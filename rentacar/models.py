@@ -14,7 +14,7 @@ class CustomUser(AbstractUser):
     # add additional fields in here
 
     def __str__(self):
-        return self.username
+        return f"{self.first_name} {self.last_name}"
 
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
