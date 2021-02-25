@@ -1,0 +1,32 @@
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.utils import timezone
+
+class CustomUser(AbstractUser):
+    userNumber = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    phoneNum = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+    postcode = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    paymentMethod = models.PositiveSmallIntegerField(default=0)
+    # add additional fields in here
+
+    def __str__(self):
+        return self.username
+
+class Car(models.Model):
+    carNumber = models.AutoField(primary_key=True)
+    make = models.CharField(max_length=50)
+    model = models.CharField(max_length=50)
+    registerNum = models.CharField(max_length=10)
+    year = models.PositiveSmallIntegerField()
+    powerLine = models.CharField(max_length=50)
+    emissions = models.PositiveSmallIntegerField()
+    seats = models.PositiveSmallIntegerField()
+    location = models.CharField(max_length=50)
+    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.carNumber

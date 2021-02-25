@@ -1,0 +1,23 @@
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import CustomUser, Car
+
+class CustomUserCreationForm(UserCreationForm):
+
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'first_name', 'last_name', 'email',
+                 'phoneNum', 'address', 'postcode', 'city', 'country')
+
+class CustomUserChangeForm(UserChangeForm):
+
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'first_name', 'last_name', 'email',
+                 'phoneNum', 'address', 'postcode', 'city', 'country')
+
+class CarForm(forms.ModelForm):
+
+    class Meta:
+        model = Car
+        fields = ('make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location')
