@@ -29,4 +29,4 @@ class Car(models.Model):
     carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.carNumber
+        return f"{self.make} {self.model}"
