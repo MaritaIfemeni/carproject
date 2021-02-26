@@ -11,7 +11,10 @@
 <body>
     <div class="topnav" id="topNavigation">
         <a href="#home" class="active">LOGO</a>
-        <a href="#user"> Signed in as {{ user.username }}!</a>
+        {% if user.is_authenticated %}
+        <a href="#user"> Kirjautuneena {{ user.username }}!</a>
+        {% else %}
+        <a href="#user"> Ei kirjautunutta käyttäjää!</a>
     </div>
     <main>
         {% block content %}
