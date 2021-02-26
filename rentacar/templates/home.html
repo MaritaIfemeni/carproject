@@ -5,7 +5,7 @@
 {% block content %}
 {% if user.is_authenticated %}
     Hi {{ user.username }}!
-    <button><a href="{% url 'logout' %}">Log Out</a></button>
+    <button>{% url 'logout' %}>Log Out</button>
     <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
 {% else %}
     <p><a href="{% url 'login' %}">Log In</a></p>
