@@ -1,3 +1,6 @@
+import django
+django.setup()
+
 import random
 from rentacar.models import Car
 from django.contrib.auth import get_user_model
@@ -37,7 +40,7 @@ for i in range(10):
 
     vregisterNum += f"-{random.randint(1,999)}"
 
-    vlocation = locations[0,len(locations)-1]
+    vlocation = locations[random.randint(0,len(locations)-1)]
 
     Car.objects.bulk_create([
         Car(make=vmake, model=vmodel, registerNum=vregisterNum, year=random.randint(1990,2020),
