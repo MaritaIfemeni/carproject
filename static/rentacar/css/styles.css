@@ -3,12 +3,17 @@
     overflow: hidden;
   }
 
-.active {
-    position: left;
-    color: blue;
-} 
+/* unvisited link */
+a:link {
+    color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
 
 #logged {
-    position: right;
-    color: blueviolet;
+    margin-left: 150px;
 }
+    
