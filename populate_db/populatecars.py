@@ -1,17 +1,11 @@
-<<<<<<< HEAD
 import random
 import os
 # from rentacar.models import Car
 # from django.contrib.auth import get_user_model
-=======
-from models import Car, CustomUser
-from django.contrib.auth import get_user_model
->>>>>>> 9f20a3a82946b9f114dc233e7057e43366bab6ea
 
 # User = get_user_model()
 # owners = User.objects.all()
 
-<<<<<<< HEAD
 print(os.listdir())
 
 with open("brands.txt", "r") as f:
@@ -31,9 +25,3 @@ for i in range(100):
 #     Car(make='ferrari', model='testarossa', registerNum='XXX-111', year=1984,
 #         powerLine='Gasoline', emissions=300, seats=2, location='Italy', carOwner=owner),
 # ])
-=======
-Car.objects.bulk_create([
-    Car(make='ferrari', model='testarossa', registerNum='XXX-111', year=1984,
-        powerLine='Gasoline', emissions=300, seats=2, location='Italy', carOwner=owner)
-])
->>>>>>> 9f20a3a82946b9f114dc233e7057e43366bab6ea
