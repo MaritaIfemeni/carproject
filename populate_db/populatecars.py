@@ -1,3 +1,6 @@
+import django
+django.setup()
+
 import random
 from rentacar.models import Car
 from django.contrib.auth import get_user_model
