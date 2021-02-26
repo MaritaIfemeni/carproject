@@ -12,9 +12,9 @@
     <div class="topnav" id="topNavigation">
         <a href="#home" class="active">LOGO</a>
         {% if user.is_authenticated %}
-        <a href="#user"> Kirjautuneena {{ user.username }}!</a>
+        <a href="#user" id="logged"> You are logged in as {{ user.username }}!</a>
         {% else %}
-        <a href="#user"> Ei kirjautunutta käyttäjää!</a>
+        <a href="{% url 'home' %}"> Log In </a>
         {% endif %}
     </div>
     <main>

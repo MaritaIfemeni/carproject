@@ -2,3 +2,13 @@
     background-color: #333;
     overflow: hidden;
   }
+
+.active {
+    position: left;
+    color: blue;
+} 
+
+#logged {
+    position: right;
+    color: blueviolet;
+}
