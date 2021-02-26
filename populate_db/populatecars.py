@@ -1,27 +1,46 @@
 import random
-import os
-# from rentacar.models import Car
-# from django.contrib.auth import get_user_model
+from rentacar.models import Car
+from django.contrib.auth import get_user_model
 
-# User = get_user_model()
-# owners = User.objects.all()
+alphabet = ["a","b","c","d","e","f","g","e","h","i","j","k","l",
+            "m","n","o","p","q","r","s","t","y","v","w","x","y","z"]
 
-print(os.listdir())
+powerLines = ["Gasoline", "Diesel", "Hybrid", "Electric"]
 
-with open("brands.txt", "r") as f:
+User = get_user_model()
+owners = User.objects.all()
+
+with open("populate_db/brands.txt", "r") as f:
     content = f.read()
 
 brands = content.split(',')
 
-for i in range(100):
-    make = brands[random.randint(0,len(brands))]
-    with open(f"{make}.txt", "r") as f:
-        model_content = f.read()
-    models = content.split(',')
-    model = models[random.randint(0,len(models))]
-    print(f"{make} {model}")
+with open("populate_db/kunnat.txt", "r") as f:
+    locations_content = f.read()
 
-# Car.objects.bulk_create([
-#     Car(make='ferrari', model='testarossa', registerNum='XXX-111', year=1984,
-#         powerLine='Gasoline', emissions=300, seats=2, location='Italy', carOwner=owner),
-# ])
+locations = locations_content.split(',')
+
+for i in range(10):
+    vmake = brands[random.randint(0,len(brands)-1)]
+    with open(f"populate_db/{vmake}.txt", "r") as f:
+        model_content = f.read()
+
+    models = model_content.split(',')
+    vmodel = models[random.randint(0,len(models)-1)]
+    print(f"{vmake} {vmodel}")
+
+    vregisterNum = ""
+
+    for i in range(3):
+        let = alphabet[random.randint(0,len(alphabet)-1)]
+        vregisterNum += let
+
+    vregisterNum += f"-{random.randint(1,999)}"
+
+    vlocation = locations[0,len(locations)-1]
+
+    Car.objects.bulk_create([
+        Car(make=vmake, model=vmodel, registerNum=vregisterNum, year=random.randint(1990,2020),
+            powerLine=powerLines[random.randint(0,3)], emissions=random.randint(100,300), 
+            seats=random.randint(2,7), location=vlocation, carOwner=owners[0]),
+    ])
