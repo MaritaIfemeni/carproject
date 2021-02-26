@@ -1,10 +1,18 @@
+{% load static %}
+
 <!DOCTYPES html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}Rent-a-car!{% endblock %}</title>
+    <title>{% block title %}RAC - Rent-a-car!{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'rentacar/styles.css">
 </head>
+
 <body>
+    <div class="topnav" id="topNavigation">
+        <a href="#home" class="active">LOGO</a>
+        <a href="#user"> Signed in as {{ user.username }}!</a>
+    </div>
     <main>
         {% block content %}
         {% endblock %}
