@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <div class="topnav" id="topNavigation">
-        <a href="#home" class="active">LOGO</a>
+    <div class="topnav">
+        <a class="active" href="#home">LOGO</a>
         {% if user.is_authenticated %}
         <a href="#user" id="logged"> You are logged in as {{ user.username }}!</a>
         {% else %}
