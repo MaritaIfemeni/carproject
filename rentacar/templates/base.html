@@ -15,6 +15,7 @@
         <a href="#user"> Kirjautuneena {{ user.username }}!</a>
         {% else %}
         <a href="#user"> Ei kirjautunutta käyttäjää!</a>
+        {% endif %}
     </div>
     <main>
         {% block content %}
