@@ -23,7 +23,7 @@ with open("populate_db/kunnat.txt", "r") as f:
 
 locations = locations_content.split(',')
 
-for i in range(10):
+for i in range(100):
     vmake = brands[random.randint(0,len(brands)-1)]
     with open(f"populate_db/{vmake}.txt", "r") as f:
         model_content = f.read()
