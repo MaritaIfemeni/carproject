@@ -54,11 +54,6 @@ def cardetails(request, pk):
     return render(request, 'rentacar/cardetails.html', context)
 
 @login_required
-def carnotfound(request, pk):
-    car = get_object_or_404(Car, pk=pk)
-
-    context = {
-        'car': car,
-    }
+def carnotfound(request):
 
     return render(request, 'rentacar/carnotfound.html', context)
