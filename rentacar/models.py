@@ -20,15 +20,6 @@ class Car(models.Model):
     file = open('populate_db/brandslist.txt') 
     brandchoice = tuple((choice,choice) for choice in file.readline())
 
-    # brandchoice = [
-        # ('Abarth', 'Abarth'),
-        # ('Alfa Romeo', 'Alfa Romeo'),
-        # ('Aston Martin', 'Aston Martin'),
-        # ('Audi', 'Audi'),
-        # ('Bentley', 'Bentley'),
-        # ('BMW', 'BMW'),
-    # ]
-
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(choices=brandchoice, max_length=50)
     model = models.CharField(max_length=50)
