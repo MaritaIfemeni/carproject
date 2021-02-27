@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
+from django.db.models import Q
 
 from .forms import CustomUserCreationForm, CarForm
 from .models import CustomUser, Car
@@ -28,7 +29,7 @@ def caradd(request):
     return render(request, 'rentacar/caradd.html', context)
 
 def carlist(request):
-    cars = Car.objects.all()
+    cars = Car.objects.filter(~Q(carOwner=request.user))
 
     context = {
         'cars': cars,
