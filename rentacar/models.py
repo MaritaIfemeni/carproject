@@ -16,7 +16,7 @@ class CustomUser(AbstractUser):
         return f"{self.first_name} {self.last_name}"
 
 class Car(models.Model):
-    with open('brandslist.txt', 'r') as f:
+    with open('populate_db/brandslist.txt', 'r') as f:
         content = f.read()
     
     brandchoice = content.split(',')
