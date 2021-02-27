@@ -34,4 +34,4 @@ def carlist(request):
         'cars': cars,
     }
 
-    return render(request, 'showcase/carlist.html', context)
+    return render(request, 'rentacar/carlist.html', context)
