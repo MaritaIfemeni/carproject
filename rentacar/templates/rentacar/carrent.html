@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ car.make }}{{ car.model }}{{ car.carOwner.last_name }}
+    <p>Car: {{ car.model }} {{ car.make }}</p>
+    <p>Car owner: {{ car.carOwner.last_name }}</p>
 {% endblock %}
