@@ -7,5 +7,5 @@ urlpatterns = [
     path('caradd/', views.caradd, name='caradd'),
     path('carlist/', views.carlist, name='carlist'),
     path('cardetails/<int:pk>/', views.cardetails, name='cardetails'),
-    path('carnotfound/<int:pk>/', views.cardetails, name='cardetails'),
+    path('carnotfound/<int:pk>/', views.carnotfound, name='carnotfound'),
 ]

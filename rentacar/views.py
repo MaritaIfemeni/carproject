@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.db.models import Q
 
@@ -43,9 +43,22 @@ def carlist(request):
 @login_required
 def cardetails(request, pk):
     car = get_object_or_404(Car, pk=pk)
-    
+
     context = {
         'car': car,
     }
 
+    if (car.status == 1):
+        return redirect('carnotfound')
+
     return render(request, 'rentacar/cardetails.html', context)
+
+@login_required
+def carnotfound(request, pk):
+    car = get_object_or_404(Car, pk=pk)
+
+    context = {
+        'car': car,
+    }
+
+    return render(request, 'rentacar/carnotfound.html', context)
