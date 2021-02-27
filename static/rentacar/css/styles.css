@@ -28,4 +28,9 @@
 .topnav a.active {
     background-color: royalblue;
     color: #f2f2f2;
+    height: 50px;
+}
+
+#logged {
+    float: right;
 }
