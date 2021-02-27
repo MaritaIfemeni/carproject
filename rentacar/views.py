@@ -29,7 +29,7 @@ def caradd(request):
     return render(request, 'rentacar/caradd.html', context)
 
 def carlist(request):
-    cars = Car.objects.filter(~Q(carOwner=request.user, status=1))
+    cars = Car.objects.filter(~Q(carOwner=request.user).filter(status=0))
 
     context = {
         'cars': cars,
