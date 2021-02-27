@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
+def plus_one_day():
+    return timezone.now() + timezone.timedelta(days=1)
 class CustomUser(AbstractUser):
     userNumber = models.AutoField(primary_key=True)
     email = models.CharField(max_length=50)
@@ -30,3 +32,15 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.make} {self.model}"
+
+class Rents(models.Model):
+    rentNumber = models.AutoField(primary_key=True)
+    carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
+    renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="renter")
+    renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
+    rentPrice = models.PositiveSmallIntegerField()
+    startDate = models.DateTimeField(default=timezone.now())
+    endDate = models.DateTimeField(default=plus_one_day())
+
+    def __str__(self):
+        return f"{self.rentNumber} {self.renterNumber.last_name} {self.renteeNumber.last_name} {self.endDate}"
