@@ -1,5 +1,4 @@
 from django.contrib.auth.models import AbstractUser
-from model_utils import Choices
 from django.db import models
 from django.utils import timezone
 
@@ -19,9 +18,7 @@ class CustomUser(AbstractUser):
 class Car(models.Model):
 
     with open('populate_db/brandslist.txt', 'r') as f:
-        content = f.read().split()
-
-    brandchoice = Choices(content)
+        brandchoice = f.read()
 
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(choices=brandchoice, max_length=999)
