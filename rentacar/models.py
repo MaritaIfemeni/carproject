@@ -22,7 +22,7 @@ class Car(models.Model):
     brandchoice = [('ferrari', 'Ferrari'), ('lamborghini', 'Lamborghini'),]
 
     carNumber = models.AutoField(primary_key=True)
-    make = models.CharField(choices=brandchoice, max_length=1)
+    make = models.CharField(choices=brandchoice)
     model = models.CharField(max_length=50)
     registerNum = models.CharField(max_length=10)
     year = models.PositiveSmallIntegerField()
