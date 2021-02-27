@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView
 from django.db.models import Q
 
@@ -39,3 +39,13 @@ def carlist(request):
     }
 
     return render(request, 'rentacar/carlist.html', context)
+
+@login_required
+def carrent(request, pk):
+    car = get_object_or_404(Car, pk=pk)
+    
+    context = {
+        'car': car,
+    }
+
+    return render(request, 'rentacar/carrent.html', context)
