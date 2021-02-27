@@ -19,7 +19,7 @@ class CustomUser(AbstractUser):
 class Car(models.Model):
 
     with open('populate_db/brandslist.txt', 'r') as f:
-        content = f.read().split(',')
+        content = f.read().split()
 
     brandchoice = Choices(content)
 
