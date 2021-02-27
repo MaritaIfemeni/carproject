@@ -7,7 +7,7 @@
     Hi {{ user.username }}!
     <p><a href="{% url 'logout' %}">Log Out</a></p>
     <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
-    <p><a class="menulinks" href="{% url 'car_list' %}">[View cars]</a></p>
+    <p><a href="{% url 'carlist' %}">[View cars]</a></p>
 {% else %}
     <p><a href="{% url 'login' %}">Log In</a></p>
     <p><a href="{% url 'signup' %}">Sign Up</a></p>
