@@ -8,8 +8,9 @@ width: 100%; /* Full width */
 height: 50px
 }
 
-.active {
-    -webkit-mask-image: ;
+#menulogo {
+    height:  50px;
+    width:  10%;
 }
 
 /* Style the links inside the navigation bar */

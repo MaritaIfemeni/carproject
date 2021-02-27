@@ -11,7 +11,7 @@
 <body>
     <div class="topnav">
         <a class="active" href="#home">
-        <img src="{% static 'rentacar/pictures/menulogo.png' %}" alt="Logo"></a>
+        <img src="{% static 'rentacar/pictures/menulogo.png' %}" id="menulogo" alt="Logo"></a>
         {% if user.is_authenticated %}
         <a href="#user" id="logged"> You are logged in as {{ user.username }}!</a>
         {% else %}
