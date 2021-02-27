@@ -8,9 +8,9 @@ width: 100%; /* Full width */
 height: 50px
 }
 
-#menulogo {
+.active {
     height:  50px;
-    width:  10%;
+    width:  100px;
 }
 
 /* Style the links inside the navigation bar */
