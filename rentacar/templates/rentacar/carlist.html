@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if car in cars %}
+    {% if car is None %}
+        <p>No cars currently available!</p>
+    {% else %}
         {% for car in cars %}
             <p>{{ car }}</p>
             <p><a href="{% url 'cardetails' pk=car.pk %}">Details</a></p>
         {% endfor %}
-    {% else %}
-        <p>No cars currently available!</p>
     {% endif %}
 {% endblock %}
