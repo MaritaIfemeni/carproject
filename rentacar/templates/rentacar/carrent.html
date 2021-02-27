@@ -2,6 +2,11 @@
 
 {% block content %}
 <h2>New Rent</h2>
+    <p>Car: {{ car.make }} {{ car.model }}</p>
+    <p>Plate: {{ car.registerNum }}</p>
+    <p>Renter: {{ request.user.last_name }}</p>
+    <p>Rentee: {{ car.ownerNumber.last_name }}</p>
+    <p>Rent price: NEEDSWORK</p>
     <form method="POST" id="rentform">{% csrf_token %}
         <div class="form">
             {{ rentform.as_p }}

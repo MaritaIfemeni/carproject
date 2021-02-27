@@ -73,7 +73,8 @@ def carrent(request, pk):
         rentform = RentForm()
 
         context = {
-            'rentform': rentform
+            'rentform': rentform,
+            'car': car,
         }
 
         return render(request, 'rentacar/carrent.html', context)
