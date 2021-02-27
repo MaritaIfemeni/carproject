@@ -16,8 +16,9 @@ class CustomUser(AbstractUser):
         return f"{self.first_name} {self.last_name}"
 
 class Car(models.Model):
-    with open('populate_db/brandslist.txt') as f:
-        brandchoice = f.read()
+
+    file = open('populate_db/brandslist.txt') 
+    brandchoice = tuple((choice,choice) for choice in file.readline())
 
     # brandchoice = [
         # ('Abarth', 'Abarth'),
