@@ -9,8 +9,9 @@ height: 50px
 }
 
 .active {
-    height:  50px;
-    width:  100px;
+height:  50px;
+width:  100px;
+background-image: url("../pictures/menulogo.png");
 }
 
 /* Style the links inside the navigation bar */
