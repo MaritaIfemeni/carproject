@@ -16,17 +16,17 @@ class CustomUser(AbstractUser):
         return f"{self.first_name} {self.last_name}"
 
 class Car(models.Model):
-    # with open('populate_db/brandslist.txt', 'r') as f:
-        # brandchoice = f.read().splitlines()
+    with open('populate_db/brandslist.txt', 'r') as f:
+        brandchoice = f.read()
 
-    brandchoice = [
-        ('Abarth', 'Abarth'),
-        ('Alfa Romeo', 'Alfa Romeo'),
-        ('Aston Martin', 'Aston Martin'),
-        ('Audi', 'Audi'),
-        ('Bentley', 'Bentley'),
-        ('BMW', 'BMW'),
-    ]
+    # brandchoice = [
+        # ('Abarth', 'Abarth'),
+        # ('Alfa Romeo', 'Alfa Romeo'),
+        # ('Aston Martin', 'Aston Martin'),
+        # ('Audi', 'Audi'),
+        # ('Bentley', 'Bentley'),
+        # ('BMW', 'BMW'),
+    # ]
 
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(choices=brandchoice, max_length=50)
