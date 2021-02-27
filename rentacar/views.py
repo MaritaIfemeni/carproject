@@ -41,11 +41,11 @@ def carlist(request):
     return render(request, 'rentacar/carlist.html', context)
 
 @login_required
-def carrent(request, pk):
+def cardetails(request, pk):
     car = get_object_or_404(Car, pk=pk)
     
     context = {
         'car': car,
     }
 
-    return render(request, 'rentacar/carrent.html', context)
+    return render(request, 'rentacar/cardetails.html', context)
