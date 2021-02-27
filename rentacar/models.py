@@ -11,14 +11,18 @@ class CustomUser(AbstractUser):
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     paymentMethod = models.PositiveSmallIntegerField(default=0)
-    # add additional fields in here
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
 class Car(models.Model):
+    with open('brandslist.txt', 'r') as f:
+        content = f.read()
+    
+    brandchoice = content.split(',')
+
     carNumber = models.AutoField(primary_key=True)
-    make = models.CharField(max_length=50)
+    make = models.CharField(choices=brandchoice, max_length=1)
     model = models.CharField(max_length=50)
     registerNum = models.CharField(max_length=10)
     year = models.PositiveSmallIntegerField()
