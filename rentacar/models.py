@@ -17,8 +17,8 @@ class CustomUser(AbstractUser):
 
 class Car(models.Model):
 
-    file = open('populate_db/brandslist.txt') 
-    brandchoice = tuple((choice,choice) for choice in file.readline())
+    with open('populate_db/brandslist.txt', 'r') as f:
+        brandchoice = f.readline().split()
 
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(choices=brandchoice, max_length=50)
