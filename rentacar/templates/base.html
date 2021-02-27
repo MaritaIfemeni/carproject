@@ -5,18 +5,9 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}RAC - Rent-a-car!{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'rentacar/css/styles.css' %}">
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="active" href="#home"></a>
-        {% if user.is_authenticated %}
-        <a class="logged" href="#user"> You are logged in as {{ user.username }}!</a>
-        {% else %}
-        <a href="{% url 'home' %}"> Log In </a>
-        {% endif %}
-    </div>
     <main>
         {% block content %}
         {% endblock %}
