@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm, CarForm
-from .models import CustomUser
+from .models import CustomUser, Car
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -26,3 +26,12 @@ def caradd(request):
     }
 
     return render(request, 'rentacar/caradd.html', context)
+
+def carlist(request):
+    cars = Car.objects.all()
+
+    context = {
+        'cars': cars,
+    }
+
+    return render(request, 'showcase/carlist.html', context)
