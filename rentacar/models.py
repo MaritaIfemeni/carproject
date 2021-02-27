@@ -36,8 +36,8 @@ class Car(models.Model):
 class Rents(models.Model):
     rentNumber = models.AutoField(primary_key=True)
     carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
-    renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
-    renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+    renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="renter")
+    renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
     rentPrice = models.PositiveSmallIntegerField()
     startDate = models.DateTimeField(default=timezone.now())
     endDate = models.DateTimeField(default=plus_one_day())
