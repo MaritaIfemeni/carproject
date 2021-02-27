@@ -26,6 +26,7 @@ class Car(models.Model):
     emissions = models.PositiveSmallIntegerField()
     seats = models.PositiveSmallIntegerField()
     location = models.CharField(max_length=50)
+    status = models.PositiveSmallIntegerField(default=0)
     carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
     def __str__(self):
