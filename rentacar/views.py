@@ -65,7 +65,7 @@ def carrent(request, pk):
         if rentform.is_valid():
             rent = rentform.save(commit=False)
             rent.renterNumber_id = request.user.userNumber
-            rent.renteeNumber_id = car.carOwner
+            rent.renteeNumber_id = car.carOwner.userNumber
             rent.carNumber_id = car.carNumber
             rent.save()
             return render(request, 'home.html')
