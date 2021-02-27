@@ -4,8 +4,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.db.models import Q
 
-from .forms import CustomUserCreationForm, CarForm
-from .models import CustomUser, Car
+from .forms import CustomUserCreationForm, CarForm, RentForm
+from .models import CustomUser, Car, Rent
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -55,5 +55,25 @@ def cardetails(request, pk):
 
 @login_required
 def carnotfound(request):
-
     return render(request, 'rentacar/carnotfound.html')
+
+@login_required
+def carrent(request, pk):
+    car = get_object_or_404(Car, pk=pk)
+    if request.method == "POST":
+        rentform = RentForm(request.POST)
+        if rentform.is_valid():
+            rent = rentform.save(commit=False)
+            rent.renter = request.user
+            rent.rentee = car.carOwner
+            rent.carNumber = car.carNumber
+            rent.save()
+            return render(request, 'home.html')
+    else:
+        rentform = RentForm()
+
+        context = {
+            'rentform': rentform
+        }
+
+        return render(request, 'rentacar/carrent.html', context)

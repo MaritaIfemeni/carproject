@@ -33,12 +33,12 @@ class Car(models.Model):
     def __str__(self):
         return f"{self.make} {self.model}"
 
-class Rents(models.Model):
+class Rent(models.Model):
     rentNumber = models.AutoField(primary_key=True)
     carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
     renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="renter")
     renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
-    rentPrice = models.PositiveSmallIntegerField()
+    rentPrice = models.PositiveSmallIntegerField(default=100)
     startDate = models.DateTimeField(default=timezone.now())
     endDate = models.DateTimeField(default=plus_one_day())
 
