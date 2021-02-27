@@ -1,5 +1,5 @@
-[('Abarth', 'Abarth'),
-('Alfa Romeo', 'Alfa Romeo'),
+((Abarth,Abarth),
+(Alfa Romeo,Alfa Romeo),
 ('Aston Martin', 'Aston Martin'),
 ('Audi', 'Audi'),
 ('Bentley', 'Bentley'),
@@ -61,4 +61,4 @@
 ('Tesla', 'Tesla'),
 ('Toyota', 'Toyota'),
 ('Volkswagen', 'Volkswagen'),
-('Volvo', 'Volvo'),]
+('Volvo', 'Volvo'),)
