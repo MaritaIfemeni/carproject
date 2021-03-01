@@ -14,6 +14,10 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+    def changePassword(self, pw):
+        self.set_password(pw)
+        
 """
 class CarOwner(models.Model):
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
