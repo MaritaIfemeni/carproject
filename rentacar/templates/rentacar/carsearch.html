@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="get" action="/carquery/">
+    Enter register number: <input type="text" name="q" id="id_q" value="{{ query }}"/>
+    <input type="submit" value="Search" />
+</form>
+
+{% endblock %}

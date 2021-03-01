@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.views.generic.edit import CreateView
-from django.db.models import Q
+from django.template import RequestContext
 
 from .forms import CustomUserCreationForm, CarForm, RentForm, OwnerForm
 from .models import CustomUser, Car, Rent, Owner
@@ -11,6 +11,24 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+@login_required
+def carsearch(request):
+    return render(request, 'rentacar/carsearch.html')
+
+@login_required
+def carquery(request):
+    query = request.GET.get('q')
+    try:
+        query = str(query)
+    except ValueError:
+        query = None
+        results = None
+    if query:
+        results = Car.objects.filter(registerNum=query)
+    context = RequestContext(request)
+
+    return render_to_response('results.html', {"results": results,}, context_instance=context)
 
 @login_required
 def caradd(request):
