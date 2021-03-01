@@ -8,8 +8,8 @@ cars = Car.objects.all()
 
 for i in range(len(users)):
 
-    vcar = users[i]
-    vuser = cars[i]
+    vcar = cars[i]
+    vuser = users[i]
 
     Owner.objects.bulk_create([
         Owner(car=vcar, user=vuser)
