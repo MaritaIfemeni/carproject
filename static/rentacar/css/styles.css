@@ -4,6 +4,7 @@ main {
 
 #loggedIn {
     padding-left: 80%;
+    color: coral;
 }
 
 #logOut {
