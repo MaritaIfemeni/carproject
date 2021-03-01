@@ -24,6 +24,11 @@ class Owner(models.Model):
     car = models.ForeignKey('Car', on_delete=models.CASCADE)
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
+    def assign_owner(self, car, owner):
+        self.car = car
+        self.owner = owner
+        self.save()
+
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(max_length=50)

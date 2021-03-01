@@ -20,12 +20,8 @@ def caradd(request):
             car = carform.save(commit=False)
             car.save()
 
-            ownerform = OwnerForm(request.POST)
-            if ownerform.is_valid():
-                owner = ownerform.save(commit=False)
-                owner.car = car
-                owner.user = request.user
-                owner.save()
+            owner = Owner()
+            owner.assign_owner(car, request.user)
             
             return render(request, 'home.html')
     else:
