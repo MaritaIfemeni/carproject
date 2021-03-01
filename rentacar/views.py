@@ -32,7 +32,7 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    cars = Car.objects.filter(status=0).filter(~Q(carOwner=request.user))
+    cars = Car.objects.all()
 
     context = {
         'cars': cars,
