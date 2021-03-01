@@ -22,7 +22,7 @@ SECRET_KEY = '3yuzy_9ss*h-t7-k2xau(#y7xl_0v#1yv@b&co%$w3(6(!g7uv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.2.111', 'localhost']
+ALLOWED_HOSTS = ['192.168.0.200', 'aurorae.tk', 'localhost']
 
 
 # Application definition
