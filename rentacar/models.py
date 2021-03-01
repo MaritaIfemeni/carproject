@@ -1,8 +1,8 @@
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
-class CustomUser(AbstractBaseUser):
+class CustomUser(AbstractUser):
     userNumber = models.AutoField(primary_key=True)
     email = models.CharField(max_length=50)
     phoneNum = models.CharField(max_length=50)
