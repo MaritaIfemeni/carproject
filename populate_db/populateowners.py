@@ -3,8 +3,6 @@ django.setup()
 
 from rentacar.models import CustomUser, Car, Owner
 
-from django.contrib.auth.models import User
-
 users = CustomUser.objects.all()
 cars = Car.objects.all()
 
