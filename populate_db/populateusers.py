@@ -1,3 +1,5 @@
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renter.settings")
 import django
 django.setup()
 
