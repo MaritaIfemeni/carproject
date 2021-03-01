@@ -18,8 +18,8 @@ class CustomUser(AbstractUser):
         return f"{self.first_name} {self.last_name}"
 
 class CarOwners(models.Model):
-    carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
-    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+    carNumber = models.ForeignKey('Car', on_delete=models.CASCADE, primary_key=True)
+    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE, primary_key=True)
 
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
