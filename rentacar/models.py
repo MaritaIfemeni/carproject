@@ -26,7 +26,7 @@ class Owner(models.Model):
 
     def assign_owner(self, car, owner):
         self.car = car
-        self.owner = owner
+        self.user = owner
         self.save()
 
 class Car(models.Model):
