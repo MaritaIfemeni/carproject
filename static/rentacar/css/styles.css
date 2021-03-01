@@ -8,7 +8,12 @@ main {
 
 h2 {
     color: coral;
-    text-shadow: dimgrey;
+    text-shadow: 3px dimgrey;
+}
+
+h4 {
+    color: coral;
+    text-shadow: 2px dimgrey;
 }
 
 #logo {
@@ -29,19 +34,23 @@ h2 {
 }
 
 #thirdcolum {
-    height: 80%;
-    width: 100%;
     text-align: center;
     border-style: solid 5px black;
     background-color: coral;
+    height: 30vh;
+    width: 20vh;
 }
 
 .pagelinks {
     text-decoration: none;
+    font-size: 20px; 
     color: black;
     background-color: cornsilk;
 }
 
+#searcharea {
+    max-width: 80%;
+}
 .pagelinks:hover{
     color: coral;
 }
