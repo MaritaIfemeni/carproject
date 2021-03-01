@@ -1,5 +1,5 @@
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renter.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "/home/mintai/renter/renter.settings")
 import django
 django.setup()
 
