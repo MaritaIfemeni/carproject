@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView
 from django.db.models import Q
 
 from .forms import CustomUserCreationForm, CarForm, RentForm
-from .models import CustomUser, Car, Rent
+from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -18,8 +18,8 @@ def caradd(request):
         carform = CarForm(request.POST)
         if carform.is_valid():
             car = carform.save(commit=False)
-            car.carOwner = request.user
             car.save()
+            
             return render(request, 'home.html')
     else:
         carform = CarForm()
@@ -65,7 +65,6 @@ def carrent(request, pk):
         if rentform.is_valid():
             rent = rentform.save(commit=False)
             rent.renterNumber_id = request.user.userNumber
-            rent.renteeNumber_id = car.carOwner.userNumber
             rent.carNumber_id = car.carNumber
             rent.save()
             return render(request, 'home.html')

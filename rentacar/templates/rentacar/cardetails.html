@@ -3,6 +3,5 @@
 {% block content %}
     <p>{{ car.make }} {{ car.model }}</p>
     <p>{{ car.registerNum }}</p>
-    <p>Owner: {{ car.carOwner.last_name }}</p>
     <p><a href="{% url 'carrent' pk=car.pk %}">Rent now!</a></p>
 {% endblock %}
