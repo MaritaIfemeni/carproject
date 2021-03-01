@@ -15,17 +15,20 @@ main {
     background-size: 15px 15px;
 }
 
-.col-md-4{
+#firstcolum {
     text-align: center;
 }
 
-.pb-3{
+#secondcolum {
+    text-align: center;
+}
+
+#thirdcolum {
     text-align: center;
 }
 
 .pagelinks {
     text-decoration: none;
-    border-bottom: coral;
     color: black;
 }
 
