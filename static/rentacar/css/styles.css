@@ -1,12 +1,6 @@
 main {
     padding-top: 200px;
 }
-
-#loggedIn {
-    padding-left: 80%;
+.nav-link {
     color: coral;
-}
-
-#logOut {
-    padding-left: 80%;
 }
