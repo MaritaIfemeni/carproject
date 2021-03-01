@@ -8,7 +8,7 @@
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        <h5>You are ready to start browsing available cars!</h5>
+        <h6>Welcome to use Rent-A-Car!</h6>
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col" id="firstcolum">
@@ -24,7 +24,7 @@
         </div>
     </div>
   </div>
-  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>Enterprices 2021<br></div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum"><br>Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021<br></div>
 </div>
 
 {% else %}
@@ -32,18 +32,17 @@
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
       <div class="pb-3">
-          <h5>Log in or create an account to start browsing available cars!</h5>
+          <h6>Log in or create an account<br>to start using Rent-A-Car!</h6>
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col" id="firstcolum">
-            <a class="pagelinks" href="{% url 'login' %}">Log In</a>
-      </div>
-        <div class="col-md-6 themed-grid-col" id="secondcolum">
-            <a class="pagelinks" href="{% url 'signup' %}">Sign Up</a>
-          </div>
+            <a class="pagelinks" href="{% url 'login' %}">Log In</a><br>
+            <a class="pagelinks" href="{% url 'signup' %}">Sign Up</a><br>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-4 themed-grid-col" id="thirdcolum">Tähän jotain!!</div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum"><br>Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021<br></div>
   </div>
   {% endif %}
 
