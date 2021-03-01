@@ -17,10 +17,6 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
-class CarOwner(models.Model):
-    carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
-    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
-
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(max_length=50)
