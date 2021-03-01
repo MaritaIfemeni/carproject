@@ -4,6 +4,47 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        Hi {{ user.username }}!
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+          <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
+          <p><a href="{% url 'carlist' %}">[View cars]</a></p>
+    </div>
+      <div class="col-md-6 themed-grid-col"><p>
+          <p><a href="{% url 'logout' %}">Log Out</a></p>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col">Tähän jotain!!</div>
+</div>
+
+{% else %}
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          Hi, log in or create an account to start browsing available cars!
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col">
+            <p><a href="{% url 'login' %}">Log In</a></p>
+      </div>
+        <div class="col-md-6 themed-grid-col"><p>
+            <p><a href="{% url 'signup' %}">Sign Up</a></p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">Tähän jotain!!</div>
+  </div>
+
+
+<!-- 
+{% if user.is_authenticated %}
     Hi {{ user.username }}!
     <p><a href="{% url 'logout' %}">Log Out</a></p>
     <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
@@ -11,5 +52,6 @@
 {% else %}
     <p><a href="{% url 'login' %}">Log In</a></p>
     <p><a href="{% url 'signup' %}">Sign Up</a></p>
-{% endif %}
+{% endif %}-->
+
 {% endblock %}
