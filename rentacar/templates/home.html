@@ -8,14 +8,18 @@
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        Hi {{ user.username }}!
+        You are ready to start browsing available cars!
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-          <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
-          <p><a href="{% url 'carlist' %}">[View cars]</a></p>
+          <p></p><a href="{% url 'caradd' %}">Add new car</a></p>
+          <p><a href="{% url 'carlist' %}">View cars</a></p>
     </div>
       <div class="col-md-6 themed-grid-col"><p>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
           <p><a href="{% url 'logout' %}">Log Out</a></p>
         </div>
     </div>

@@ -4,6 +4,15 @@ main {
 }
 
 #logged {
-    border: coral;
-    margin-left: 20vw;
+    background-color: coral;
+    margin-left: 30vw;
+}
+#logout {
+    background-color: crimson;
+    margin-left: 40vw;
+}
+
+a {
+    background-color: coral;
+    text-decoration: none;
 }
