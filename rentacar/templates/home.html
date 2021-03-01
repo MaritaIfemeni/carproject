@@ -8,7 +8,7 @@
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        <h6>Welcome to use Rent-A-Car!</h6>
+        <h5>Welcome to Rent-A-Car!</h5>
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col" id="firstcolum">
@@ -20,11 +20,12 @@
             <input class="form-control me-2" id="searcharea" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
-          <a class="pagelinks" href="{% url 'logout' %}">Log Out</a></p>
+          <a class="pagelinks" href="{% url 'logout' %}">Log Out</a>
         </div>
     </div>
   </div>
-  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021</div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
 </div>
 
 {% else %}
@@ -32,18 +33,20 @@
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
       <div class="pb-3">
-          <h6>Log in or create an account<br>to start using Rent-A-Car!</h6>
+          <h6><strong>Log in or create an account</strong><br>to start using Rent-A-Car!</h6>
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col" id="firstcolum">
             <a class="pagelinks" href="{% url 'login' %}">Log In<br></a>
-            <a class="pagelinks" href="{% url 'signup' %}">Sign Up<br></a>
         </div>
-    
-    </div>
+        <div class="col-md-6 themed-grid-col" id="secondcolum">
+          <a class="pagelinks" href="{% url 'signup' %}">Sign Up<br></a>
+        </div>
       </div>
+     </div>
     </div>
-    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021</div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
   </div>
   {% endif %}
 
