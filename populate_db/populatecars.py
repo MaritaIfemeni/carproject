@@ -3,15 +3,11 @@ django.setup()
 
 import random
 from rentacar.models import Car
-from django.contrib.auth import get_user_model
 
 alphabet = ["a","b","c","d","e","f","g","e","h","i","j","k","l",
             "m","n","o","p","q","r","s","t","y","v","w","x","y","z"]
 
 powerLines = ["Gasoline", "Diesel", "Hybrid", "Electric"]
-
-User = get_user_model()
-owners = User.objects.all()
 
 with open("populate_db/brands.txt", "r") as f:
     content = f.read()
@@ -45,5 +41,5 @@ for i in range(100):
     Car.objects.bulk_create([
         Car(make=vmake, model=vmodel, registerNum=vregisterNum, year=random.randint(1990,2020),
             powerLine=powerLines[random.randint(0,3)], emissions=random.randint(100,300), 
-            seats=random.randint(2,7), location=vlocation, carOwner=owners[0]),
+            seats=random.randint(2,7), location=vlocation),
     ])
