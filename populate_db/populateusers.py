@@ -43,6 +43,6 @@ for i in range(100):
 
     CustomUser.objects.bulk_create([
         CustomUser(username=vusername, first_name=vfirst_name, last_name=vlast_name, email=vemail, 
-            phonenum=vphonenum, address=vaddress, postcode=random.randint(10000, 99999),
+            phoneNum=vphonenum, address=vaddress, postcode=random.randint(10000, 99999),
             city=vcity, country="Finland", paymentMethod=0),
     ])
