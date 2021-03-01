@@ -41,8 +41,8 @@ for i in range(100):
             f"Email: \t\t{vemail}\nPhone: \t\t{vphonenum}\nStreet: \t{vaddress}\n"
             f"City: \t\t{vcity}\nCountry: \tFinland\n")
 
-    Car.objects.bulk_create([
-        Car(username=vusername, first_name=vfirst_name, last_name=vlast_name, email=vemail, 
+    CustomUser.objects.bulk_create([
+        CustomUser(username=vusername, first_name=vfirst_name, last_name=vlast_name, email=vemail, 
             phonenum=vphonenum, address=vaddress, postcode=random.randint(10000, 99999),
             city=vcity, country="Finland", paymentMethod=0),
     ])
