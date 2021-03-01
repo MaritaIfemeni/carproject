@@ -48,10 +48,3 @@ for i in range(100):
             phoneNum=vphonenum, address=vaddress, postcode=random.randint(10000, 99999),
             city=vcity, country="Finland", paymentMethod=0),
     ])
-
-def _pw():
-    return "password"
-
-for user in CustomUser.objects.filter(password=""):
-    user.set_password(_pw())
-    user.save()
