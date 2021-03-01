@@ -1,6 +1,3 @@
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE","rentacar.settings")
-
 import django
 django.setup()
 
