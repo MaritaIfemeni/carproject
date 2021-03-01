@@ -25,7 +25,7 @@ def caradd(request):
                 owner = ownerform.save(commit=False)
                 owner.car = car
                 owner.user = request.user
-                ownerform.save()
+                owner.save()
             
             return render(request, 'home.html')
     else:
