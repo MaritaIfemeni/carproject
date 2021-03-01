@@ -4,6 +4,8 @@ django.setup()
 import random
 from rentacar.models import CustomUser
 
+from django.contrib.auth.models import User
+
 with open("populate_db/words.txt", "r") as f:
     unContent = f.read()
 
@@ -42,7 +44,14 @@ for i in range(100):
             f"City: \t\t{vcity}\nCountry: \tFinland\n")
 
     CustomUser.objects.bulk_create([
-        CustomUser(username=vusername, password="passu", first_name=vfirst_name, last_name=vlast_name, email=vemail, 
+        CustomUser(username=vusername, first_name=vfirst_name, last_name=vlast_name, email=vemail, 
             phoneNum=vphonenum, address=vaddress, postcode=random.randint(10000, 99999),
             city=vcity, country="Finland", paymentMethod=0),
     ])
+
+def _pw():
+    return "password"
+
+for user in CustomUser.objects.filter(password=""):
+    user.set_password(_pw())
+    user.save()
