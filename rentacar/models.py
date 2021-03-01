@@ -36,12 +36,6 @@ class Car(models.Model):
     location = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField(default=0)
 
-    def __init__(self):
-        owner = Owner()
-        owner.car = self.carNumber
-        owner.user = request.user
-        owner.save()
-
     def __str__(self):
         return f"{self.make} {self.model}"
 

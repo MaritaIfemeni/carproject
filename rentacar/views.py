@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.db.models import Q
 
-from .forms import CustomUserCreationForm, CarForm, RentForm
+from .forms import CustomUserCreationForm, CarForm, RentForm, OwnerForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
@@ -19,6 +19,13 @@ def caradd(request):
         if carform.is_valid():
             car = carform.save(commit=False)
             car.save()
+
+            ownerform = OwnerForm(request.POST)
+            if ownerform.is_valid():
+                owner = ownerform.save(commit=False)
+                owner.car = car
+                owner.user = request.user
+                ownerform.save()
             
             return render(request, 'home.html')
     else:

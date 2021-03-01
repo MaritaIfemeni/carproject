@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Car, Rent
+from .models import CustomUser, Car, Rent, Owner
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -27,3 +27,8 @@ class RentForm(forms.ModelForm):
     class Meta:
         model = Rent
         fields = ('startDate', 'endDate')
+
+class OwnerForm(forms.ModelForm):
+    class Meta:
+        model = Owner
+        fields = ('car', 'user')
