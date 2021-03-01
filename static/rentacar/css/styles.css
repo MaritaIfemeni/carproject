@@ -2,3 +2,7 @@ main {
     padding-top: 150px;
     padding-left: 50px;
 }
+
+#logged {
+    background-color: coral;
+}
