@@ -19,6 +19,9 @@ class CarOwner(models.Model):
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
     car = models.ForeignKey('Car', on_delete=models.CASCADE)
 """
+class Owner(models.Model):
+    car = models.ForeignKey('Car', on_delete=models.CASCADE)
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
