@@ -3,9 +3,9 @@ main {
 }
 
 #loggedIn {
-    float: right;
+    padding-left: 80%;
 }
 
 #logOut {
-    float: right;
+    padding-left: 80%;
 }
