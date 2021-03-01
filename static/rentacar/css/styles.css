@@ -8,12 +8,13 @@ main {
     padding-top: 150px;
     padding-left: 50px;
 }
+
 #logo {
     background-color: coral;
 }
 #logged {
     background-color: coral;
-    margin-left: 30vw;
+    margin-left: 40vw;
 }
 #logout {
     background-color: crimson;
