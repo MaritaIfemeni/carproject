@@ -4,6 +4,6 @@ main {
 }
 
 #logged {
-    background-color: coral;
-    margin-left: 80%;
+    border: coral;
+    margin-left: 20vw;
 }
