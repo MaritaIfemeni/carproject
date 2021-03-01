@@ -68,8 +68,6 @@ def carrent(request, pk):
             rent.renteeNumber_id = car.carOwner.userNumber
             rent.carNumber_id = car.carNumber
             rent.save()
-            car.status = 1
-            car.save()
             return render(request, 'home.html')
     else:
         rentform = RentForm()

@@ -17,6 +17,10 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
+class CarOwners(models.Model):
+    carNumber = models.ForeignKey('Car', on_delete=models.CASCADE)
+    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(max_length=50)
@@ -28,7 +32,7 @@ class Car(models.Model):
     seats = models.PositiveSmallIntegerField()
     location = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField(default=0)
-    carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+    # carOwner = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.make} {self.model}"
@@ -41,6 +45,7 @@ class Rent(models.Model):
     rentPrice = models.PositiveSmallIntegerField(default=100)
     startDate = models.DateTimeField(default=timezone.now())
     endDate = models.DateTimeField(default=plus_one_day())
+    expired = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.rentNumber} {self.renterNumber.last_name} {self.renteeNumber.last_name} {self.endDate}"

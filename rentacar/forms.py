@@ -25,4 +25,4 @@ class CarForm(forms.ModelForm):
 class RentForm(forms.ModelForm):
     class Meta:
         model = Rent
-        fields = ('endDate',)
+        fields = ('startDate', 'endDate')
