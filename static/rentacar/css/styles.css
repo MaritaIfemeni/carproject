@@ -11,7 +11,7 @@ h2 {
     text-shadow: 3px dimgrey;
 }
 
-h6 {
+h5, h6 {
     color: coral;
     text-shadow: 2px dimgrey;
 }
@@ -41,7 +41,7 @@ h6 {
 .pagelinks {
     text-decoration: none;
     font-size: 20px; 
-    font-weight: 500;
+    font-weight: 400;
     color: black;
 }
 
