@@ -26,7 +26,6 @@ h6 {
 
 #firstcolum {
     text-align: left;
-    margin-left: 15px;
 }
 
 #secondcolum {
@@ -42,7 +41,7 @@ h6 {
 .pagelinks {
     text-decoration: none;
     font-size: 20px; 
-    font-weight: 100;
+    font-weight: 500;
     color: black;
 }
 
