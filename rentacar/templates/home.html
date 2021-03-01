@@ -12,19 +12,19 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-          <p></p><a href="{% url 'caradd' %}">Add new car</a></p>
-          <p><a href="{% url 'carlist' %}">View cars</a></p>
+          <a class="pagelinks" href="{% url 'caradd' %}">Add new car</a></p>
+          <a class="pagelinks" href="{% url 'carlist' %}">View cars</a></p>
     </div>
       <div class="col-md-6 themed-grid-col"><p>
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
-          <p><a href="{% url 'logout' %}">Log Out</a></p>
+          </form>
+          <a class="pagelinks" href="{% url 'logout' %}">Log Out</a></p>
         </div>
     </div>
   </div>
-  <div class="col-md-4 themed-grid-col">Tähän jotain!!</div>
+  <div class="col-md-4 themed-grid-col" id="advert">Tähän jotain!!<br>Mainos?</div>
 </div>
 
 {% else %}
@@ -36,26 +36,15 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-            <p><a href="{% url 'login' %}">Log In</a></p>
+            <a class="pagelinks" href="{% url 'login' %}">Log In</a></p>
       </div>
         <div class="col-md-6 themed-grid-col"><p>
-            <p><a href="{% url 'signup' %}">Sign Up</a></p>
+            <a class="pagelinks" href="{% url 'signup' %}">Sign Up</a></p>
           </div>
       </div>
     </div>
     <div class="col-md-4 themed-grid-col">Tähän jotain!!</div>
   </div>
   {% endif %}
-
-<!-- 
-{% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-    <p><a href="{% url 'caradd' %}">[Add new car]</a></p>
-    <p><a href="{% url 'carlist' %}">[View cars]</a></p>
-{% else %}
-    <p><a href="{% url 'login' %}">Log In</a></p>
-    <p><a href="{% url 'signup' %}">Sign Up</a></p>
-{% endif %}-->
 
 {% endblock %}
