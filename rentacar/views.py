@@ -17,21 +17,6 @@ def carsearch(request):
     return render(request, 'rentacar/carsearch.html')
 
 @login_required
-def carquery(request):
-    query = request.GET.get('q')
-    try:
-        query = str(query)
-    except ValueError:
-        query = None
-        results = None
-    if query:
-        results = Car.objects.get(registerNum=query)
-    
-    context = RequestContext(request)
-
-    return render(request, 'rentacar/results.html', context)
-
-@login_required
 def caradd(request):
     if request.method == "POST":
         carform = CarForm(request.POST)
