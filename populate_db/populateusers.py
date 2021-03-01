@@ -1,8 +1,8 @@
-# import django
-# django.setup()
+import django
+django.setup()
 
 import random
-# from rentacar.models import CustomUser
+from rentacar.models import CustomUser
 
 with open("populate_db/words.txt", "r") as f:
     unContent = f.read()
