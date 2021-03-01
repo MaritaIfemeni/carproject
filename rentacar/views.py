@@ -26,9 +26,12 @@ def carquery(request):
         results = None
     if query:
         results = Car.objects.filter(registerNum=query)
-    context = RequestContext(request)
+    
+    context = {
+        'results': results,
+    }
 
-    return render_to_response('results.html', {"results": results,}, context_instance=context)
+    return render(request, 'rentacar/results.html', context)
 
 @login_required
 def caradd(request):
