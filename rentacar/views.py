@@ -31,19 +31,14 @@ def carimage(request):
         query_results = Car.objects.all()
         car_list = CarPickForm()
 
-        cars = []
-
         user = request.user
         owner = Owner.objects.filter(user_id=user.userNumber)
-        
-        for car in owner:
-            cars.append(car)
 
         context = {
             'query_results': query_results,
             'car_list': car_list,
             'form': form,
-            'cars': cars,
+            'owner': owner,
         }
 
     return render(request, 'rentacar/carimage.html', context)
