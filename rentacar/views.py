@@ -27,16 +27,11 @@ def carimage(request):
             return render(request, 'rentacar/carimage.html', context)
     else:
         form = CarImageForm()
-    
-        query_results = Car.objects.all()
-        car_list = CarPickForm()
 
         user = request.user
         owner = Owner.objects.filter(user_id=user.userNumber)
 
         context = {
-            'query_results': query_results,
-            'car_list': car_list,
             'form': form,
             'owner': owner,
         }

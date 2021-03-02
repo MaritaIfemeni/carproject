@@ -29,9 +29,3 @@ class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
         fields = ('image',)
-
-class CarPickForm(forms.Form):
-    cars = forms.ModelChoiceField(
-        queryset=Car.objects.all(),
-        empty_label=None
-    )
