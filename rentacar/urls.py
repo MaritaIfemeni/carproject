@@ -10,5 +10,5 @@ urlpatterns = [
     path('carnotfound/', views.carnotfound, name='carnotfound'),
     path('carrent/<int:pk>/', views.carrent, name='carrent'),
     path('carsearch/', views.carsearch, name='carsearch'),
-    # urli mallia ylemmästä
+    path('account/', views.account, name='account'),
 ]

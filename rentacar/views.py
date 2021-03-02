@@ -13,7 +13,8 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
 
 @login_required
-# Tähän viewi. Mallia alemmasta
+def account(request):
+    return render(request, 'rentacar/account.html')
 
 @login_required
 def carsearch(request):
