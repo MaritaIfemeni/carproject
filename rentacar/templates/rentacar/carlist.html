@@ -13,10 +13,11 @@
           <p><br>All cars listed</p>
           {% for car in cars %}
           <ul>
-          <li>{{ car }}<a href="{% url 'cardetails' pk=car.pk %}"><br>Details</a></li>
+          <li><a href="{% url 'cardetails' pk=car.pk %}">{{ car }} {{ car.model }}<br>Click for details</a></li>
             {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <p><br>Cars available now</p>
         <ul>  
           <li><a href="#">Tähän täällä hetkellä vapaana olevat autot!</a></li>
         </ul>  
