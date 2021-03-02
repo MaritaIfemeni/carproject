@@ -21,4 +21,4 @@ urlpatterns = [
     path('rentacar/', include('rentacar.urls')),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
