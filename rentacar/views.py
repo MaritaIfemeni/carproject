@@ -24,16 +24,16 @@ def carimage(request):
                 'form': form,
                 'img_obj': img_obj,
             }
+    else:
+        form = CarImageForm()
+    
+        query_results = Car.objects.all()
+        car_list = CarPickForm()
 
-            return render(request, 'rentacar/carimage.html', context)
-
-    query_results = Car.objects.all()
-    car_list = CarPickForm()
-
-    context = {
-        'query_results': query_results,
-        'car_list': car_list,
-    }
+        context = {
+            'query_results': query_results,
+            'car_list': car_list,
+        }
 
     return render(request, 'rentacar/carimage.html', context)
 
