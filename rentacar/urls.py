@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
     path('caradd/', views.caradd, name='caradd'),
+    path('caradd/carimage/', views.carimage, name='carimage'),
     path('carlist/', views.carlist, name='carlist'),
     path('cardetails/<int:pk>/', views.cardetails, name='cardetails'),
     path('carnotfound/', views.carnotfound, name='carnotfound'),

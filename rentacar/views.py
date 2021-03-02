@@ -13,16 +13,16 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
 
 @login_required
-def carimageform(request):
+def carimage(request):
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             img_obj = form.instance
-            return render(request, 'carimageform.html', {'form': form, 'img_obj': img_obj})
+            return render(request, 'carimage.html', {'form': form, 'img_obj': img_obj})
     else:
         form = CarImageForm()
-    return render(request, 'carimageform.html', {'form': form})
+    return render(request, 'carimage.html', {'form': form})
 
 @login_required
 def account(request):
