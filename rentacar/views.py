@@ -12,6 +12,17 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+def carlistforimage(request):
+    query_results = Car.objects.all()
+    car_list = CarPickForm()
+
+    context = {
+        'query_results': query_results,
+        'car_list': car_list,
+    }
+
+    return render(request, 'rentacar/carimage.html', context)
+
 @login_required
 def carimage(request):
     if request.method == 'POST':
@@ -26,8 +37,6 @@ def carimage(request):
             context = {
                 'form': form,
                 'img_obj': img_obj,
-                'query_results': query_results,
-                'car_list': car_list,
             }
 
             return render(request, 'rentacar/carimage.html', context)
