@@ -3,9 +3,9 @@
 {% block content %}
 <h2>Picture</h2>
 
-{% for i in len(cars) %}
+{% for car in cars %}
     <ul>
-        <li>{{ car[i].carNumber }} {{ car[i].registerNum }}</li>
+        <li>{{ car.carNumber }} {{ car.registerNum }}</li>
     </ul>
 {% endfor %}
 
