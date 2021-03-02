@@ -28,7 +28,7 @@ class RentForm(forms.ModelForm):
 class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
-        fields = ('image', 'car')
+        fields = ('image', 'car',)
 
     def __init__(self, user, *args, **kwargs):
         super(CarImageForm, self).__init__(*args, **kwargs)
