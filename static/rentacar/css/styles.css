@@ -45,7 +45,7 @@ h1, h2, h3, h5, h6 {
     margin-top: 30px;
     padding: 0;
     background-color: cornsilk;
-    border: 4px black;
+    border-top: 4px black;
 }
 
 #searcharea {
