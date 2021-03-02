@@ -22,15 +22,15 @@
             </tr>
             <tr>
                 <td>Type: {{ car.powerLine }}</td>
-                <td>Year:{{ car.year }}</td>
+                <td>Year: {{ car.year }}</td>
             </tr>
               <tr>
-                <td>Location:{{ car.location }}</td>
-                <td>Status:{{ car.status }} </td>
+                <td>Location: {{ car.location }}</td>
+                <td>Status: {{ car.status }} </td>
               </tr>
             <tr>
                 <td>
-                    <form action="{% url 'cardetails' pk=car.pk %}">
+                    <form action="{% url 'carrent' pk=car.pk %}">
                         <button class="btn btn-outline-success" type="submit">RENT</button>
                     </form>
                 </td>
