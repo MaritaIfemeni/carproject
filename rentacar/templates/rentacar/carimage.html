@@ -3,7 +3,7 @@
 {% block content %}
 <h2>Picture</h2>
 
-<select id="carsimage" name="carsimage">
+<select name="carsimage">
 {% for car in owner %}
     <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
 {% endfor %}

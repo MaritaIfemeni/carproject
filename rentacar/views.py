@@ -34,7 +34,8 @@ def carimage(request):
         form = CarImageForm()
 
         user = request.user
-        owner = Owner.objects.filter(user_id=user.userNumber)
+        # owner = Owner.objects.filter(user_id=user.userNumber)
+        owner = Owner.objects.filter(user_id=user.userNumber).order_by('user_id').values_list('user_id', flat=True)
 
         context = {
             'form': form,
