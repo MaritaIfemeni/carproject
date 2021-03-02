@@ -29,3 +29,8 @@ class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
         fields = ('image', 'car')
+
+    def __init__(self, user, *args, **kwargs):
+        super(CarImageForm, self).__init__(*args, **kwargs)
+        owner = Owner.objects.filter(user=user)
+        self.fields['car'].queryset = Car.objects.filter(carNumber=owner.car.carNumber)

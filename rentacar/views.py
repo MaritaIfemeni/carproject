@@ -14,21 +14,22 @@ class SignUpView(CreateView):
 @login_required
 def carimage(request):
     if request.method == 'POST':
-        form = CarImageForm(request.POST, request.FILES)
+        form = CarImageForm(request.user, request.POST, request.FILES)
         if form.is_valid():
-            car = request.POST.get('carsimage')
-            # form.save()
+            carimage = form.save(commit=False)
+            carimage.user = request.user
+            # car = request.POST.get('carsimage')
+            carimage.save()
             img_obj = form.instance
     
             context = {
                 'form': form,
                 'img_obj': img_obj,
-                'car': car,
             }
 
             return render(request, 'rentacar/carimage.html', context)
     else:
-        form = CarImageForm()
+        form = CarImageForm(request.user)
 
         user = request.user
         owner = Owner.objects.filter(user_id=user.userNumber)
