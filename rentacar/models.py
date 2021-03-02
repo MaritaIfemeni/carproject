@@ -39,7 +39,7 @@ class Car(models.Model):
     emissions = models.PositiveSmallIntegerField()
     seats = models.PositiveSmallIntegerField()
     location = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=None, blank=True)
+    picture = models.ImageField(upload_to='blog/%Y')
     status = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):

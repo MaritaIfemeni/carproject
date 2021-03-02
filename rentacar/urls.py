@@ -1,8 +1,6 @@
 from django.urls import path
 from .views import SignUpView
 from . import views
-from django.conf.urls.static import static
-from django.conf import settings
 
 urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
@@ -13,4 +11,4 @@ urlpatterns = [
     path('carrent/<int:pk>/', views.carrent, name='carrent'),
     path('carsearch/', views.carsearch, name='carsearch'),
     path('account/', views.account, name='account'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
