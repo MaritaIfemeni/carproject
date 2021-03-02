@@ -16,6 +16,7 @@ def carimage(request):
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
+            form.car = get_object_or_404(Car, pk=request.POST.get('carsimage'))
             form.save()
             img_obj = form.instance
     
