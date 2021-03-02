@@ -71,3 +71,7 @@ h1, h2, h3, h5, h6 {
 .listedcars:hover {
     background-color: coral;
 }
+
+td {
+    padding: 5px;
+}
