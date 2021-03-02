@@ -16,6 +16,10 @@ h1, h2, h3, h5, h6 {
     text-align: center;
 }
 
+#account_firstcolum {
+    text-align: left;
+}
+
 #secondcolum {
     padding-top: 30px;
 }
