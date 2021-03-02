@@ -1,6 +1,6 @@
 
 main {
-    padding-top: 120px;
+    padding-top: 125px;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -21,10 +21,6 @@ h1, h2, h3, h5, h6 {
 
 #account_firstcolum, #carsearch_firstcolum, #login_firstcolum, #login_secondcolum, #carsearch_secondcolum {
     text-align: left;
-}
-
-#secondcolum {
-    padding-top: 30px;
 }
 
 #thirdcolum {
