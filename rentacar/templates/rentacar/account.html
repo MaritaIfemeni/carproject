@@ -11,12 +11,12 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <p>Tähän käyttäjän tiedot ja mahdollisuus muuttaa niitä.</p>
+        <p><br>Tähän käyttäjän tiedot ja mahdollisuus muuttaa niitä.</p>
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-      <form method="get" action="">
-        Enter register number: <input type="text" name="q" id="id_q" value="{{ query }}"/>
-        <input type="submit" value="Search" />
+      <ul>  
+        <li><a href="{% url 'carsearch' %}">Add new car for Rent</a></li>
+      </ul>  
     </form>
       <p>Käyttäjän autoista lista</p>
     </div>
