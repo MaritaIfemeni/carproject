@@ -17,13 +17,14 @@ def carimage(request):
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
             selected_car = request.POST.get('carsimage')
-            form.car = Car.objects.filter(carNumber=1)
-            form.save()
+            form.car = Car.objects.filter(carNumber=selected_car)
+            # form.save()
             img_obj = form.instance
     
             context = {
                 'form': form,
                 'img_obj': img_obj,
+                'selected_car': selected_car,
             }
 
             return render(request, 'rentacar/carimage.html', context)

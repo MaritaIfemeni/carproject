@@ -3,6 +3,8 @@
 {% block content %}
 <h2>Picture</h2>
 
+<h3>HERE: {{ selected_car }}</h3>
+
 <select name="carsimage">
     {% for car in owner %}
         <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
