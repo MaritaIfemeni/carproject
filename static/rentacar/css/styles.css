@@ -1,5 +1,4 @@
 
-
 main {
     padding-top: 150px;
     padding-left: 50px;
@@ -8,22 +7,12 @@ main {
 
 h1, h2, h3, h5, h6 {
     color: coral;
-    text-align: center;
 }
-
-#logo {
+.navbar-brand, .navbar-toggler-icon {
     background-color: coral;
 }
 
-#togglelogo {
-    background-color: coral;
-}
-
-#firstcolum {
-    text-align: center;
-}
-
-#secondcolum {
+.pd-3 {
     text-align: center;
 }
 
@@ -49,12 +38,9 @@ h1, h2, h3, h5, h6 {
 .themed-grid-col li {
     padding: 2px;
     margin-bottom: 4px;
-    background-color: burlywood;
+    background-color: rgb(26, 26, 26);
 }
 
-#searcharea {
-    max-width: 50%;
-}
-.pagelinks:hover{
+.themed-grid-col li:hover{
     color: coral;
 }
