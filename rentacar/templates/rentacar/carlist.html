@@ -29,7 +29,12 @@
                 <td>Status:{{ car.status }} </td>
               </tr>
             <tr>
-                <td><a href="{% url 'cardetails' pk=car.pk %}"><br>RENT</a></td>
+                <td>
+                    <form method="post">
+                        <a href="{% url 'cardetails' pk=car.pk %}"></a>
+                        <button class="btn btn-outline-success" type="submit">RENT</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
           </table>
