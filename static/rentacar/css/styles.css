@@ -58,12 +58,12 @@ h1, h2, h3, h5, h6 {
     background-color: coral;
 }
 
-#forgotten {
+.forgotten {
     color: coral;
     font-size: 20px;
     transition: .1s;
 }
 
-#forgotten:hover {
+.forgotten:hover {
     transform: scale(1);
 }
