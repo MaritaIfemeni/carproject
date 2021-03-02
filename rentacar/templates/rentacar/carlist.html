@@ -13,19 +13,23 @@
           <p><br>All cars listed</p>
           {% for car in cars %}
           <ul>
-          <li><p>{{ car }}<a href="{% url 'cardetails' pk=car.pk %}"><br>Details</a></p></li>
+          <li>{{ car }}<a href="{% url 'cardetails' pk=car.pk %}"><br>Details</a></li>
             {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
         <ul>  
-          <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
+          <li><a href="#">Tähän täällä hetkellä vapaana olevat autot!</a></li>
         </ul>  
-      </form>
-        <p>Käyttäjän autoista lista</p>
       </div>
       </div>
     </div>
-    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">
+        <p>Search cars!</p>
+        <form class="d-flex">
+            <label for="model">Model:</label>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
     </div>
   </div>
 
