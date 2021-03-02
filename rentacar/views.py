@@ -12,7 +12,21 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-def carlistforimage(request):
+@login_required
+def carimage(request):
+    if request.method == 'POST':
+        form = CarImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            img_obj = form.instance
+    
+            context = {
+                'form': form,
+                'img_obj': img_obj,
+            }
+
+            return render(request, 'rentacar/carimage.html', context)
+
     query_results = Car.objects.all()
     car_list = CarPickForm()
 
@@ -23,26 +37,23 @@ def carlistforimage(request):
 
     return render(request, 'rentacar/carimage.html', context)
 
-@login_required
-def carimage(request):
-    if request.method == 'POST':
-        form = CarImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            img_obj = form.instance
-
-            query_results = Car.objects.all()
-            car_list = CarPickForm()
-
-            context = {
-                'form': form,
-                'img_obj': img_obj,
-            }
-
-            return render(request, 'rentacar/carimage.html', context)
-    else:
-        form = CarImageForm()
-    return render(request, 'rentacar/carimage.html', {'form': form})
+#@login_required
+#def carimage(request):
+#    if request.method == 'POST':
+#        form = CarImageForm(request.POST, request.FILES)
+#        if form.is_valid():
+#            form.save()
+#            img_obj = form.instance
+#
+#            context = {
+#                'form': form,
+#                'img_obj': img_obj,
+#            }
+#
+#            return render(request, 'rentacar/carimage.html', context)
+#    else:
+#        form = CarImageForm()
+#    return render(request, 'rentacar/carimage.html', {'form': form})
 
 @login_required
 def account(request):

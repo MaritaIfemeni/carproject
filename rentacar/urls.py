@@ -11,5 +11,5 @@ urlpatterns = [
     path('carrent/<int:pk>/', views.carrent, name='carrent'),
     path('carsearch/', views.carsearch, name='carsearch'),
     path('account/', views.account, name='account'),
-    path('carimage/', views.carlistforimage, name='carlistforimage'),
+    path('carimage/', views.carimage, name='carimage'),
 ]
