@@ -3,20 +3,13 @@
 {% block content %}
 <h2>Picture</h2>
 
-<p>{{ car }}</p>
-
-{% for car in owner %}
-    <p>{{ car.car.carNumber }}</p>
-{% endfor %}
-
-<select name="carsimage">
-{% for car in owner %}
-    <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
-{% endfor %}
-</select>
-
 <form method="POST" enctype="multipart/form-data">{% csrf_token %}
     <div class="form">
+        <select name="carsimage">
+            {% for car in owner %}
+                <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
+            {% endfor %}
+        </select>
         {{ form.as_p }}
     </div>
     <button type="submit" class="savebutton">upload</button>
