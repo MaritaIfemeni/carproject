@@ -24,6 +24,8 @@ def carimage(request):
                 'form': form,
                 'img_obj': img_obj,
             }
+
+            return render(request, 'rentacar/carimage.html', context)
     else:
         form = CarImageForm()
     
@@ -33,6 +35,7 @@ def carimage(request):
         context = {
             'query_results': query_results,
             'car_list': car_list,
+            'form': form,
         }
 
     return render(request, 'rentacar/carimage.html', context)
