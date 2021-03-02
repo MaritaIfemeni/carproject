@@ -4,13 +4,25 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.template import RequestContext
 
-from .forms import CustomUserCreationForm, CarForm, RentForm, OwnerForm
+from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+@login_required
+def carimageform(request):
+    if request.method == 'POST':
+        form = CarImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            img_obj = form.instance
+            return render(request, 'carimageform.html', {'form': form, 'img_obj': img_obj})
+    else:
+        form = CarImageForm()
+    return render(request, 'carimageform.html', {'form': form})
 
 @login_required
 def account(request):

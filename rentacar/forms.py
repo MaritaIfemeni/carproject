@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Car, Rent, Owner
+from .models import CustomUser, Car, Rent, CarImage
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -21,14 +21,14 @@ class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
-        'emissions', 'seats', 'location', 'picture')
+        'emissions', 'seats', 'location')
 
 class RentForm(forms.ModelForm):
     class Meta:
         model = Rent
         fields = ('startDate', 'endDate')
 
-class OwnerForm(forms.ModelForm):
+class CarImageForm(forms.ModelForm):
     class Meta:
-        model = Owner
-        fields = ('car', 'user')
+        model = CarImage
+        fields = ('title', 'image')

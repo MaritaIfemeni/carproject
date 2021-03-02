@@ -2,6 +2,16 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
+class CarImage(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = "rentacar_carimage"
+
 class CustomUser(AbstractUser):
     userNumber = models.AutoField(primary_key=True)
     email = models.CharField(max_length=50)
@@ -39,7 +49,6 @@ class Car(models.Model):
     emissions = models.PositiveSmallIntegerField()
     seats = models.PositiveSmallIntegerField()
     location = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to='blog/%Y')
     status = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
