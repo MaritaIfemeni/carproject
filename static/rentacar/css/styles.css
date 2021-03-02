@@ -33,19 +33,23 @@ h1, h2, h3, h5, h6 {
     background-color: coral;
 }
 
-.pagelinks {
+.themed-grid-col a {
     text-decoration: none;
     font-size: 20px; 
     font-weight: 400;
     color: black;
 }
 
-.linkit {
-    list-style: none;
+.themed-grid-col ul {
+    list-style-type: none;
     margin-top: 30px;
     padding: 0;
-    background-color: cornsilk;
-    border-top: 4px black;
+}
+
+.themed-grid-col li {
+    padding: 2px;
+    margin-bottom: 4px;
+    background-color: burlywood;
 }
 
 #searcharea {

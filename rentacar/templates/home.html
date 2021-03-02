@@ -11,11 +11,11 @@
         <h5>Welcome to Rent-A-Car!</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 themed-grid-col" id="firstcolum">
-        <ul class="linkit">  
-          <li><a class="pagelinks" href="{% url 'caradd' %}">Add new car for Rent</a></li>
-          <li><a class="pagelinks" href="{% url 'carlist' %}">Rent cars</a></li>
-          <li><a class="pagelinks" href="#">View account details</a></li>
+      <div class="col-md-6 themed-grid-col">
+        <ul>  
+          <li><a href="{% url 'caradd' %}">Add new car for Rent</a></li>
+          <li><a href="{% url 'carlist' %}">Rent cars</a></li>
+          <li><a href="#">View account details</a></li>
         </ul>  
     </div>
       <!-- <div class="col-md-6 themed-grid-col" id="secondcolum">
@@ -46,7 +46,7 @@
         </form>
       </div>
         <div class="col-md-6 themed-grid-col" id="secondcolum">
-            <a class="pagelinks" href="{% url 'signup' %}">Create account</a>
+            <a href="{% url 'signup' %}">Create account</a>
           </div>
       </div>
     </div>
