@@ -4,7 +4,10 @@
 <h2>Picture</h2>
 
 <p>{{ car }}</p>
-<p>{{ owner.car[0].registerNum }}</p>
+
+{% for car in owner %}
+    <p>{{ owner.car.registerNum }}</p>
+{% endfor %}
 
 <select name="carsimage">
 {% for car in owner %}
