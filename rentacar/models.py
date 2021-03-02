@@ -14,6 +14,7 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
 """
 class CarOwner(models.Model):
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
@@ -22,6 +23,11 @@ class CarOwner(models.Model):
 class Owner(models.Model):
     car = models.ForeignKey('Car', on_delete=models.CASCADE)
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+
+    def assign_owner(self, car, owner):
+        self.car = car
+        self.user = owner
+        self.save()
 
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
