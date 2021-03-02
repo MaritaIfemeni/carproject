@@ -19,10 +19,9 @@ h1, h2, h3, h5, h6 {
     text-align: center;
 }
 
-#account_firstcolum, #login_firstcolum, #login_secondcolum {
+#account_firstcolum, #carsearch_firstcolum, #login_firstcolum, #login_secondcolum, #carsearch_secondcolum {
     text-align: left;
 }
-
 
 #secondcolum {
     padding-top: 30px;
