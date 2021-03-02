@@ -18,8 +18,8 @@
           <li><a href="#">View account details</a></li>
         </ul>  
     </div>
-    <div class="col-md-6 themed-grid-col">
-      <p>Rent-A-Car is a platform where you can rentyour car whne you dont need it!</p>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+      <p>Rent-A-Car is a platform where you can rent your car when you don't need it!</p>
     </div>
     </div>
   </div>
@@ -36,8 +36,10 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-          <li><a class="nav-link" href="{% url 'login' %}"> Log in</a></li>
-          <li><a href="{% url 'signup' %}">Create account</a></li>
+          <ul>
+            <li><a class="nav-link" href="{% url 'login' %}">Log in</a></li>
+            <li><a href="{% url 'signup' %}">Create account</a></li>
+          </ul>
         </div>
         <div class="col-md-6 themed-grid-col">
             <p>Rent-A-Car is a platform where you can rentyour car whne you dont need it!</p>
