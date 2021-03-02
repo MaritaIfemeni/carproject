@@ -30,8 +30,7 @@
               </tr>
             <tr>
                 <td>
-                    <form method="post">
-                        <a href="{% url 'cardetails' pk=car.pk %}"></a>
+                    <form action="{% url 'cardetails' pk=car.pk %}">
                         <button class="btn btn-outline-success" type="submit">RENT</button>
                     </form>
                 </td>
