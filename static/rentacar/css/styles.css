@@ -12,6 +12,10 @@ h1, h2, h3, h5, h6 {
     background-color: coral;
 }
 
+.themed-grid-col {
+    text-align: center;
+}
+
 #thirdcolum {
     text-align: center;
     border-style: solid 5px black;
@@ -35,6 +39,7 @@ h1, h2, h3, h5, h6 {
     padding: 2px;
     margin-bottom: 4px;
     background-color: rgb(30, 30, 30);
+ 
 }
 
 .themed-grid-col li:hover{
