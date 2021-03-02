@@ -4,9 +4,7 @@
 <h2>Picture</h2>
 
 {% for car in owner %}
-    <ul class="list-group list-group-flush">
-        <option value="{{ car }}">{{ car.car.registerNum }}</option>
-    </ul>
+    <option value="{{ car }}">{{ car.car.registerNum }}</option>
 {% endfor %}
 
 <form method="POST" enctype="multipart/form-data">{% csrf_token %}
