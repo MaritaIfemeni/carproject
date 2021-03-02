@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
 from django.template import RequestContext
 
-from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm
+from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm, CarPickForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
@@ -19,7 +19,18 @@ def carimage(request):
         if form.is_valid():
             form.save()
             img_obj = form.instance
-            return render(request, 'rentacar/carimage.html', {'form': form, 'img_obj': img_obj})
+
+            query_results = Car.objects.all()
+            car_list = CarPickForm()
+
+            context = {
+                'form': form,
+                'img_obj': img_obj,
+                'query_results': query_results,
+                'car_list': car_list,
+            }
+
+            return render(request, 'rentacar/carimage.html', context)
     else:
         form = CarImageForm()
     return render(request, 'rentacar/carimage.html', {'form': form})

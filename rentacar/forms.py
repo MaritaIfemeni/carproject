@@ -1,23 +1,20 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Car, Rent, CarImage
+from .models import CustomUser, Car, Rent, CarImage, Owner
 
 class CustomUserCreationForm(UserCreationForm):
-
     class Meta:
         model = CustomUser
         fields = ('username', 'first_name', 'last_name', 'email',
                  'phoneNum', 'address', 'postcode', 'city', 'country')
 
 class CustomUserChangeForm(UserChangeForm):
-
     class Meta:
         model = CustomUser
         fields = ('username', 'first_name', 'last_name', 'email',
                  'phoneNum', 'address', 'postcode', 'city', 'country')
 
 class CarForm(forms.ModelForm):
-
     class Meta:
         model = Car
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
@@ -31,4 +28,10 @@ class RentForm(forms.ModelForm):
 class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
-        fields = ('title', 'image')
+        fields = ('image',)
+
+class CarPickForm(forms.Form):
+    cars = forms.ModelChoiceField(
+        queryset=Car.objects.all(),
+        empty_label=None
+    )
