@@ -8,16 +8,17 @@ main {
 
 h2 {
     color: coral;
-    text-shadow: 3px dimgrey;
+    text-shadow: 5px dimgrey;
 }
 
 h5, h6 {
     color: coral;
-    text-shadow: 2px dimgrey;
+    text-shadow: 3px dimgrey;
 }
 
 #logo {
     background-color: coral;
+    background-size: 50px 100px;
 }
 
 #togglelogo {
@@ -43,6 +44,18 @@ h5, h6 {
     font-size: 20px; 
     font-weight: 400;
     color: black;
+}
+
+.linkit {
+    list-style-type: none;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.linkitlista {
+    padding: 2px;
+    margin-bottom: 4px;
+    background-color: cornsilk;
 }
 
 #searcharea {
