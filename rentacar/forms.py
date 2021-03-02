@@ -28,8 +28,4 @@ class RentForm(forms.ModelForm):
 class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
-        fields = ('image', 'car',)
-
-    def __init__(self, user, *args, **kwargs):
-        super(CarImageForm, self).__init__(*args, **kwargs)
-        self.fields['car'].queryset = Owner.objects.all(carNumber=Owner.objects.filter(user=user))
+        fields = ('image',)
