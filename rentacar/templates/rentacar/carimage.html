@@ -4,11 +4,11 @@
 <h2>Picture</h2>
 
 <p>{{ car }}</p>
+<p>{{ owner[0].car.registerNum }}</p>
 
 <select name="carsimage">
 {% for car in owner %}
     <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
-    <p>{{ owner.car.registerNum }}</p>
 {% endfor %}
 </select>
 
