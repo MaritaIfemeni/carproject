@@ -34,7 +34,7 @@ def carimage(request):
         cars = []
 
         user = request.user
-        owner = Owner.objects.filter(user_id=user[0].userNumber)
+        owner = Owner.objects.filter(user_id=user.userNumber)
         
         for car in owner:
             cars.append(car)
