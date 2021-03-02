@@ -1,8 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for car in cars %}
-        <p>{{ car }}</p>
-        <p><a href="{% url 'cardetails' pk=car.pk %}">Details</a></p>
-    {% endfor %}
+
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h5>Find a car suitable for your needs</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col">
+          <p><br>All cars listed</p>
+          {% for car in cars %}
+          <ul>
+          <li><p>{{ car }}<a href="{% url 'cardetails' pk=car.pk %}"><br>Details</a></p></li>
+            {% endfor %}
+      </div>
+      <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <ul>  
+          <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
+        </ul>  
+      </form>
+        <p>Käyttäjän autoista lista</p>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
+  </div>
+
 {% endblock %}
