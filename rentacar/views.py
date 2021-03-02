@@ -17,7 +17,7 @@ def carimage(request):
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
             selected_car = request.POST.get('carsimage')
-            form.car = Car.objects.filter(carNumber=selected_car)
+            form.car = Car.objects.filter(carNumber=1)
             form.save()
             img_obj = form.instance
     
