@@ -11,6 +11,7 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+# TOTALLY FUCKED!
 @login_required
 def carimage(request):
     user = request.user
