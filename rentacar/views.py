@@ -19,10 +19,10 @@ def carimage(request):
         if form.is_valid():
             form.save()
             img_obj = form.instance
-            return render(request, 'carimage.html', {'form': form, 'img_obj': img_obj})
+            return render(request, 'rentacar/carimage.html', {'form': form, 'img_obj': img_obj})
     else:
         form = CarImageForm()
-    return render(request, 'carimage.html', {'form': form})
+    return render(request, 'rentacar/carimage.html', {'form': form})
 
 @login_required
 def account(request):
