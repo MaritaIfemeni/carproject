@@ -5,7 +5,7 @@
 
 <select id="carsimage" name="carsimage">
 {% for car in owner %}
-    <option value="{{ car }}">{{ car.car.registerNum }}</option>
+    <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
 {% endfor %}
 </select>
 
