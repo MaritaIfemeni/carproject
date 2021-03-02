@@ -57,3 +57,9 @@ h1, h2, h3, h5, h6 {
     color: coral;
     font-size: 20px;
 }
+
+.listedcars {
+    padding: 2px;
+    margin-bottom: 4px;
+    background-color: rgb(43, 43, 43);
+}

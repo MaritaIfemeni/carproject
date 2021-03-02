@@ -11,9 +11,8 @@
       <div class="row">
         <div class="col-md-6 themed-grid-col">
           <p><br>All cars listed</p>
-
           {% for car in cars %}
-          <table>
+          <table class="listedcars">
             <tr>
               <th>{{ car }}</th>
             </tr>
@@ -25,6 +24,7 @@
                 <td><a href="{% url 'cardetails' pk=car.pk %}"><br>RENT</a></td>
             </tr>
             {% endfor %}
+          </table>
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
         <p><br>Cars available now</p>
