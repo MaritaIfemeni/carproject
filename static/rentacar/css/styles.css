@@ -8,6 +8,9 @@ main {
 h1, h2, h3, h5, h6 {
     color: coral;
 }
+#login_h5 {
+    text-align: left;
+}
 .navbar-brand, .navbar-toggler-icon {
     background-color: coral;
 }
@@ -60,7 +63,7 @@ h1, h2, h3, h5, h6 {
     font-size: 16px;
 }
 
-.forgotten a:hover {
-    transform: scale(1);
+.forgotten:hover {
+    transform: scale(3);
 
 }
