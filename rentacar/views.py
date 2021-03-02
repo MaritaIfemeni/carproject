@@ -20,7 +20,7 @@ def carimage(request):
         if form.is_valid():
             selected_car = request.POST.get('carsimage')
             car = cars.filter(carNumber=selected_car)
-            form.car = car
+            form.car_id = car
             form.save()
             img_obj = form.instance
     
@@ -34,8 +34,7 @@ def carimage(request):
         form = CarImageForm()
 
         user = request.user
-        # owner = Owner.objects.filter(user_id=user.userNumber)
-        owner = Owner.objects.filter(user_id=user.userNumber).order_by('user_id').values_list('user_id', flat=True)
+        owner = Owner.objects.filter(user_id=user.userNumber)
 
         context = {
             'form': form,
