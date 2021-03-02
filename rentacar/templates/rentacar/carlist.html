@@ -11,9 +11,19 @@
       <div class="row">
         <div class="col-md-6 themed-grid-col">
           <p><br>All cars listed</p>
+
           {% for car in cars %}
-          <ul>
-          <li><a href="{% url 'cardetails' pk=car.pk %}">{{ car }} {{ car.model }}<br>Click for details</a></li>
+          <table>
+            <tr>
+              <th>{{ car }}</th>
+            </tr>
+            <tr>
+                <td>Seats:</td>
+                <td>{{ car.seats }}</td>
+              </tr>
+            <tr>
+                <td><a href="{% url 'cardetails' pk=car.pk %}"><br>RENT</a></td>
+            </tr>
             {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
