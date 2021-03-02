@@ -17,16 +17,15 @@
               <th>{{ car }}</th>
             </tr>
             <tr>
-                <td>Seats:</td>
-                <td>{{ car.seats }}</td>
-                <td>Year:</td>
-                <td>{{ car.year }}</td>
+                <td>Seats: {{ car.seats }}</td>
+                <td>Emissions:{{ car.emissions }}</td>
+                <td>Type: {{ car.powerLine }}</td>
+                <td>Year:{{ car.year }}</td>
               </tr>
               <tr>
-                <td>Location:</td>
+                <td>Location:{{ car.location }}</td>
                 <td>{{ car.location }}</td>
-                <td>Emissions:</td>
-                <td>{{ car.emissions }}</td>
+                <td>Status:{{ car.status }} </td>
               </tr>
             <tr>
                 <td><a href="{% url 'cardetails' pk=car.pk %}"><br>RENT</a></td>

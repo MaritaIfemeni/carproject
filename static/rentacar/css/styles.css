@@ -59,7 +59,8 @@ h1, h2, h3, h5, h6 {
 }
 
 .listedcars {
-    padding: 2px;
+    padding: 5px;
+    border-radius: 50px;
     margin-bottom: 4px;
     background-color: rgb(43, 43, 43);
     color: white;
