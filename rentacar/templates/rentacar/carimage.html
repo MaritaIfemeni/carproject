@@ -4,8 +4,8 @@
 <h2>Picture</h2>
 
 {% for car in owner %}
-    <ul>
-        <li >{{ car.car.carNumber }} {{ car.car.registerNum }}</li>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ car.car.carNumber }} {{ car.car.registerNum }}</li>
     </ul>
 {% endfor %}
 
