@@ -5,13 +5,13 @@
 
 {% for car in query_results %}
         <tr>
-            <td>{{ car.registerNum }}</td>
-            <td>{{ car.model }}</td>
+            {{ car.registerNum }}
         </tr>
 {% endfor %}
 
 <form method="POST" enctype="multipart/form-data">{% csrf_token %}
     <div class="form">
+        WTF
         {{ form.as_p }}
     </div>
     <button type="submit" class="savebutton">upload</button>
