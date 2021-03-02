@@ -13,6 +13,8 @@ class SignUpView(CreateView):
 
 @login_required
 def carimage(request):
+    user = request.user
+    owner = Owner.objects.filter(user_id=user.userNumber)
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
@@ -25,14 +27,12 @@ def carimage(request):
                 'form': form,
                 'img_obj': img_obj,
                 'selected_car': selected_car,
+                'owner': owner,
             }
 
             return render(request, 'rentacar/carimage.html', context)
     else:
         form = CarImageForm()
-
-        user = request.user
-        owner = Owner.objects.filter(user_id=user.userNumber)
 
         context = {
             'form': form,
