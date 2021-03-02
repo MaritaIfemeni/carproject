@@ -58,7 +58,7 @@ h1, h2, h3, h5, h6 {
     background-color: coral;
 }
 
-#login_sescondcolum a {
+#login_secondcolum a {
     color: coral;
     font-size: 16px;
     transition: .1s;
