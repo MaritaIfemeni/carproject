@@ -64,6 +64,6 @@ h1, h2, h3, h5, h6 {
     transition: .1s;
 }
 
-#forgotten li:hover {
+#forgotten:hover {
     transform: scale(1);
 }
