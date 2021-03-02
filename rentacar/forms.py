@@ -28,4 +28,4 @@ class RentForm(forms.ModelForm):
 class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
-        fields = ('image',)
+        fields = ('image', 'car')
