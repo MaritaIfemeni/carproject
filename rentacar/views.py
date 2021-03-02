@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm
@@ -13,11 +13,14 @@ class SignUpView(CreateView):
 
 @login_required
 def carimage(request):
+    selected_car = None
+    cars = Car.objects.all()
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
-            car = get_object_or_404(Car, pk=request.POST['carsimage'])
-            form.car = Car.objects.filter(carNumber=car.car.carNumber)
+            selected_car = request.POST.get('carsimage')
+            car = cars.filter(carNumber=selected_car)
+            form.car = car
             form.save()
             img_obj = form.instance
     
