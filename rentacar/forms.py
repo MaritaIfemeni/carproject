@@ -32,5 +32,4 @@ class CarImageForm(forms.ModelForm):
 
     def __init__(self, user, *args, **kwargs):
         super(CarImageForm, self).__init__(*args, **kwargs)
-        owner = Owner.objects.filter(user=user)
-        self.fields['WHAT THE FUCK'].queryset = Owner.objects.all(carNumber=owner.car.carNumber)
+        self.fields['car'].queryset = Owner.objects.all(carNumber=Owner.objects.filter(user=user))
