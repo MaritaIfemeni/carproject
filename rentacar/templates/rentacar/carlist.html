@@ -19,6 +19,14 @@
             <tr>
                 <td>Seats:</td>
                 <td>{{ car.seats }}</td>
+                <td>Year:</td>
+                <td>{{ car.year }}</td>
+              </tr>
+              <tr>
+                <td>Location:</td>
+                <td>{{ car.location }}</td>
+                <td>Emissions:</td>
+                <td>{{ car.emissions }}</td>
               </tr>
             <tr>
                 <td><a href="{% url 'cardetails' pk=car.pk %}"><br>RENT</a></td>
@@ -35,9 +43,9 @@
       </div>
     </div>
     <div class="col-md-4 themed-grid-col" id="thirdcolum">
-        <p>Search cars!</p>
+        <p><br>Search cars!<br></p>
         <form class="d-flex">
-            <label for="model">Model:</label>
+            <label for="model">Model:  </label>
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
