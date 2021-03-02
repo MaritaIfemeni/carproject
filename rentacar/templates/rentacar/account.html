@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}RAC - Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        <h5>Your account!</h5>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col" id="firstcolum">
+        <ul>  
+          <li><a class="pagelinks" href="{% url 'caradd' %}">Add new car for Rent</a></li>
+          <a class="pagelinks" href="{% url 'carlist' %}">Rent cars</a></li>
+          <a class="pagelinks" href="{% url 'carsearch' %}">Search for car</a>
+    </div>
+      <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <form class="d-flex">
+            <input class="form-control me-2" id="searcharea" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
+</div>
+
+{% else %}
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h6><strong>Log in or create an account</strong><br>to start using Rent-A-Car!</h6>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col" id="firstcolum">
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-outline-success" type="submit">Log In</button>
+        </form>
+      </div>
+        <div class="col-md-6 themed-grid-col" id="secondcolum">
+            <a class="pagelinks" href="{% url 'signup' %}">Create account</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
+  </div>
+  {% endif %}
+
+{% endblock %}
