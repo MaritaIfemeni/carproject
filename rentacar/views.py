@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView
-from django.template import RequestContext
 
 from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm, CarPickForm
 from .models import CustomUser, Car, Rent, Owner
@@ -32,10 +31,19 @@ def carimage(request):
         query_results = Car.objects.all()
         car_list = CarPickForm()
 
+        cars = []
+
+        user = request.user
+        owner = Owner.objects.filter(user_id=user[0].userNumber)
+        
+        for car in owner:
+            cars.append(car)
+
         context = {
             'query_results': query_results,
             'car_list': car_list,
             'form': form,
+            'cars': cars,
         }
 
     return render(request, 'rentacar/carimage.html', context)
