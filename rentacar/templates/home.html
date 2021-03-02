@@ -12,15 +12,14 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col" id="firstcolum">
-          <a class="pagelinks" href="{% url 'caradd' %}">Add new car<br></a>
-          <a class="pagelinks" href="{% url 'carlist' %}">View cars<br></a>
+          <a class="pagelinks" href="{% url 'caradd' %}"><br>Add new car<br></a>
+          <a class="pagelinks" href="{% url 'carlist' %}"><br>View cars<br></a>
     </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
         <form class="d-flex">
             <input class="form-control me-2" id="searcharea" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
-          <a class="pagelinks" href="{% url 'logout' %}">Log Out</a>
         </div>
     </div>
   </div>
