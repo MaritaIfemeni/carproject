@@ -5,7 +5,7 @@
 
 {% for car in owner %}
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Car ID: {{ car.car.carNumber }} Register Number: {{ car.car.registerNum }}</li>
+        <option value="{{ car }}">{{ car.car.registerNum }}</option>
     </ul>
 {% endfor %}
 
