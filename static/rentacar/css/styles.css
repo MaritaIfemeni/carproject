@@ -13,6 +13,7 @@ h1, h2, h3, h5, h6 {
 }
 .navbar-brand, .navbar-toggler-icon {
     background-color: coral;
+    border-radius: 5px;
 }
 
 .themed-grid-col {
@@ -27,6 +28,7 @@ h1, h2, h3, h5, h6 {
     text-align: center;
     border-style: solid 5px black;
     background-color: coral;
+    border-radius: 5px;
 }
 
 .themed-grid-col a {
@@ -46,6 +48,7 @@ h1, h2, h3, h5, h6 {
     padding: 2px;
     margin-bottom: 4px;
     background-color: rgb(43, 43, 43);
+    border-radius: 5px;
  
 }
 
