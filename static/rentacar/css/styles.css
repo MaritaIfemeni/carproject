@@ -26,7 +26,7 @@ h1, h2, h3, h5, h6 {
     text-decoration: none;
     font-size: 20px; 
     font-weight: 400;
-    color: black;
+    color: white;
 }
 
 .themed-grid-col ul {
@@ -38,9 +38,9 @@ h1, h2, h3, h5, h6 {
 .themed-grid-col li {
     padding: 2px;
     margin-bottom: 4px;
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(30, 30, 30);
 }
 
 .themed-grid-col li:hover{
-    color: coral;
+    background-color: coral;
 }
