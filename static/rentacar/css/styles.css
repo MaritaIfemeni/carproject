@@ -1,34 +1,26 @@
 
-
 main {
-    padding-top: 150px;
+    padding-top: 125px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-h2 {
+h1, h2, h3, h5, h6 {
     color: coral;
-    text-shadow: 3px dimgrey;
 }
-
-h5, h6 {
-    color: coral;
-    text-shadow: 2px dimgrey;
-}
-
-#logo {
-    background-color: coral;
-}
-
-#togglelogo {
-    background-color: coral;
-}
-
-#firstcolum {
+#login_h5 {
     text-align: left;
 }
+.navbar-brand, .navbar-toggler-icon {
+    background-color: coral;
+    border-radius: 5px;
+}
 
-#secondcolum {
+.themed-grid-col {
+    text-align: center;
+}
+
+#account_firstcolum, #carsearch_firstcolum, #login_firstcolum, #login_secondcolum, #carsearch_secondcolum {
     text-align: left;
 }
 
@@ -36,18 +28,77 @@ h5, h6 {
     text-align: center;
     border-style: solid 5px black;
     background-color: coral;
+    border-radius: 5px;
 }
 
-.pagelinks {
+.themed-grid-col a {
     text-decoration: none;
     font-size: 20px; 
     font-weight: 400;
-    color: black;
+    color: white;
 }
 
-#searcharea {
-    max-width: 50%;
+.themed-grid-col ul {
+    list-style-type: none;
+    margin-top: 30px;
+    padding: 0;
 }
-.pagelinks:hover{
+
+.themed-grid-col li {
+    padding: 2px;
+    margin-bottom: 4px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 5px;
+ 
+}
+
+.themed-grid-col li:hover{
+    background-color: coral;
+}
+
+#forgotten{
     color: coral;
+    font-size: 20px;
+}
+
+.listedcars {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.listedcars:hover {
+    background-color: coral;
+}
+
+td {
+    padding: 5px;
+}
+
+th {
+    padding: 8px;
+}
+
+.selectedcar {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }

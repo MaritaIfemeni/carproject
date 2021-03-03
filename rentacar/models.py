@@ -2,6 +2,16 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
+class CarImage(models.Model):
+    image = models.ImageField(upload_to='images')
+    car = models.ForeignKey('Car', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.car.registerNum
+
+    class Meta:
+        db_table = "rentacar_carimage"
+
 class CustomUser(AbstractUser):
     userNumber = models.AutoField(primary_key=True)
     email = models.CharField(max_length=50)

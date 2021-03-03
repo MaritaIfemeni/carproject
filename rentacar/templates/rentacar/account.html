@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Account Details{% endblock %}
+
+{% block content %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        <h5>You are logged in as {{ user.username }}!</h5>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+        <p><br>Tähän käyttäjän tiedot ja mahdollisuus muuttaa niitä.</p>
+    </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+      <ul>  
+        <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
+      </ul>  
+      <p>Käyttäjän autoista lista</p>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
+</div>
+
+
+{% endblock %}

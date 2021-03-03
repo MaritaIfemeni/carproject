@@ -11,18 +11,17 @@
         <h5>Welcome to Rent-A-Car!</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 themed-grid-col" id="firstcolum">
-          <a class="pagelinks" href="{% url 'caradd' %}">Add new car<br></a>
-          <a class="pagelinks" href="{% url 'carlist' %}">View cars<br></a>
-          <a class="pagelinks" href="{% url 'carsearch' %}">Search for car</a>
+      <div class="col-md-6 themed-grid-col">
+        <ul>  
+          <li><a href="{% url 'caradd' %}">Add new car for Rent</a></li>
+          <li><a href="{% url 'carimage' %}">Add a picture for your car</a></li>
+          <li><a href="{% url 'carlist' %}">Rent cars</a></li>
+          <li><a href="{% url 'account' %}">View account details</a></li>
+        </ul>  
     </div>
-      <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <form class="d-flex">
-            <input class="form-control me-2" id="searcharea" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-          <a class="pagelinks" href="{% url 'logout' %}">Log Out</a>
-        </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+      <p><br>Rent-A-Car is a platform where you can rent your car when you don't need it!</p>
+    </div>
     </div>
   </div>
   <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
@@ -37,11 +36,14 @@
           <h6><strong>Log in or create an account</strong><br>to start using Rent-A-Car!</h6>
       </div>
       <div class="row">
-        <div class="col-md-6 themed-grid-col" id="firstcolum">
-            <a class="pagelinks" href="{% url 'login' %}">Log In</a>
-      </div>
-        <div class="col-md-6 themed-grid-col" id="secondcolum">
-            <a class="pagelinks" href="{% url 'signup' %}">Create account</a>
+        <div class="col-md-6 themed-grid-col">
+          <ul>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            <li><a href="{% url 'signup' %}">Create account</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 themed-grid-col">
+            <p><br>Rent-A-Car is a platform where you can rent your car when you don't need it!</p>
           </div>
       </div>
     </div>

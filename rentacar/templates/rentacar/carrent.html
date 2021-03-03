@@ -1,15 +1,54 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>New Rent</h2>
-    <p>Car: {{ car.make }} {{ car.model }}</p>
-    <p>Plate: {{ car.registerNum }}</p>
-    <p>Renter: {{ request.user.last_name }}</p>
-    <p>Rent price: NEEDSWORK</p>
-    <form method="POST" id="rentform">{% csrf_token %}
-        <div class="form">
-            {{ rentform.as_p }}
-        </div>
-        <button type="submit" class="savebutton">save</button>
-    </form>
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h5>New rent</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col">
+            <p><br>Car: {{ car.make }} {{ car.model }}</p>
+            <p>Rent price: NEEDSWORK</p>
+            <form method="POST" id="rentform">
+                    {% csrf_token %}
+                <div class="form">
+                    {{ rentform.as_p }}
+                </div>
+                <button type="submit" class="savebutton">save</button>
+            </form>
+
+      </div>
+      <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <p><br>You are viewing: </p>
+        <table class="selectedcar">
+            <tr>
+              <th>{{ car }}</th>
+            </tr>
+            <tr>
+                <td>Seats: {{ car.seats }}</td>
+                <td>Emissions:{{ car.emissions }}</td>
+            </tr>
+            <tr>
+                <td>Type: {{ car.powerLine }}</td>
+                <td>Year: {{ car.year }}</td>
+            </tr>
+              <tr>
+                <td>Location: {{ car.location }}</td>
+                <td>Status: {{ car.status }} </td>
+              </tr>
+              <tr>
+                <td>Renter: {{ request.user.last_name }}</td>
+                <td>RegNum: {{ car.registerNum }} </td>
+              </tr>
+          </table>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">
+        <div class="col-md-4 themed-grid-col" id="thirdcolum">TÄHÄN<br>-<br>KUVA<br>-<br>TÄSTÄ<br>-<br>AUTOSTA<br>-<br>2021
+    </div>
+  </div>
+
 {% endblock %}

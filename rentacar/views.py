@@ -1,16 +1,68 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
-from django.template import RequestContext
 
-from .forms import CustomUserCreationForm, CarForm, RentForm, OwnerForm
+from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+# TOTALLY FUCKED!
+@login_required
+def carimage(request):
+    user = request.user
+    owner = Owner.objects.filter(user_id=user.userNumber)
+    if request.method == 'POST':
+        form = CarImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            selected_car = request.POST.get('carsimage')
+            form.car = Car.objects.filter(carNumber=selected_car)
+            # form.save()
+            img_obj = form.instance
+    
+            context = {
+                'form': form,
+                'img_obj': img_obj,
+                'selected_car': selected_car,
+                'owner': owner,
+            }
+
+            return render(request, 'rentacar/carimage.html', context)
+    else:
+        form = CarImageForm()
+
+        context = {
+            'form': form,
+            'owner': owner,
+        }
+
+    return render(request, 'rentacar/carimage.html', context)
+
+#@login_required
+#def carimage(request):
+#    if request.method == 'POST':
+#        form = CarImageForm(request.POST, request.FILES)
+#        if form.is_valid():
+#            form.save()
+#            img_obj = form.instance
+#
+#            context = {
+#                'form': form,
+#                'img_obj': img_obj,
+#            }
+#
+#            return render(request, 'rentacar/carimage.html', context)
+#    else:
+#        form = CarImageForm()
+#    return render(request, 'rentacar/carimage.html', {'form': form})
+
+@login_required
+def account(request):
+    return render(request, 'rentacar/account.html')
 
 @login_required
 def carsearch(request):

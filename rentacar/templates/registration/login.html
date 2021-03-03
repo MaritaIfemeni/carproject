@@ -3,11 +3,27 @@
 {% block title %}Log In{% endblock %}
 
 {% block content %}
-<h2>Log In</h2><br>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-outline-success" type="submit">Log In</button>
-</form>
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h5 id="login_h5">Log In</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col" id="login_firstcolum">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-outline-success" type="submit">Log In</button>
+            </form>
+      </div>
+      <div class="col-md-6 themed-grid-col" id="login_secondcolum">
+        <p><br>Forgotten password or username?</p> 
+        <a id="forgotten" href="#">Clic here for help!<br></a>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
+  </div>
 {% endblock %}
