@@ -132,6 +132,10 @@ th {
     padding-left: 5px;
 }
 
+#imgsend {
+    max-width: 80%;
+}
+
 @media screen and (max-width: 700px) {
 .text-muted {
     font-size: 10px;
