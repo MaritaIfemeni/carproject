@@ -6,9 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}RAC - Rent-a-car!{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'rentacar/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="{% static 'rentacar/css/bootstrap.min.css' %}"> -->
     <link rel="stylesheet" href="{% static 'rentacar/css/styles.css' %}">
-    <script src="{% static 'rentacar/js/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'rentacar/js/bootstrap.min.js' %}"></script> -->    
 </head>
 
 <body>
@@ -47,7 +50,8 @@
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-          <span class="text-muted">Rent - A - Car Enterprices 2021</span>
+          <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+          <!-- <span class="text-muted">Rent - A - Car Enterprices 2021</span> -->
         </div>
       </footer>
 
