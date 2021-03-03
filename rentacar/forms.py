@@ -22,15 +22,10 @@ class CarForm(forms.ModelForm):
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
         'emissions', 'seats', 'location')
 
-#class RentForm(forms.ModelForm):
- #   class Meta:
-  #      model = Rent
-   #     fields = ('startDate', 'endDate')
-
-class TestRentForm(forms.Form):
-    startDate   = forms.DateTimeField(label="Start date: ")
-    endDate     = forms.DateTimeField(label="End date: ")
-
+class RentForm(forms.ModelForm):
+    class Meta:
+        model = Rent
+        fields = ('startDate', 'endDate')
 
 class CarImageForm(forms.ModelForm):
     class Meta:

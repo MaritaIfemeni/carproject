@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
 
-from .forms import CustomUserCreationForm, CarForm, CarImageForm, TestRentForm
+from .forms import CustomUserCreationForm, CarForm, CarImageForm, RentForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
@@ -124,7 +124,7 @@ def carnotfound(request):
 def carrent(request, pk):
     car = get_object_or_404(Car, pk=pk)
     if request.method == "POST":
-        rentform = TestRentForm(request.POST)
+        rentform = RentForm(request.POST)
         if rentform.is_valid():
             rent = rentform.save(commit=False)
             rent.renterNumber_id = request.user.userNumber
@@ -132,7 +132,7 @@ def carrent(request, pk):
             rent.save()
             return render(request, 'home.html')
     else:
-        rentform = TestRentForm()
+        rentform = RentForm()
 
         context = {
             'rentform': rentform,
