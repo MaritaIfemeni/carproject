@@ -27,8 +27,3 @@ class RentForm(forms.ModelForm):
     class Meta:
         model = Rent
         fields = ('startDate', 'endDate')
-
-class OwnerForm(forms.ModelForm):
-    class Meta:
-        model = Owner
-        fields = ('car', 'user')
