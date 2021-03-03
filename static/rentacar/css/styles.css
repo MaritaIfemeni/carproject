@@ -110,7 +110,7 @@ th {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: red;
+    background-color:coral;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -122,7 +122,7 @@ th {
   }
 
 .text-muted {
-    float: right;
+    float: left;
     font-size: 12px;
     padding-top: 5px;
     padding-left: 5px;
@@ -130,8 +130,7 @@ th {
 
 @media screen and (max-width: 700px) {
 .text-muted {
-    float: left;
-    font-size: 12px;
+    font-size: 10px;
     padding-top: 5px;
     }
 }
