@@ -99,4 +99,11 @@ th {
     bottom: 0;
     width: 100%;
     text-align: center;
+    height: 20px;
+}
+
+#myBtn {
+    position: left;
+    background-color: coral;
+    border-radius: 5px;
 }
