@@ -98,10 +98,10 @@ th {
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: center;
 }
 
 #myBtn {
+    float: left;
     color: white;
     background-color: coral;
     border-radius: 5px;
