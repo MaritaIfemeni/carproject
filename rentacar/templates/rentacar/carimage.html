@@ -12,13 +12,12 @@
          <table>
              <th>Selected car: {{ selected_car }} </th>
              <tr>
-                <td>Select car using plate num:</td>
-                <td> 
-                  <select name="carsimage">
-                    {% for car in owner %}
-                        <option value="1">{{ car.car.registerNum }}</option>
-                    {% endfor %}
-                  </select>
+                <td>Select car using plate num:
+                    <select name="carsimage">
+                        {% for car in owner %}
+                            <option value="1">{{ car.car.registerNum }}</option>
+                        {% endfor %}
+                      </select>
                 </td>
              </tr>
              <tr>
@@ -26,7 +25,7 @@
                     <form method="POST" enctype="multipart/form-data">{% csrf_token %}
                     <div class="form">
                         {{ form.as_p }}
-                    <button class="btn btn-outline-success" type="submit" class="savebutton">upload</button>
+                    <button class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
                     </form>
                 </td>
             </tr>
