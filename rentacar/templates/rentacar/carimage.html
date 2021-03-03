@@ -3,52 +3,52 @@
 {% block content %}
 
 <div class="row mb-3">
-    <div class="col-md-8 themed-grid-col">
-      <div class="pb-3">
-          <h5>Add a picture for your car here</h5>
-      </div>
-      <div class="row">
-        <div class="col-md-6 themed-grid-col">
-         <table class="imgadd">
-             <th>Selected car: {{ selected_car }} </th>
-             <tr>
-                <td>Select car:
-                    <select name="carsimage">
-                        {% for car in owner %}
-                            <option value="1">{{ car.car.registerNum }}</option>
-                        {% endfor %}
-                      </select>
-                </td>
-             </tr>
-             <tr>
-                <td>
-                    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
-                    <div class="form">
-                        {{ form.as_p }}
-                    <button class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
-                    <input type="button" value="Update" class="btn btn-xs btn-block" id="update">
-                    </form>
-                </td>
-            </tr>
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+      <h5>Add a picture for your car here</h5>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+        <table class="imgadd">
+          <th>Selected car: {{ selected_car }} </th>
+          <tr>
+            <td>Select car:
+              <select id="sel_car" name="sel_car">
+                {% for car in owner %}
+                  <option value="1">{{ car.car.registerNum }}</option>
+                {% endfor %}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+              <div class="form">
+                {{ form.as_p }}
+              <button class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
+              <input type="button" value="Update" class="btn btn-xs btn-block" id="update">
+              </form>
+            </td>
+          </tr>
         </table>
       </div>
-      <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <br>  
-        {% if img_obj %}
-        <h6>Succesfully uploaded {{ img_obj.title }}</h6>
-        <img src="{{ img_obj.image.url }}" alt="pic" style="max-height: 300px">
-        {% endif %}
     </div>
-      </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+      <br>  
+      {% if img_obj %}
+      <h6>Succesfully uploaded {{ img_obj.title }}</h6>
+      <img src="{{ img_obj.image.url }}" alt="pic" style="max-height: 300px">
+      {% endif %}
     </div>
     <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
     </div>
   </div>
+</div>
 
-  <script>
-    $('#update').click(function(){
-      alert($('#carsimage').val());
-    });
-  </script
+<script>
+  $('#update').click(function(){
+    alert($('#carsimage').val());
+  });
+</script
 
 {% endblock %}
