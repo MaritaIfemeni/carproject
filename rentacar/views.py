@@ -14,7 +14,7 @@ class SignUpView(CreateView):
 @login_required
 def carimage(request):
     car = Car.objects.filter(carNumber=1)
-    user = request.user
+    user = CustomUser.objects.filter(userNumber=1)
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
