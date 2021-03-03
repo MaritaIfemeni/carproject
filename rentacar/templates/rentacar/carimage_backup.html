@@ -16,7 +16,7 @@
                   <select id="idsel_car" name="idsel_car">
                     <option selected="select" disabled>--select one--</option>
                     {% for car in owner %}
-                      <option value="{{car.car.carNumber}}">{{ car.car.registerNum }}</option>
+                      <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
                     {% endfor %}
                   </select>
                   <input type="button" value="Update" class="btn btn-xs btn-block" id="update">

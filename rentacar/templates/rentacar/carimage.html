@@ -2,10 +2,13 @@
 
 {% block content %}
 
-<form name="carimageform" method="POST" enctype="multipart/form-data">{% csrf_token %}
+<form name="carimageform" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
   {{ form.as_p }}
+  <p name="idsel_car">sometext</p>
+  <input class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
 </form>
 
-<p>{{ owner }}</p>
+{{ selected_car }}
 
 {% endblock %}
