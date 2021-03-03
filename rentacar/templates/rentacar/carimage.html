@@ -5,7 +5,7 @@
 <form name="carimageform" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.as_p }}
-  <p name="idsel_car">{{ car }}</p>
+  <p name="idsel_car">{{ car.registerNum }}</p>
   <input class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
 </form>
 
