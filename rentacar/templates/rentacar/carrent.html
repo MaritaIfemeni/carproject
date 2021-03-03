@@ -38,7 +38,7 @@
                 <td>Status: {{ car.status }} </td>
               </tr>
               <tr>
-                <td>Owners: {% for owner in owners %}{{ owner.user.last_name }}{% endfor %}</td>
+                <td>Owners: {% for owner in owners %}{{ owner.user.last_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
                 <td>Plate Num: {{ car.registerNum }} </td>
               </tr>
           </table>
