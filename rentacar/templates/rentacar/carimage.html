@@ -3,7 +3,7 @@
 {% block content %}
 
 <form name="carimageform" method="POST" enctype="multipart/form-data">{% csrf_token %}
-  {{ form }}
+  {{ form.as_p }}
 </form>
 
 <p>{{ owner }}</p>
