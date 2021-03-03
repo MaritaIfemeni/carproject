@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
+from django.db.models import Q
 
 from .forms import CustomUserCreationForm, CarForm, CarImageForm, RentForm
 from .models import CustomUser, Car, Rent, Owner
@@ -127,7 +128,7 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    cars = Car.objects.all()
+    cars = Car.objects.filter(status=0).filter(~Q(user=request.user))
 
     context = {
         'cars': cars,
