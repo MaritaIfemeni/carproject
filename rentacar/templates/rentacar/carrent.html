@@ -5,11 +5,11 @@
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
       <div class="pb-3">
-          <h5>New rent</h5>
+          <h4>New rent</h4>
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-            <p><br>Car: {{ car.make }} {{ car.model }}</p>
+            <h5><br>Car: {{ car.make }} {{ car.model }}</h5>
             <p>Rent price: NEEDSWORK</p>
             <form method="POST" id="rentform">
                     {% csrf_token %}
@@ -21,7 +21,7 @@
 
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <p><br>You are viewing: </p>
+        <h5><br>You are viewing:</h5>
         <table class="selectedcar">
             <tr>
               <th>{{ car }}</th>
@@ -40,7 +40,7 @@
               </tr>
               <tr>
                 <td>Renter: {{ request.user.last_name }}</td>
-                <td>RegNum: {{ car.registerNum }} </td>
+                <td>Plate Num: {{ car.registerNum }} </td>
               </tr>
           </table>
       </div>
