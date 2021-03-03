@@ -11,6 +11,8 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+"""
+# Doesn't work...
 @login_required
 def carimage(request):
     car = Car.objects.filter(carNumber=1)
@@ -39,8 +41,8 @@ def carimage(request):
         }
 
         return render(request, 'rentacar/carimage.html', context)
-
 """
+
 # TOTALLY FUCKED!
 @login_required
 def carimage(request):
@@ -71,7 +73,6 @@ def carimage(request):
         }
 
     return render(request, 'rentacar/carimage.html', context)
-"""
 
 #@login_required
 #def carimage(request):
