@@ -11,6 +11,32 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+@login_required
+def carimage(request):
+    owner = request.user.last_name
+    if request.method == 'POST':
+        form = CarImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            selected_car = request.POST.get('idsel_car')
+            form.save()
+
+            context = {
+                'form': form,
+                'selected_car': selected_car,
+                'owner': owner,
+            }
+
+            return render(request, 'rentacar/carimage.html', context)
+    else:
+        form = CarImageForm()
+
+        context = {
+            'form': form,
+            'owner': owner,
+        }
+
+        return render(request, 'rentacar/carimage.html', context)
+
 """
 # TOTALLY FUCKED!
 @login_required
