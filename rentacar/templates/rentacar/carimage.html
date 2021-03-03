@@ -26,6 +26,7 @@
                     <div class="form">
                         {{ form.as_p }}
                     <button class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
+                    <input type="submit" value="Update" class="btn btn-xs btn-block" id="update">
                     </form>
                 </td>
             </tr>
@@ -43,5 +44,11 @@
     <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
     </div>
   </div>
+
+  <script>
+    $('#update').click(function(){
+      alert($('#options').val());
+    });
+  </script
 
 {% endblock %}
