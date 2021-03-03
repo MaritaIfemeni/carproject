@@ -13,7 +13,7 @@
              <th>Selected car: {{ selected_car }} </th>
              <tr>
                 <td>Select car:
-                  <select id="idsel_car">
+                  <select id="idsel_car" name="idsel_car">
                     <option selected="select" disabled>--select one--</option>
                     {% for car in owner %}
                       <option value="{{car.car.carNumber}}">{{ car.car.registerNum }}</option>
