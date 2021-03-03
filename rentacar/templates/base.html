@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="{% static 'rentacar/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'rentacar/css/styles.css' %}">
     <script src="{% static 'rentacar/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'rentacar/js/scripts.js' %}"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -47,14 +45,35 @@
         {% endblock %}
     </main>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
     </script>
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
+          <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
          <span class="text-muted"> Copyright @ Rent - A - Car Enterprices 2021</span>
         </div>
       </footer>
+      <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.sdisplay = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+        
 
 </body>
 </html>
