@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
 from django.db import router
+from django.forms.fields import DateTimeField
 from .models import CustomUser, Car, Rent, CarImage, Owner
 
 class CustomUserCreationForm(UserCreationForm):
@@ -27,9 +28,9 @@ class CarForm(forms.ModelForm):
    #     fields = ('startDate', 'endDate')
 
 class TestRentForm(forms.Form):
-    startDate   = forms.DateTimeField()
-    endDate     = forms.DateTimeField()
-    rentPrice   = forms.DecimalField()
+    startDate   = forms.DateTimeField(label="Start date: ", widget= forms.DateField)
+    endDate     = forms.DateTimeField(label="End date: ")
+    rentPrice   = forms.DecimalField(initial=200)
     user        = forms.CharField()
 
 class CarImageForm(forms.ModelForm):

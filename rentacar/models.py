@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models.fields import DateTimeField
 from django.utils import timezone
 
 class CarImage(models.Model):
@@ -60,8 +61,8 @@ class Rent(models.Model):
     renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="renter")
     renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
     rentPrice = models.PositiveSmallIntegerField(default=100)
-    startDate = models.DateTimeField()
-    endDate = models.DateTimeField()
+    startDate = models.DateTimeField(null=True)
+    endDate = models.DateTimeField(null=True)
     expired = models.BooleanField(default=False)
 
     def __str__(self):
