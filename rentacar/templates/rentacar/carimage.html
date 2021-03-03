@@ -6,6 +6,7 @@
   {% csrf_token %}
   {{ form.as_p }}
   <p name="idsel_car">{{ car.registerNum }}</p>
+  <p name="idcur_user">{{ user }}
   <input class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
 </form>
 
