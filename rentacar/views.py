@@ -130,9 +130,8 @@ def caradd(request):
 def carlist(request):
     cars = []
     owner = Owner.objects.filter(~Q(user_id=request.user.userNumber))
-    for car in Car.objects.all():
-        if owner.car.carNumber == car.carNumber:
-            cars.append(car)
+    for car in owner:
+        cars.append(car)
 
     context = {
         'cars': cars,
