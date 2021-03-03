@@ -114,3 +114,9 @@ th {
     font-size: 12px;
 }
 
+@media screen and (min-width: 600px) {
+.text-muted {
+    float: left;
+    font-size: 12px;
+    }
+}
