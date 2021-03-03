@@ -11,12 +11,11 @@
         <div class="col-md-6 themed-grid-col">
             <h5><br>Car: {{ car.make }} {{ car.model }}<br></h5>
             <p>Rent price: NEEDSWORK</p>
-            <form method="POST" id="rentform">
-                    {% csrf_token %}
+            <form action='.' method="POST"">{% csrf_token %}
                 <div class="form">
                     {{ rentform.as_p }}
                 </div>
-                <button type="submit" class="savebutton">save</button>
+                <input type="submit" value="Save" />
             </form>
 
       </div>

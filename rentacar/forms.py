@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
 from .models import CustomUser, Car, Rent, CarImage, Owner
 
 class CustomUserCreationForm(UserCreationForm):
@@ -20,10 +20,15 @@ class CarForm(forms.ModelForm):
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
         'emissions', 'seats', 'location')
 
-class RentForm(forms.ModelForm):
-    class Meta:
-        model = Rent
-        fields = ('startDate', 'endDate')
+#class RentForm(forms.ModelForm):
+ #   class Meta:
+  #      model = Rent
+   #     fields = ('startDate', 'endDate')
+
+class TestRentForm(forms.Form):
+    startDate   = forms.DateTimeField()
+    endDate     = forms.DateTimeField()
+
 
 class CarImageForm(forms.ModelForm):
     class Meta:
