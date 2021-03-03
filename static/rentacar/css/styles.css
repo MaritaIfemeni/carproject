@@ -109,6 +109,6 @@ th {
 }
 
 .text-muted {
-    text-align: right;
+    float: right;
     font-size: 12px;
 }
