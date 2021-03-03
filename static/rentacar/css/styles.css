@@ -112,11 +112,13 @@ th {
 .text-muted {
     float: right;
     font-size: 12px;
+    padding-top: 5px;
 }
 
 @media screen and (max-width: 700px) {
 .text-muted {
     float: left;
     font-size: 12px;
+    padding-top: 5px;
     }
 }
