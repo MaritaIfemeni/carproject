@@ -13,13 +13,15 @@
              <th>Selected car: {{ selected_car }} </th>
              <tr>
                 <td>Select car:
-                    <select id="idsel_car" name="sel_car">
+                  <form name="myForm">
+                    <select id="idsel_car" name="sel_car" onChange="test()">
                       <option selected="select" disabled>--select one--</option>
-                        {% for car in owner %}
-                            <!-- <option value="1">{{ car.car.registerNum }}</option> -->
-                            <option value="iphone">Iphone</option>
-                        {% endfor %}
-                      </select>
+                      {% for car in owner %}
+                          <!-- <option value="1">{{ car.car.registerNum }}</option> -->
+                          <option value="iphone">Iphone</option>
+                      {% endfor %}
+                    </select>
+                  </form>
                 </td>
              </tr>
              <tr>
@@ -27,6 +29,7 @@
                     <form method="POST" enctype="multipart/form-data">{% csrf_token %}
                     <div class="form">
                         {{ form.as_p }}
+                    </div>
                     <button class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
                     <input type="button" value="Update" class="btn btn-xs btn-block" id="update">
                     </form>
@@ -47,10 +50,15 @@
     </div>
   </div>
 
-  <script>
-    $('#update').click(function(){
-      alert($('#sel_car').val());
-    });
-  </script
+<script>
+  $('#update').click(function(){
+    alert($('#sel_car').val());
+  });
+
+  function test() {
+	  var InitialFunctionJS = document.carimageform.InitialFunction.value;
+	  alert(InitialFunctionJS);
+  }
+</script
 
 {% endblock %}
