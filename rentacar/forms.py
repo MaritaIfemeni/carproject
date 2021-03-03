@@ -29,9 +29,6 @@ class CarForm(forms.ModelForm):
 class TestRentForm(forms.Form):
     startDate   = forms.DateTimeField()
     endDate     = forms.DateTimeField()
-    rentPrice   = forms.DecimalField()
-    make        = forms.CharField()
-    userName    = forms.CharField()
 
 class CarImageForm(forms.ModelForm):
     class Meta:
