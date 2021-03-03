@@ -94,6 +94,10 @@ th {
     text-align: left;
 }
 
+.imgadd {
+    max-width: 80%;
+}
+
 .footer {
     position: fixed;
     left: 0;

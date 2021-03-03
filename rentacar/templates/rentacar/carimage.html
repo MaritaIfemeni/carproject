@@ -9,10 +9,10 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-         <table>
+         <table class="imgadd">
              <th>Selected car: {{ selected_car }} </th>
              <tr>
-                <td>Select car using plate num:
+                <td>Select car:
                     <select name="carsimage">
                         {% for car in owner %}
                             <option value="1">{{ car.car.registerNum }}</option>
