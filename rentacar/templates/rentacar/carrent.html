@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>Seats: {{ car.seats }}</td>
-                <td>Emissions:{{ car.emissions }}</td>
+                <td>Emissions: {{ car.emissions }}</td>
             </tr>
             <tr>
                 <td>Type: {{ car.powerLine }}</td>
@@ -38,7 +38,7 @@
                 <td>Status: {{ car.status }} </td>
               </tr>
               <tr>
-                <td>Renter: {{ request.user.last_name }}</td>
+                <td>Owner: {{ owner.user.last_name }}</td>
                 <td>Plate Num: {{ car.registerNum }} </td>
               </tr>
           </table>
