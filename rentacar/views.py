@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView
 
-from .forms import CustomUserCreationForm, CarForm, RentForm, CarImageForm, TestRentForm
+from .forms import CustomUserCreationForm, CarForm, CarImageForm, TestRentForm
 from .models import CustomUser, Car, Rent, Owner
 
 class SignUpView(CreateView):
