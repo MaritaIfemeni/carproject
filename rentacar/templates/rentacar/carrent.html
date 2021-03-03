@@ -9,7 +9,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-            <h5><br>Car: {{ car.make }} {{ car.model }}</h5>
+            <h5><br>Car: {{ car.make }} {{ car.model }}<br></h5>
             <p>Rent price: NEEDSWORK</p>
             <form method="POST" id="rentform">
                     {% csrf_token %}
@@ -21,7 +21,7 @@
 
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h5><br>You are viewing:</h5>
+        <h5><br>You are viewing:<br></h5>
         <table class="selectedcar">
             <tr>
               <th>{{ car }}</th>
