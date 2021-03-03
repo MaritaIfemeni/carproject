@@ -120,7 +120,7 @@ def carnotfound(request):
 def carrent(request, pk):
     car = get_object_or_404(Car, pk=pk)
     if request.method == "POST":
-        rentform = RentForm(request.POST)
+        rentform = TestRentForm(request.POST)
         if rentform.is_valid():
             rent = rentform.save(commit=False)
             rent.renterNumber_id = request.user.userNumber
