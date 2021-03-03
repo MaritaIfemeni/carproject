@@ -65,6 +65,10 @@ def account(request):
     return render(request, 'rentacar/account.html')
 
 @login_required
+def rents(request):
+    return render(request, 'rentacar/rents.html')
+
+@login_required
 def carsearch(request):
     return render(request, 'rentacar/carsearch.html')
 

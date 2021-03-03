@@ -28,10 +28,9 @@ class CarForm(forms.ModelForm):
    #     fields = ('startDate', 'endDate')
 
 class TestRentForm(forms.Form):
-    startDate   = forms.CharField(label="Start date: ")
+    startDate   = forms.DateTimeField(label="Start date: ")
     endDate     = forms.DateTimeField(label="End date: ")
-    rentPrice   = forms.DecimalField(initial=200)
-    user        = forms.CharField()
+
 
 class CarImageForm(forms.ModelForm):
     class Meta:

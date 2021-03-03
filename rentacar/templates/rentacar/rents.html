@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Rent Details{% endblock %}
+
+{% block content %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        <h4>{{ user.first_name }} view your rent details below!</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+        <h5><br>Cars you have rented<br></h5>
+        <p>Tähän vuokrattavana olevat autot listana niin, että ne voisi
+            palauttaa laittamalla raksin ruutuun?
+        </p>
+    </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <h5><br>Your cars rented out<br></h5>
+        <p>Tähän sinulta vuokratuta autot listana
+        </p>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
+</div>
+
+
+{% endblock %}
