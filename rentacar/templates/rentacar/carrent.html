@@ -13,7 +13,7 @@
             <p>Rent price: NEEDSWORK</p>
             <form action='.' method="POST">{% csrf_token %}
                 <div class="form">
-                    {{ rentform.as_li }}
+                    {{ rentform.as_ul }}
                 </div>
                 <input type="submit" value="Save" />
             </form>
