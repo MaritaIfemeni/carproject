@@ -108,7 +108,7 @@ th {
     right: 30px;
     z-index: 99;
     font-size: 18px;
-    border: 3px coral;
+    border: none;
     outline: none;
     background-color:rgb(79, 79, 79);
     color: white;
@@ -118,8 +118,7 @@ th {
   }
   
   #myBtn:hover {
-    background-color: rgb(63, 63, 63);
-    border: 3px red;
+    background-color: rgb(121, 121, 121);
   }
 
 .text-muted {
