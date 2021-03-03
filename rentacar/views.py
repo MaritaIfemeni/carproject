@@ -159,7 +159,7 @@ def carnotfound(request):
 @login_required
 def carrent(request, pk):
     car = get_object_or_404(Car, pk=pk)
-    owner = Owner.objects.filter(car_id=car.carNumber).first()
+    owners = Owner.objects.filter(car_id=car.carNumber)
     if request.method == "POST":
         rentform = RentForm(request.POST)
         if rentform.is_valid():
@@ -175,7 +175,7 @@ def carrent(request, pk):
         context = {
             'rentform': rentform,
             'car': car,
-            'owner': owner,
+            'owners': owners,
         }
 
         return render(request, 'rentacar/carrent.html', context)
