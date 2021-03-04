@@ -188,6 +188,10 @@ def caradd(request):
 
 @login_required
 def carlist(request):
+    makesearch = ""
+    if request.method = "POST":
+        makesearch = request.POST.get('makesearch')
+
     user_number = request.user.userNumber
     
     # filtered_cars = []
@@ -205,6 +209,7 @@ def carlist(request):
     context = {
         'cars': cars,
         'rented_cars': rented_cars,
+        'makesearch': makesearch,
     }
 
     return render(request, 'rentacar/carlist.html', context)

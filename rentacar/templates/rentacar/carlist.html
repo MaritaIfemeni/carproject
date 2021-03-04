@@ -71,11 +71,16 @@
     </div>
     <div class="col-md-4 themed-grid-col" id="thirdcolum">
         <p><br>Search cars!<br></p>
-        <form class="d-flex">
-            <label for="model">Model:  </label>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" method="post">{% csrf_token %}
+            <label for="model">Make:  </label>
+            <input class="form-control me-2" type="search" placeholder="eg. Jeep" aria-label="Search" name="makesearch">
+            <label for="model">Seats:  </label>
+            <input class="form-control me-2" type="search" placeholder="eg. 4" aria-label="Search" name="seatsearch">
+            <label for="model">Location:  </label>
+            <input class="form-control me-2" type="search" placeholder="eg. Helsinki" aria-label="Search" name="locationsearch">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+          {{ makesearch }}
     </div>
   </div>
 
