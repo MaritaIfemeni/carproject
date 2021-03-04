@@ -19,7 +19,7 @@
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
             {{ cars.carNumber.registerNum }}</label><br>
-            <p> NÄkyykö mitä ?{{ car.carNumber.rents.endDate }} </p>
+            <p> NÄkyykö mitä ?{{ cars.carNumber.rents.endDate }} </p>
         {% endfor %}
         <h2>EXPIRED RENTS</h2>
         {% for exp_cars in exp_rents %}
