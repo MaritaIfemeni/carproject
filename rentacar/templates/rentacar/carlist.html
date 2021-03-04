@@ -81,7 +81,23 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
           {% for car in searched %}
-            {{ car }}
+            <table class="listedcars">
+              <tr>
+                <th>{{ car.carNumber }}</th>
+              </tr>
+              <tr>
+                <td>Seats: {{ car.carNumber.seats }}</td>
+                <td>Emissions: {{ car.carNumber.emissions }}</td>
+              </tr>
+              <tr>
+                <td>Type: {{ car.carNumber.powerLine }}</td>
+                <td>Year: {{ car.carNumber.year }}</td>
+              </tr>
+                <tr>
+                  <td>Location: {{ car.carNumber.location }}</td>
+                  <td>Available from: {{ car.endDate }} </td>
+                </tr>
+            </table>
           {% endfor %}
     </div>
   </div>
