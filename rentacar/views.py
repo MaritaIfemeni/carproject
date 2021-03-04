@@ -99,8 +99,8 @@ def account(request):
 
 @login_required
 def rents(request):
-    rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(~Q(expired=1))
-    exp_rents = rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(~Q(expired=0))
+    rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
+    exp_rents = rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
 
     context = {
         'rents': rents,
