@@ -111,6 +111,19 @@ def rents(request):
     return render(request, 'rentacar/rents.html', context)
 
 @login_required
+def rentsout(request):
+    rents = Rent.objects.filter(renteeNumber_id=request.user.userNumber)
+    valid_rents = rents.filter(expired=0)
+    expired_rents = rents.filter(expired=1)
+
+    context = {
+        'valid_rents': valid_rents,
+        'expired_rents': expired_rents,
+    }
+
+    return render(request, 'rentacar/rents.html', context)
+
+@login_required
 def carsearch(request):
     return render(request, 'rentacar/carsearch.html')
 
