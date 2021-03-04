@@ -1,0 +1,17 @@
+Autot, jotka SINÄ(SINÄ ITSE) olet vuokrannut JOLTAKIN MUULTA:
+	palautus!
+
+Autot, jotka SINULTA on vuokrannut JOKU MUU:
+	palautuksen hyväksyntä!
+
+Autojen etsintä:
+	dropdown (make, seats, location)
+
+Autojen yhteisomistajuuden lisäys:
+	etsintä rekisterinumerolla!
+
+Autoja, jotka on jo vuokrattu, ei voi vuokrata uudelleen:
+	osoiteriviltä!
+
+Autojen kuvien uploadaaminen:
+	paska nakki
