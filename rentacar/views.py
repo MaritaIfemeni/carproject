@@ -203,17 +203,17 @@ def carlist(request):
 
         if makesearch != "" and seatsearch != 0 and locationsearch != "":
             searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch).filter(location__icontains=locationsearch)
-        else if makesearch != "" and seatsearch != 0:
+        elif makesearch != "" and seatsearch != 0:
             searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch)
-        else if makesearch != "" and locationsearch != "":
+        elif makesearch != "" and locationsearch != "":
             searched = Car.objects.filter(make__icontains=makesearch).filter(location__icontains=locationsearch)
-        else if seatsearch != 0 and locationsearch != "":
+        elif seatsearch != 0 and locationsearch != "":
             searched = Car.objects.filter(seats=seatsearch).filter(location__icontains=locationsearch)
-        else if makesearch != "":
+        elif makesearch != "":
             searched = Car.objects.filter(make__icontains=makesearch)
-        else if seatsearch != "":
+        elif seatsearch != "":
             searched = Car.objects.filter(seats=seatsearch)
-        else if locationsearch != "":
+        elif locationsearch != "":
             searched = Car.objects.filter(location=locationsearch)
         else:
             pass
