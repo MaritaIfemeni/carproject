@@ -189,16 +189,21 @@ def caradd(request):
 @login_required
 def carlist(request):
     searched = None
-    makesearch = ""
-    seatsearch = 0
-    locationsearch = ""
+    makesearch = None
+    seatsearch = None
+    locationsearch = None
 
     if request.method == "POST":
         makesearch = request.POST.get('makesearch')
         seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
-        searched = Car.objects.filter(make__icontains=makesearch)
+        if makesearch != None:
+            searched = Car.objects.filter(make__icontains=makesearch)
+        if seatsearch != None:
+            searched = Car.objects.filter(seats=seatsearch)
+        if locationsearch != None:
+            searched = Car.objects.filter(location=locationsearch)
 
     user_number = request.user.userNumber
 
