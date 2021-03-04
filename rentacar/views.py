@@ -128,10 +128,7 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    cars = []
-    owner = Owner.objects.filter(~Q(user_id=request.user.userNumber))
-    for car in owner:
-        cars.append(car)
+    cars = Owner.objects.filter(~Q(user_id=request.user.userNumber))
 
     context = {
         'cars': cars,
