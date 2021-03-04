@@ -27,16 +27,6 @@ class RentForm(forms.ModelForm):
         model = Rent
         fields = ('startDate', 'endDate')
 
-        startDate = forms.DateField(
-        widget=forms.DateInput(format='%m/%d/%Y'),
-        input_formats=('%m/%d/%Y', )
-        )
-
-        endDate = forms.DateField(
-        widget=forms.DateInput(format='%m/%d/%Y'),
-        input_formats=('%m/%d/%Y', )
-        )
-
 class CarImageForm(forms.ModelForm):
     class Meta:
         model = CarImage
