@@ -188,6 +188,7 @@ def caradd(request):
 
 @login_required
 def carlist(request):
+    searched = None
     makesearch = ""
     seatsearch = 0
     locationsearch = ""
