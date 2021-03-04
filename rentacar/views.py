@@ -268,7 +268,8 @@ def carrent(request, pk):
     else:
         rentform = RentForm()
 
-        # if car.status
+        if car.status != 0:
+            return redirect('carnotfound')
 
         context = {
             'rentform': rentform,
