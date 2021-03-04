@@ -18,8 +18,8 @@
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
-            {{ cars.carNumber.registerNum }}
-            {{ cars.carNumber.endDate }} </label><br>
+            {{ cars.carNumber.registerNum }}</label><br>
+            <p> NÄkyykö mitä ?{{ rents.carNumber.endDate }} </p>
         {% endfor %}
         <h2>EXPIRED RENTS</h2>
         {% for exp_cars in exp_rents %}
