@@ -115,9 +115,10 @@ def rents(request):
 
     if request.method == 'POST':
         carchoice = request.POST.getlist('carchoice')
-        cars = Car.objects.filter(carNumber=carchoice)
-        cars.status = 2
-        cars.save()
+        for i in range(len(carchoice)):
+            car = Car.objects.filter(carNumber=carchoice[i])
+            car.status = 2
+            car.save()
 
     context = {
         'val_rents': val_rents,
