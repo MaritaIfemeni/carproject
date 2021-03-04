@@ -61,7 +61,7 @@ class Rent(models.Model):
     renterNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="renter")
     renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
     rentPrice = models.PositiveSmallIntegerField(default=100)
-    startDate = models.DateTimeField(null=True,default=datetime.now())
+    startDate = models.DateTimeField(null=True)
     endDate = models.DateTimeField(null=True)
     expired = models.BooleanField(default=False)
 
