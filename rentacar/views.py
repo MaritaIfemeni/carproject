@@ -189,7 +189,7 @@ def caradd(request):
 @login_required
 def carlist(request):
     makesearch = ""
-    if request.method = "POST":
+    if request.method == "POST":
         makesearch = request.POST.get('makesearch')
 
     user_number = request.user.userNumber
