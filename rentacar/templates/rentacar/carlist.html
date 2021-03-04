@@ -10,7 +10,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-          <h5><br>All cars listed<br></h5>
+          <h5><br>Available Cars<br></h5>
           {% for car in cars %}
           <table class="listedcars">
             <tr>
@@ -26,7 +26,6 @@
             </tr>
               <tr>
                 <td>Location: {{ car.car.location }}</td>
-                <td>Status: {{ car.car.status }} </td>
               </tr>
             <tr>
                 <td>
@@ -39,9 +38,9 @@
           {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h5><br>Cars available now<br></h5>
+        <h5><br>Currently Rented Cars<br></h5>
         {% for car in rented_cars %}
-          <table class="listedcars">
+          <table class="notavailable">
             <tr>
               <th>{{ car.carNumber }}</th>
             </tr>
@@ -59,8 +58,8 @@
               </tr>
             <tr>
               <td>
-                <form action="{% url 'carrent' pk=car.carNumber.pk %}">
-                  <button class="btn btn-outline-success" type="submit">RENT</button>
+                <form action="{% url 'cardetails' pk=car.carNumber.pk %}">
+                  <button class="btn btn-outline-success" type="submit">Details</button>
                 </form>
               </td>
             </tr>
