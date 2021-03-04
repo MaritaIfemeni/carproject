@@ -16,8 +16,7 @@
             palauttaa laittamalla raksin ruutuun ja lähettämällä?
         </p>
         {% for cars in rents %}
-        <p>{{ cars.carNumber.make }} {{ cars.carNumber.model }}</p>
-        <p>{{ cars.carNumber.registerNum }}</p>
+          <p>{{ cars.carNumber.make }} {{ cars.carNumber.model }} {{ cars.carNumber.registerNum }}</p>
         {% endfor %}
         <ul>
             <li><a href="#">View past rents</a></li>
