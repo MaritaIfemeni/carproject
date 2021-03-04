@@ -99,7 +99,13 @@ def account(request):
 
 @login_required
 def rents(request):
-    return render(request, 'rentacar/rents.html')
+    rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
+
+    context = {
+        'rents': rents,
+    }
+
+    return render(request, 'rentacar/rents.html', context)
 
 @login_required
 def carsearch(request):
@@ -165,6 +171,9 @@ def carrent(request, pk):
             rent.renteeNumber_id = owners.first().user.userNumber
             rent.carNumber_id = car.carNumber
             rent.save()
+
+            car.status = 1
+            car.save()
 
             return render(request, 'home.html')
     else:
