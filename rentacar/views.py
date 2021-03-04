@@ -121,7 +121,7 @@ def rents(request):
             car.status = 2
             car.save()
 
-            rent = Rent.objects.get(carNumber_id=carchoice[i])
+            rent = Rent.objects.get(carNumber_id=carchoice[i]).filter(expired=0)
             rent.endDate = timezone.now()
             rent.expired = 1
             rent.save()
