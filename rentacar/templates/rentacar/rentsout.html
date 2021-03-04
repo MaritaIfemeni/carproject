@@ -7,12 +7,11 @@
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        <h4>{{ user.first_name }} view cars you have rented out!</h4>
+        <h4>{{ user.first_name }} view cars you are renting out!</h4>
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <h5><br>Cars you have rented out<br></h5>
-        <h6>ONGOING RENTS</h6>
+        <h6><br>ONGOING RENTS</h6>
         {% for cars in valid_rentsout %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
@@ -29,7 +28,7 @@
 
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h6>PAST RENTS</h6>
+        <h6><br>PAST RENTS</h6>
         {% for exp_cars in expired_rentsout %}
           <table>
             <tr>

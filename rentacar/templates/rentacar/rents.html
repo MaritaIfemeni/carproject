@@ -11,8 +11,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <h5><br>Cars you have rented<br></h5>
-        <h6>ONGOING RENTS</h6>
+        <h6><br>ONGOING RENTS</h6>
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
