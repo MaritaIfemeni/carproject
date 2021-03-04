@@ -12,22 +12,24 @@
     <div class="row">
       <div class="col-md-6 themed-grid-col">
         <h5><br>Cars you have rented<br></h5>
-        <p>Tähän vuokrattavana olevat autot listana niin, että ne voisi
-            palauttaa laittamalla raksin ruutuun ja lähettämällä?
-        </p>
+        <h6>ONGOING RENTS</h6>
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
             {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
          {% endfor %}
-        <h2>EXPIRED RENTS</h2>
+        <h6>PAST RENTS</h6>
         {% for exp_cars in exp_rents %}
-          <input type="checkbox" value="{{ exp_cars.carNumber.carNumber }}" name="exp_carchoice">
-          <label style="color:red;" for="{{ exp_cars.carNumber.carNumber }}">{{ exp_cars.carNumber.registerNum }}</label><br>
+          <table>
+            <tr>
+              <th>{{ exp_cars.carNumber.make }}</th>
+            </tr>
+            <tr>
+                <td>Plate Num: {{ cars.carNumber.registerNum }}</td>
+                <td>Rent period: MITEN?</td>
+            </tr>
+          </table>
         {% endfor %}
-        <ul>
-            <li><a href="#">View past rents</a></li>
-          </ul>  
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
         <h5><br>Your cars rented out<br></h5>

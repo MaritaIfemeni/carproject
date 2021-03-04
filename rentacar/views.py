@@ -112,9 +112,9 @@ def rents(request):
 
 @login_required
 def rentsout(request):
-    rents = Rent.objects.filter(renteeNumber_id=request.user.userNumber)
-    valid_rents = rents.filter(expired=0)
-    expired_rents = rents.filter(expired=1)
+    rentsout = Rent.objects.filter(renteeNumber_id=request.user.userNumber)
+    valid_rents = rentsout.filter(expired=0)
+    expired_rents = rentsout.filter(expired=1)
 
     context = {
         'valid_rents': valid_rents,
