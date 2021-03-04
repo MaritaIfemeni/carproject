@@ -99,10 +99,12 @@ def account(request):
 
 @login_required
 def rents(request):
-    rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
+    rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(~Q(expired=1))
+    exp_rents = rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(~Q(expired=0))
 
     context = {
         'rents': rents,
+        'exp_rents': exp_rents,
     }
 
     return render(request, 'rentacar/rents.html', context)
