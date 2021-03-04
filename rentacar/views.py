@@ -111,8 +111,10 @@ def rents(request):
     exp_rents = rents.filter(expired=1)
     val_rents_count = val_rents.count()
 
+    carchoice = ""
+
     if request.method == 'POST':
-        fruits = request.POST.getlist('carchoice')
+        carchoice = request.POST.getlist('carchoice')
 
     context = {
         'val_rents': val_rents,
