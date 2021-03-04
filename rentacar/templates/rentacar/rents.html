@@ -15,7 +15,7 @@
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
-            {{ cars.carNumber.registerNum }} * Exp Dat: MITEN SAADAAN?</label><br>
+            {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
          {% endfor %}
          <p>Return your rents choosing car(s) and pressing return button!</p>
          <form action='.' method="POST">
