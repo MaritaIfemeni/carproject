@@ -18,17 +18,23 @@
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
             {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
          {% endfor %}
-            <p> MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
+         <p>Return your rents choosing car(s) and pressing return button!</p>
+         <form action='.' method="POST">
+          <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
+         </form>
+
+
+            <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
                teksti----> Youd don't have ongoing rents atm!</p>
         <h6>PAST RENTS</h6>
         {% for exp_cars in exp_rents %}
           <table>
             <tr>
               <th>{{ exp_cars.carNumber.make }}</th>
+              <th id="rentperiod">Rent period: MITEN?</th>
             </tr>
             <tr>
                 <td>Plate Num: {{ cars.carNumber.registerNum }}</td>
-                <td>Rent period: MITEN?</td>
             </tr>
           </table>
         {% endfor %}
@@ -37,11 +43,6 @@
         <h5><br>Your cars rented out<br></h5>
         <p>Tähän sinulta vuokratut autot listana
         </p>
-        {% for val_cars in valid_rents %}
-        <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-        <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
-          {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
-       {% endfor %}
     </div>
     </div>
   </div>
