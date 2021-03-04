@@ -161,7 +161,7 @@ def caradd(request):
 def carlist(request):
     user_number = request.user.userNumber
     cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
-    rented_cars = Owner.objects.filter(car__status=1).filter(~Q(user_id=user_number))
+    rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
 
     context = {
         'cars': cars,

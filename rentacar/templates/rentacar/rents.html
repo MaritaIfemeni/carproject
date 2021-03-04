@@ -34,10 +34,10 @@
         <table>
           <tr>
             <th>{{ exp_cars.carNumber.make }}</th>
-            <th id="rentperiod">Rent period: MITEN?</th>
+            <th id="rentperiod">Rent period: {{ exp_cars.endDate }}</th>
           </tr>
           <tr>
-              <td>Plate Num: {{ cars.carNumber.registerNum }}</td>
+              <td>Plate Num: {{ exp_cars.carNumber.registerNum }}</td>
           </tr>
         </table>
       {% endfor %}

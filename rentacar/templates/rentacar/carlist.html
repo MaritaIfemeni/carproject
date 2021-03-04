@@ -35,14 +35,37 @@
                     </form>
                 </td>
             </tr>
-            {% endfor %}
           </table>
+          {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
         <h5><br>Cars available now<br></h5>
-        <ul>  
-          <li><a href="#">Tähän täällä hetkellä vapaana olevat autot!</a></li>
-        </ul>  
+        {% for car in rented_cars %}
+          <table class="listedcars">
+            <tr>
+              <th>{{ car.carNumber }}</th>
+            </tr>
+            <tr>
+              <td>Seats: {{ car.carNumber.seats }}</td>
+              <td>Emissions: {{ car.carNumber.emissions }}</td>
+            </tr>
+            <tr>
+              <td>Type: {{ car.carNumber.powerLine }}</td>
+              <td>Year: {{ car.carNumber.year }}</td>
+            </tr>
+              <tr>
+                <td>Location: {{ car.carNumber.location }}</td>
+                <td>Available from: {{ car.endDate }} </td>
+              </tr>
+            <tr>
+              <td>
+                <form action="{% url 'carrent' pk=car.carNumber.pk %}">
+                  <button class="btn btn-outline-success" type="submit">RENT</button>
+                </form>
+              </td>
+            </tr>
+          </table>
+          {% endfor %}
       </div>
       </div>
     </div>
