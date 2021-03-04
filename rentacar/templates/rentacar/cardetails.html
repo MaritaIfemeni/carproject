@@ -3,4 +3,10 @@
 {% block content %}
     <p>{{ car.make }} {{ car.model }}</p>
     <p>{{ car.registerNum }}</p>
+
+    <form method="POST">{% csrf_token %}
+        {{ teksti }}
+        <button class="btn btn-outline-success" type="submit" value="Save">HELP</button>
+    </form>
+
 {% endblock %}
