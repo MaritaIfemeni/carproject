@@ -66,4 +66,4 @@ class Rent(models.Model):
     expired = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.renterNumber.last_name} {self.renteeNumber.last_name} {self.car.registerNum} {self.endDate}"
+        return f"{self.renterNumber.last_name} {self.renteeNumber.last_name} {self.carNumber.registerNum} {self.endDate}"
