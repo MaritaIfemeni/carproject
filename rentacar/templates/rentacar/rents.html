@@ -13,15 +13,13 @@
       <div class="col-md-6 themed-grid-col">
         <h5><br>Cars you have rented<br></h5>
         <h6>ONGOING RENTS</h6>
-        {% if cars in val_rents %}
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
             {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
          {% endfor %}
-         {% else %}
-            <p> Youd don't have ongoing rents atm!</p>
-          {% endif %}
+            <p> MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
+               teksti----> Youd don't have ongoing rents atm!</p>
         <h6>PAST RENTS</h6>
         {% for exp_cars in exp_rents %}
           <table>
