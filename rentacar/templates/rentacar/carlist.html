@@ -93,10 +93,17 @@
                 <td>Type: {{ car.carNumber.powerLine }}</td>
                 <td>Year: {{ car.carNumber.year }}</td>
               </tr>
-                <tr>
-                  <td>Location: {{ car.carNumber.location }}</td>
-                  <td>Available from: {{ car.endDate }} </td>
-                </tr>
+              <tr>
+                <td>Location: {{ car.carNumber.location }}</td>
+                <td>Available from: {{ car.endDate }} </td>
+              </tr>
+              <tr>
+                <td>
+                  <form action="{% url 'carrent' pk=car.carNumber.pk %}">
+                    <button class="btn btn-outline-success" type="submit">RENT</button>
+                  </form>
+                </td>
+              </tr>
             </table>
           {% endfor %}
     </div>
