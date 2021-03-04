@@ -243,14 +243,19 @@ def carlist(request):
 @login_required
 def cardetails(request, pk):
     teksti = None
+    car = get_object_or_404(Car, pk=pk)
     if request.method == 'POST':
         teksti = "Lähetä sähköpostia osoitteeseen blabla"
 
-    car = get_object_or_404(Car, pk=pk)
+        context = {
+            'teksti': teksti,
+            'car': car,
+        }
+
+        return render(request, 'rentacar/cardetails.html', context)
 
     context = {
         'car': car,
-        'teksti': teksti,
     }
 
     if (car.status != 0):
