@@ -107,8 +107,8 @@ def cars(request):
 @login_required
 def rents(request):
     rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
-    val_rents = rents.filter(expired=0)
-    exp_rents = rents.filter(expired=1)
+    val_rents = rents.filter(expired=0).filter(carNumber__status=1)
+    exp_rents = rents.filter(expired=1).filter(carNumber__status=1)
     val_rents_count = val_rents.count()
 
     carchoice = []
