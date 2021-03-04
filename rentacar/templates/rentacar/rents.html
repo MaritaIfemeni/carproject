@@ -13,11 +13,15 @@
       <div class="col-md-6 themed-grid-col">
         <h5><br>Cars you have rented<br></h5>
         <h6>ONGOING RENTS</h6>
+        {% if cars in val_rents == True ‰}
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
             {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
          {% endfor %}
+         {% else %}
+            <p> Youd don't have ongoing rents atm!</p>
+          {% endif %}
         <h6>PAST RENTS</h6>
         {% for exp_cars in exp_rents %}
           <table>
@@ -33,9 +37,9 @@
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
         <h5><br>Your cars rented out<br></h5>
-        <p>Tähän sinulta vuokratuta autot listana
+        <p>Tähän sinulta vuokratut autot listana
         </p>
-        {% for cars in valid_rents %}
+        {% for val_cars in valid_rents %}
         <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
         <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
           {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
