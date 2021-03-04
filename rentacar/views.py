@@ -188,7 +188,7 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    locationsearch = None
+    searched = None
 
     if request.method == "POST":
         makesearch = request.POST.get('makesearch')
