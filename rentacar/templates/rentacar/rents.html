@@ -16,7 +16,8 @@
             palauttaa laittamalla raksin ruutuun ja lähettämällä?
         </p>
         {% for cars in val_rents %}
-          <p>{{ cars.carNumber.make }} {{ cars.carNumber.model }} {{ cars.carNumber.registerNum }}</p>
+          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
+          <label for="{{cars.carNumber.carNumber }}">{{ cars.carNumber.registerNum }}</label><br>
         {% endfor %}
         <h2>EXPIRED RENTS</h2>
         {% for cars in exp_rents %}
