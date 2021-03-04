@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Rents Out Details{% endblock %}
+{% block title %}Rents Out{% endblock %}
 
 {% block content %}
 
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        <h4>{{ user.first_name }} view your cars rented out!</h4>
+        <h4>{{ user.first_name }} view cars you have rented out!</h4>
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
@@ -26,6 +26,9 @@
 
             <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
                teksti----> Youd don't have ongoing rents atm!</p>
+
+    </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
         <h6>PAST RENTS</h6>
         {% for exp_cars in expired_rentsout %}
           <table>
@@ -38,9 +41,6 @@
             </tr>
           </table>
         {% endfor %}
-    </div>
-    <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h5><br>jottain<br></h5>
     </div>
     </div>
   </div>

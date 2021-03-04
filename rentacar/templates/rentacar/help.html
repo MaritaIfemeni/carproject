@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h5 id="login_h5">Log In</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col" id="firstcolum">
+            <ul>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+                <li><a href="{% url 'signup' %}">Create account</a></li>
+              </ul>
+            </div>>
+      </div>
+      <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <h4>To reset your password contact:</h4>
+        <br><h6><strong>help@rac.com</strong></h6>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
+  </div>
+{% endblock %}

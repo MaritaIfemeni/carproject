@@ -11,15 +11,16 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <p><br>Tähän käyttäjän tiedot ja mahdollisuus muuttaa niitä.</p>
+        <ul>
+          <li><a href="{% url 'rents' %}">View your rents</a></li>
+          <li><a href="{% url 'rentsout' %}">View your cars rented out</a></li>
+          <li><a href="{% url 'cars' %}">View your listed cars</a></li>
+          <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
+          <li><a href="{% url 'carimage' %}">Add a picture for your car</a></li>
+        </ul>  
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-      <ul>
-        <li><a href="{% url 'rents' %}">View your rents</a></li>
-        <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
-        <li><a href="{% url 'carimage' %}">Add a picture for your car</a></li>
-      </ul>  
-      <p>Käyttäjän autoista lista</p>
+      <p><br>Tähän käyttäjän tiedot ja mahdollisuus muuttaa niitä.</p>
     </div>
     </div>
   </div>

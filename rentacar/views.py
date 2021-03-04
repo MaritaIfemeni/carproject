@@ -93,9 +93,16 @@ def carimage(request):
 #        form = CarImageForm()
 #    return render(request, 'rentacar/carimage.html', {'form': form})
 
+def help(request):
+    return render(request, 'rentacar/help.html')
+
 @login_required
 def account(request):
     return render(request, 'rentacar/account.html')
+
+@login_required
+def cars(request):
+    return render(request, 'rentacar/cars.html')
 
 @login_required
 def rents(request):

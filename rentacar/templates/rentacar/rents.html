@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Rent Details{% endblock %}
+{% block title %}Your Rents{% endblock %}
 
 {% block content %}
 
@@ -15,35 +15,29 @@
         <h6>ONGOING RENTS</h6>
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
-            {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
+          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
+            {{ cars.carNumber.registerNum }} * Exp Dat: MITEN SAADAAN?</label><br>
          {% endfor %}
          <p>Return your rents choosing car(s) and pressing return button!</p>
          <form action='.' method="POST">
           <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
          </form>
-
-
             <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
                teksti----> Youd don't have ongoing rents atm!</p>
-        <h6>PAST RENTS</h6>
-        {% for exp_cars in exp_rents %}
-          <table>
-            <tr>
-              <th>{{ exp_cars.carNumber.make }}</th>
-              <th id="rentperiod">Rent period: MITEN?</th>
-            </tr>
-            <tr>
-                <td>Plate Num: {{ cars.carNumber.registerNum }}</td>
-            </tr>
-          </table>
-        {% endfor %}
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h5><br>Your cars rented out<br></h5>
-        <ul>
-            <li><a href="{% url 'rentsout' %}">View your cars rented out</a></li>
-          </ul>  
+      <h6>PAST RENTS</h6>
+      {% for exp_cars in exp_rents %}
+        <table>
+          <tr>
+            <th>{{ exp_cars.carNumber.make }}</th>
+            <th id="rentperiod">Rent period: MITEN?</th>
+          </tr>
+          <tr>
+              <td>Plate Num: {{ cars.carNumber.registerNum }}</td>
+          </tr>
+        </table>
+      {% endfor %}
     </div>
     </div>
   </div>
