@@ -11,26 +11,26 @@
       <div class="row">
         <div class="col-md-6 themed-grid-col">
           <h5><br>All cars listed<br></h5>
-          {% for car in filtered_cars %}
+          {% for car in cars %}
           <table class="listedcars">
             <tr>
-              <th>{{ car }}</th>
+              <th>{{ car.car }}</th>
             </tr>
             <tr>
-                <td>Seats: {{ car.seats }}</td>
-                <td>Emissions: {{ car.emissions }}</td>
+                <td>Seats: {{ car.car.seats }}</td>
+                <td>Emissions: {{ car.car.emissions }}</td>
             </tr>
             <tr>
-                <td>Type: {{ car.powerLine }}</td>
-                <td>Year: {{ car.year }}</td>
+                <td>Type: {{ car.car.powerLine }}</td>
+                <td>Year: {{ car.car.year }}</td>
             </tr>
               <tr>
-                <td>Location: {{ car.location }}</td>
-                <td>Status: {{ car.status }} </td>
+                <td>Location: {{ car.car.location }}</td>
+                <td>Status: {{ car.car.status }} </td>
               </tr>
             <tr>
                 <td>
-                    <form action="{% url 'carrent' pk=car.pk %}">
+                    <form action="{% url 'carrent' pk=car.car.pk %}">
                         <button class="btn btn-outline-success" type="submit">RENT</button>
                     </form>
                 </td>

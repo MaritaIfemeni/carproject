@@ -188,21 +188,22 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    filtered_cars = []
     user_number = request.user.userNumber
-    cars = Car.objects.all()
-    uniq_cars = Owner.objects.order_by().values_list('car_id', flat=True).distinct()
-    filt_uniq_cars = uniq_cars.filter(~Q(user_id=user_number))
-    for i in range(len(filt_uniq_cars)):
-        for j in range(len(cars)):
-            if filt_uniq_cars[i] == cars[j].carNumber:
-                filtered_cars.append(cars[j])
     
-    # cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
+    # filtered_cars = []
+    # cars = Car.objects.all()
+    # uniq_cars = Owner.objects.values_list('car_id', flat=True).distinct()
+    # filt_uniq_cars = uniq_cars.filter(~Q(user_id=user_number))
+    # for i in range(len(filt_uniq_cars)):
+    #     for j in range(len(cars)):
+    #         if filt_uniq_cars[i] == cars[j].carNumber:
+    #             filtered_cars.append(cars[j])
+    
+    cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
     rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
 
     context = {
-        'filtered_cars': filtered_cars,
+        'cars': cars,
         'rented_cars': rented_cars,
     }
 
