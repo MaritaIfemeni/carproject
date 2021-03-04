@@ -109,9 +109,11 @@ def rents(request):
     rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
     val_rents = rents.filter(expired=0)
     exp_rents = rents.filter(expired=1)
+    val_rents_count = val_rents.count()
 
     context = {
         'val_rents': val_rents,
+        'val_rents_count': val_rents_count,
         'exp_rents': exp_rents,
     }
 

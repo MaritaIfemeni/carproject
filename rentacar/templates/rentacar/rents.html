@@ -12,13 +12,15 @@
     <div class="row">
       <div class="col-md-6 themed-grid-col">
         <h6><br>ONGOING RENTS</h6>
-        {% for cars in val_rents %}
-          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
-            {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
-        {% empty %}
-            <p>You don't have any ongoing rents at the moment!</p>
-        {% endfor %}
+        {% if val_rents_count > 0 %}
+          {% for cars in val_rents %}
+            <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
+            <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
+              {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
+          {% endfor %}
+        {% else %}
+          <p>You don't have any ongoing rents at the moment!</p>
+        {% endif %}
         <p>Return your rents choosing car(s) and pressing return button!</p>
         <form action='.' method="POST">
           <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
