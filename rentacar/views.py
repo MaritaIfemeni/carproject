@@ -159,10 +159,13 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=request.user.userNumber))
+    user_number = request.user.userNumber
+    cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
+    rented_cars = Owner.objects.filter(car__status=1).filter(~Q(user_id=user_number))
 
     context = {
         'cars': cars,
+        'rented_cars': rented_cars,
     }
 
     return render(request, 'rentacar/carlist.html', context)
