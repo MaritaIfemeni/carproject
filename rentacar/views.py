@@ -198,26 +198,7 @@ def carlist(request):
         seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
-        scars = f".filter(make={makesearch})"
-        seats = f".filter(seats={seatsearch})"
-        location = f".filter(location={locationsearch})"
-
-        if makesearch != "" and seatsearch != 0 and locationsearch != "":
-            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch).filter(location__icontains=locationsearch)
-        elif makesearch != "" and seatsearch != 0:
-            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch)
-        elif makesearch != "" and locationsearch != "":
-            searched = Car.objects.filter(make__icontains=makesearch).filter(location__icontains=locationsearch)
-        elif seatsearch != 0 and locationsearch != "":
-            searched = Car.objects.filter(seats=seatsearch).filter(location__icontains=locationsearch)
-        elif makesearch != "":
-            searched = Car.objects.filter(make__icontains=makesearch)
-        elif seatsearch != "":
-            searched = Car.objects.filter(seats=seatsearch)
-        elif locationsearch != "":
-            searched = Car.objects.filter(location=locationsearch)
-        else:
-            pass
+        searched = Car.objects.filter(make__icontains=makesearch)
 
     user_number = request.user.userNumber
 
