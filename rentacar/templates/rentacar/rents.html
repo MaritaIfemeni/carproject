@@ -19,8 +19,8 @@
           <p>{{ cars.carNumber.make }} {{ cars.carNumber.model }} {{ cars.carNumber.registerNum }}</p>
         {% endfor %}
         <h2>EXPIRED RENTS</h2>
-        {% for cars in exp_rents %}
-          <p style="color:red;">{{ cars.carNumber.make }} {{ cars.carNumber.model }} {{ cars.carNumber.registerNum }}</p>
+        {% for exp_cars in exp_rents %}
+          <p style="color:red;">{{ exp_cars.carNumber.make }} {{ exp_cars.carNumber.model }} {{ exp_cars.carNumber.registerNum }}</p>
         {% endfor %}
         <ul>
             <li><a href="#">View past rents</a></li>
