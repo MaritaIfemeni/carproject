@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Rents Out Details{% endblock %}
+
+{% block content %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        <h4>{{ user.first_name }} view your cars rented out!</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+        <h5><br>Cars you have rented out<br></h5>
+        <h6>ONGOING RENTS</h6>
+        {% for cars in valid_rentsout %}
+          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
+          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
+            {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
+         {% endfor %}
+         <p>Return your rents choosing car(s) and pressing return button!</p>
+         <form action='.' method="POST">
+          <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
+         </form>
+
+
+            <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
+               teksti----> Youd don't have ongoing rents atm!</p>
+        <h6>PAST RENTS</h6>
+        {% for exp_cars in expired_rentsout %}
+          <table>
+            <tr>
+              <th>{{ exp_cars.carNumber.make }}</th>
+              <th id="rentperiod">Rent period: MITEN?</th>
+            </tr>
+            <tr>
+                <td>Plate Num: {{ exp_cars.carNumber.registerNum }}</td>
+            </tr>
+          </table>
+        {% endfor %}
+    </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <h5><br>Past rent outs<br></h5>
+        <p>Tähän sinulta vuokratut autot listana
+        </p>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
+</div>
+
+
+{% endblock %}
