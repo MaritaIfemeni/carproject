@@ -120,6 +120,10 @@ def rents(request):
             car.status = 2
             car.save()
 
+            rent = Rent.objects.get(carNumber_id=carchoice[i])
+            rent.expired = 1
+            rent.save()
+
     context = {
         'val_rents': val_rents,
         'val_rents_count': val_rents_count,
