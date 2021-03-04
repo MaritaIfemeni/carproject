@@ -115,6 +115,9 @@ def rents(request):
 
     if request.method == 'POST':
         carchoice = request.POST.getlist('carchoice')
+        cars = Car.objects.filter(carNumber=carchoice)
+        cars.status = 2
+        cars.save()
 
     context = {
         'val_rents': val_rents,
@@ -184,7 +187,7 @@ def cardetails(request, pk):
         'car': car,
     }
 
-    if (car.status == 1):
+    if (car.status != 0):
         return redirect('carnotfound')
 
     return render(request, 'rentacar/cardetails.html', context)
