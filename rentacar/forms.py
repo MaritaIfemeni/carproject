@@ -16,6 +16,16 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('username', 'first_name', 'last_name', 'email',
                  'phoneNum', 'address', 'postcode', 'city', 'country')
 
+class CustomCarCreationForm(forms.ModelForm):
+    class Meta:
+        model = Car
+        fields = ('make', 'model')
+
+class CustomCarChangeForm(forms.ModelForm):
+    class Meta:
+        model = Car
+        fields = ('make', 'model')
+
 class CarForm(forms.ModelForm):
     class Meta:
         model = Car
