@@ -16,11 +16,13 @@
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
             {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
-         {% endfor %}
-         <p>Return your rents choosing car(s) and pressing return button!</p>
-         <form action='.' method="POST">
+        {% empty %}
+            <p>You don't have any ongoing rents at the moment!</p>
+        {% endfor %}
+        <p>Return your rents choosing car(s) and pressing return button!</p>
+        <form action='.' method="POST">
           <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
-         </form>
+        </form>
             <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
                teksti----> Youd don't have ongoing rents atm!</p>
     </div>
