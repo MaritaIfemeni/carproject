@@ -116,7 +116,7 @@ def rents(request):
     if request.method == 'POST':
         carchoice = request.POST.getlist('carchoice')
         for i in range(len(carchoice)):
-            car = Car.objects.filter(carNumber=carchoice[i])
+            car = Car.objects.get(carNumber=carchoice[i])
             car.status = 2
             car.save()
 
