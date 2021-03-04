@@ -193,8 +193,8 @@ def carlist(request):
     locationsearch = ""
 
     if request.method == "POST":
-        # makesearch = request.POST.get('makesearch')
-        # seatsearch = request.POST.get('seatsearch')
+        makesearch = request.POST.get('makesearch')
+        seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
     user_number = request.user.userNumber
@@ -215,6 +215,8 @@ def carlist(request):
         'cars': cars,
         'rented_cars': rented_cars,
         'makesearch': makesearch,
+        'seatsearch': seatsearch,
+        'locationsearch': locationsearch,
     }
 
     return render(request, 'rentacar/carlist.html', context)
