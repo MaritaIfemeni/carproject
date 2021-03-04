@@ -114,7 +114,7 @@ def rents(request):
     carchoice = ""
 
     if request.method == 'POST':
-        carchoice = request.POST.getlist('carchoice')
+        carchoice = request.POST.getlist('carchoice').first()
 
     context = {
         'val_rents': val_rents,
