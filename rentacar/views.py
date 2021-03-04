@@ -100,11 +100,9 @@ def account(request):
 @login_required
 def rents(request):
     rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(expired=0)
-    exp_rents = rents = Rent.objects.filter(renterNumber_id=request.user.userNumber).filter(expired=1)
 
     context = {
         'rents': rents,
-        'exp_rents': exp_rents,
     }
 
     return render(request, 'rentacar/rents.html', context)
