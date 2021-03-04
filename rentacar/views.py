@@ -251,6 +251,10 @@ def carnotfound(request):
 @login_required
 def carrent(request, pk):
     car = get_object_or_404(Car, pk=pk)
+
+    if car.status != 0:
+            return redirect('carnotfound')
+
     owners = Owner.objects.filter(car_id=car.carNumber)
     if request.method == "POST":
         rentform = RentForm(request.POST)
@@ -267,9 +271,6 @@ def carrent(request, pk):
             return redirect('rents')
     else:
         rentform = RentForm()
-
-        if car.status != 0:
-            return redirect('carnotfound')
 
         context = {
             'rentform': rentform,
