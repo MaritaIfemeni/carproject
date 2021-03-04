@@ -11,10 +11,13 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col" id="carsearch_firstcolum">
-            <form method="get" action="">
-                Enter register number: <input type="text" name="q" id="id_q" value="{{ query }}"/>
+            <form method="post">{% csrf_token %}
+                Enter register number: <input type="text" name="searchfield"/>
                 <button class="btn btn-outline-success" input type="submit" value="Search">Search</button>
             </form>
+            {% for car in cars %}
+              {{ car }}
+            {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="carsearch_secondcolum">
         <p>You can have co-ownership for a car so that multible users can manage rents if needed.</p>

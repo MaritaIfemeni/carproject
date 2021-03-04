@@ -13,11 +13,15 @@ Done -> Valitset autot, jotka haluat "ottaa vastaan" ja klikkaat "Confirm Return
 Autojen etsintä:
 	dropdown (make, seats, location)
 
+Done -> Voit etsiä kaikilla kolmella vaihtoehdolla ja ne filtteröivät toisiaan
+
 Autojen yhteisomistajuuden lisäys:
 	etsintä rekisterinumerolla!
 
 Autoja, jotka on jo vuokrattu, ei voi vuokrata uudelleen:
 	osoiteriviltä!
+
+Done -> Ohjaa "carnotfound" sivulle, jos yrittää
 
 Autojen kuvien uploadaaminen:
 	paska nakki

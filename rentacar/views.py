@@ -163,7 +163,15 @@ def rentsout(request):
 
 @login_required
 def carsearch(request):
-    return render(request, 'rentacar/carsearch.html')
+    if request.method == "POST":
+        regsearch = request.POST.get('searchfield')
+        cars = Car.objects.filter(registerNum__icontains=regsearch)
+
+    context = {
+        'cars': cars,
+    }
+
+    return render(request, 'rentacar/carsearch.html', context)
 
 @login_required
 def caradd(request):
