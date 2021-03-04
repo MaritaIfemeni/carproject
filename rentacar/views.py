@@ -203,9 +203,11 @@ def carrent(request, pk):
             car.status = 1
             car.save()
 
-            return render(request, 'home.html')
+            return render(request, 'rentacar/rents.html')
     else:
         rentform = RentForm()
+
+        # if car.status
 
         context = {
             'rentform': rentform,
