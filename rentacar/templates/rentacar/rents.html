@@ -15,6 +15,8 @@
         <p>Tähän vuokrattavana olevat autot listana niin, että ne voisi
             palauttaa laittamalla raksin ruutuun ja lähettämällä?
         </p>
+        {% for cars in rents %}
+        {{ cars }}
         <ul>
             <li><a href="#">View past rents</a></li>
           </ul>  
