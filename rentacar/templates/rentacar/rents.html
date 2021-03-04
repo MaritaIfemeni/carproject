@@ -13,7 +13,7 @@
       <div class="col-md-6 themed-grid-col">
         <h5><br>Cars you have rented<br></h5>
         <h6>ONGOING RENTS</h6>
-        {% if cars in rents == val_rents %}
+        {% if cars in val_rents %}
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
           <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
