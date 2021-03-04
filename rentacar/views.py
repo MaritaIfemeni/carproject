@@ -222,9 +222,6 @@ def carlist(request):
     context = {
         'cars': cars,
         'rented_cars': rented_cars,
-        'makesearch': makesearch,
-        'seatsearch': seatsearch,
-        'locationsearch': locationsearch,
         'searched': searched,
     }
 
