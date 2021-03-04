@@ -163,6 +163,7 @@ def rentsout(request):
 
 @login_required
 def carsearch(request):
+    cars = None
     if request.method == "POST":
         regsearch = request.POST.get('searchfield')
         cars = Car.objects.filter(registerNum__icontains=regsearch)
