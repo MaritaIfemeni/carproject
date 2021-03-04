@@ -154,7 +154,7 @@ def rentsout(request):
 
     context = {
         'valid_rentsout': valid_rentsout,
-        'valid_rentsout_count': val_rents_count,
+        'valid_rentsout_count': valid_rentsout_count,
         'returned_rentsout': returned_rentsout,
         'expired_rentsout': expired_rentsout,
     }
