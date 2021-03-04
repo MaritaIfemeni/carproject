@@ -12,12 +12,32 @@
     <div class="row">
       <div class="col-md-6 themed-grid-col">
         <h6><br>Cars</h6>
-        <p>Tähän omat autot listattuna<br>MITEN (en osaa nyyh) + if tähän?</p>
+        {% for car in my_cars %}
+        <table >
+            <tr>
+              <th>{{ car.car }}</th>
+            </tr>
+            <tr>
+                <td>Seats: {{ car.car.seats }}</td>
+                <td>Emissions: {{ car.car.emissions }}</td>
+            </tr>
+            <tr>
+                <td>Type: {{ car.car.powerLine }}</td>
+                <td>Year: {{ car.car.year }}</td>
+            </tr>
+              <tr>
+                <td>Location: {{ car.car.location }}</td>
+                <td>Status: {{ car.car.status }} </td>
+              </tr>
+            <tr>
+         </tr>
+        </table>
+        {% endfor %}       
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
         <ul>
             <li><a href="{% url 'carimage' %}">Add a picture for your car</a></li>
-          </ul>  
+          </ul>   
     </div>
     </div>
   </div>
