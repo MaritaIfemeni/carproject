@@ -15,7 +15,7 @@ class CustomCarAdmin(admin.ModelAdmin)
     add_form = CustomCarCreationForm
     form = CustomCarChangeForm
     model = Car
-    list_display = ("make", "model")
+    list_display = ["make", "model"]
 
 # Register your models here.
 admin.site.register(CustomUser, CustomUserAdmin)
