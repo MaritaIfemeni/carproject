@@ -17,11 +17,12 @@
         </p>
         {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-          <label for="{{cars.carNumber.carNumber }}">{{ cars.carNumber.registerNum }}</label><br>
+          <label for="{{ cars.carNumber.carNumber }}">{{ cars.carNumber.registerNum }}</label><br>
         {% endfor %}
         <h2>EXPIRED RENTS</h2>
-        {% for cars in exp_rents %}
-          <p style="color:red;">{{ cars.carNumber.make }} {{ cars.carNumber.model }} {{ cars.carNumber.registerNum }}</p>
+        {% for exp_cars in exp_rents %}
+          <input type="checkbox" value="{{ exp_cars.carNumber.carNumber }}" name="exp_carchoice">
+          <label style="color:red;" for="{{ exp_cars.carNumber.carNumber }}">{{ exp_cars.carNumber.registerNum }}</label><br>
         {% endfor %}
         <ul>
             <li><a href="#">View past rents</a></li>
