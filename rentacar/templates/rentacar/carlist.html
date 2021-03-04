@@ -14,23 +14,23 @@
           {% for car in filtered_cars %}
           <table class="listedcars">
             <tr>
-              <th>{{ car.car }}</th>
+              <th>{{ car.0.car }}</th>
             </tr>
             <tr>
-                <td>Seats: {{ car.car.seats }}</td>
-                <td>Emissions: {{ car.car.emissions }}</td>
+                <td>Seats: {{ car.0.car.seats }}</td>
+                <td>Emissions: {{ car.0.car.emissions }}</td>
             </tr>
             <tr>
-                <td>Type: {{ car.car.powerLine }}</td>
-                <td>Year: {{ car.car.year }}</td>
+                <td>Type: {{ car.0.car.powerLine }}</td>
+                <td>Year: {{ car.0.car.year }}</td>
             </tr>
               <tr>
-                <td>Location: {{ car.car.location }}</td>
-                <td>Status: {{ car.car.status }} </td>
+                <td>Location: {{ car.0.car.location }}</td>
+                <td>Status: {{ car.0.car.status }} </td>
               </tr>
             <tr>
                 <td>
-                    <form action="{% url 'carrent' pk=car.car.pk %}">
+                    <form action="{% url 'carrent' pk=car.0.car.pk %}">
                         <button class="btn btn-outline-success" type="submit">RENT</button>
                     </form>
                 </td>
