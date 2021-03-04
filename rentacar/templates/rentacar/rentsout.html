@@ -12,20 +12,25 @@
     <div class="row">
       <div class="col-md-6 themed-grid-col">
         <h6><br>ONGOING RENTS</h6>
-        {% for cars in valid_rentsout %}
-          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }}
-            {{ cars.carNumber.registerNum }} Miten lisätään exp date tähä?</label><br>
-         {% endfor %}
-         <p>Return your rents choosing car(s) and pressing return button!</p>
-         <form action='.' method="POST">
+        {% if val_rents_count > 0 %}
+          {% for cars in valid_rentsout %}
+            <p>{{ cars.carNumber.make }} {{ cars.carNumber.registerNum }} {{ cars.endDate }}</p><br>
+          {% endfor %}
+        <p>Return your rents choosing car(s) and pressing return button!</p>
+        {% else %}
+          <p>You don't have any ongoing rents at the moment!</p>
+        {% endif %}
+        <h6>RETURNED CARS, PLEASE CONFIRM</h6>
+        <form method="post">{% csrf_token %}
+        {% for cars in returned_rentsout %}
+          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
+          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
+          {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
+        {% endfor %}
           <button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
-         </form>
-
-
+        </form>
             <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
                teksti----> Youd don't have ongoing rents atm!</p>
-
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
         <h6><br>PAST RENTS</h6>

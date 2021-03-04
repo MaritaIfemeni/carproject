@@ -109,7 +109,7 @@ def cars(request):
 def rents(request):
     rents = Rent.objects.filter(renterNumber_id=request.user.userNumber)
     val_rents = rents.filter(expired=0).filter(carNumber__status=1)
-    exp_rents = rents.filter(expired=1).filter(carNumber__status=1)
+    exp_rents = rents.filter(expired=1)
     val_rents_count = val_rents.count()
 
     carchoice = []
@@ -138,11 +138,24 @@ def rents(request):
 @login_required
 def rentsout(request):
     rentsout = Rent.objects.filter(renteeNumber_id=request.user.userNumber)
-    valid_rentsout = rentsout.filter(expired=0)
+    valid_rentsout = rentsout.filter(expired=0).filter(carNumber__status=1)
+    returned_rentsout = rentsout.filter(carNumber__status=2)
     expired_rentsout = rentsout.filter(expired=1)
+    valid_rentsout_count = valid_rentsout.count()
+
+    returncarchoice = []
+
+    if request.method == 'POST':
+        returncarchoice = request.POST.getlist('returncarchoice')
+        for i in range(len(returncarchoice)):
+            car = Car.objects.get(carNumber=returncarchoice[i])
+            car.status = 0
+            car.save()
 
     context = {
         'valid_rentsout': valid_rentsout,
+        'valid_rentsout_count': val_rents_count,
+        'returned_rentsout': returned_rentsout,
         'expired_rentsout': expired_rentsout,
     }
 
