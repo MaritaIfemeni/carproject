@@ -193,7 +193,7 @@ def carlist(request):
     locationsearch = ""
 
     if request.method == "POST":
-        makesearch = request.POST.get('makesearch')
+        # makesearch = request.POST.get('makesearch')
         seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
