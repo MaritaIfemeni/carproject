@@ -195,14 +195,20 @@ def carlist(request):
         seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
-        if makesearch != '':
+        if makesearch != '' and seatsearch != '' and locationsearch != '':
+            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch).filter(location__icontains=locationsearch)
+        elif makesearch != '' and seatsearch != '':
+            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch)
+        elif makesearch != '' and locationsearch != '':
+            searched = Car.objects.filter(make__icontains=makesearch).filter(location__icontains=locationsearch)
+        elif seatsearch != '' and locationsearch != '':
+            searched = Car.objects.filter(seats=seatsearch).filter(location__icontains=locationsearch)  
+        elif makesearch != '':
             searched = Car.objects.filter(make__icontains=makesearch)
-        if seatsearch != '':
+        elif seatsearch != '':
             searched = Car.objects.filter(seats=seatsearch)
-        if locationsearch != '':
+        elif locationsearch != '':
             searched = Car.objects.filter(location=locationsearch)
-
-    user_number = request.user.userNumber
 
     # filtered_cars = []
     # cars = Car.objects.all()
@@ -213,6 +219,7 @@ def carlist(request):
     #         if filt_uniq_cars[i] == cars[j].carNumber:
     #             filtered_cars.append(cars[j])
     
+    user_number = request.user.userNumber
     cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
     rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
 
