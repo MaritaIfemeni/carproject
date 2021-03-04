@@ -188,17 +188,38 @@ def caradd(request):
 
 @login_required
 def carlist(request):
-    makesearch = str()
-    seatsearch = int()
-    locationsearch = str()
+    makesearch = ""
+    seatsearch = 0
+    locationsearch = ""
 
     if request.method == "POST":
         makesearch = request.POST.get('makesearch')
         seatsearch = request.POST.get('seatsearch')
         locationsearch = request.POST.get('locationsearch')
 
+        scars = f".filter(make={makesearch})"
+        seats = f".filter(seats={seatsearch})"
+        location = f".filter(location={locationsearch})"
+
+        if makesearch != "" and seatsearch != 0 and locationsearch != "":
+            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch).filter(location__icontains=locationsearch)
+        else if makesearch != "" and seatsearch != 0:
+            searched = Car.objects.filter(make__icontains=makesearch).filter(seats=seatsearch)
+        else if makesearch != "" and locationsearch != "":
+            searched = Car.objects.filter(make__icontains=makesearch).filter(location__icontains=locationsearch)
+        else if seatsearch != 0 and locationsearch != "":
+            searched = Car.objects.filter(seats=seatsearch).filter(location__icontains=locationsearch)
+        else if makesearch != "":
+            searched = Car.objects.filter(make__icontains=makesearch)
+        else if seatsearch != "":
+            searched = Car.objects.filter(seats=seatsearch)
+        else if locationsearch != "":
+            searched = Car.objects.filter(location=locationsearch)
+        else:
+            pass
+
     user_number = request.user.userNumber
-    
+
     # filtered_cars = []
     # cars = Car.objects.all()
     # uniq_cars = Owner.objects.values_list('car_id', flat=True).distinct()
@@ -217,6 +238,7 @@ def carlist(request):
         'makesearch': makesearch,
         'seatsearch': seatsearch,
         'locationsearch': locationsearch,
+        'searched': searched,
     }
 
     return render(request, 'rentacar/carlist.html', context)

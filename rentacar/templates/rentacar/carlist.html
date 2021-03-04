@@ -80,7 +80,9 @@
             <input class="form-control me-2" type="search" placeholder="eg. Helsinki" aria-label="Search" name="locationsearch">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
-          {{ makesearch }} {{ seatsearch }} {{ locationsearch }}
+          {% for car in searched %}
+            {{ car }}
+          {% endfor %}
     </div>
   </div>
 
