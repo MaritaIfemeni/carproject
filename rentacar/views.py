@@ -103,7 +103,13 @@ def account(request):
 
 @login_required
 def cars(request):
-    return render(request, 'rentacar/cars.html')
+    my_cars = Owner.objects.filter(user=request.user)
+
+    context = {
+        'my_cars': my_cars,
+    }
+
+    return render(request, 'rentacar/cars.html', context)
 
 @login_required
 def rents(request):
