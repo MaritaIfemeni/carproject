@@ -264,9 +264,6 @@ def cardetails(request, pk):
         'car': car,
     }
 
-    if (car.status != 0):
-        return redirect('carnotfound')
-
     return render(request, 'rentacar/cardetails.html', context)
 
 @login_required
