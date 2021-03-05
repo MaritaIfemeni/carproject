@@ -17,11 +17,11 @@
             {% for cars in val_rents %}
             <table>
               <tr>
-                  <th><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-                  <label for="{{ cars.carNumber.carNumber }}"> 
+                  <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice"></td>
+                  <td><label for="{{ cars.carNumber.carNumber }}"> 
                     {{ cars.carNumber }} <br>
                     Plate Nro: {{ cars.carNumber.registerNum }} <br> 
-                    Due date: {{ cars.endDate }} </label></th>
+                    Due date: {{ cars.endDate }} </label></td>
               </tr>
               </table>
             {% endfor %}
@@ -31,7 +31,7 @@
           {% else %}
             <p>You don't have any ongoing rents at the moment!</p>
           {% endif %}
-          
+
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS</h6>
