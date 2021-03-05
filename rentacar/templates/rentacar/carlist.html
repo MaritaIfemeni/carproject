@@ -59,6 +59,9 @@
             </tr>
               <tr>
                 <td>Location: {{ car.location }}</td>
+                {% if car.status == 1 %}
+                  <td>THIS CAR IS RENTED</td>
+                {% endif %}
               </tr>
             <tr>
               <td>
