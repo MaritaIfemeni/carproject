@@ -33,6 +33,11 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;
 }
 
+#carlist_thirdcolum {
+    color: black;
+    text-align: center;
+}
+
 .themed-grid-col a {
     text-decoration: none;
     font-size: 20px; 

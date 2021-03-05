@@ -73,19 +73,25 @@
       </div>
       </div>
     </div>
-    <div class="col-md-4 themed-grid-col" id="thirdcolum">
+    <div class="col-md-4 themed-grid-col" id="carlist_thirdcolum">
       <h5 id="lookup"><br>Searchs cars<br></h5>
       <table>
         <form class="d-flex" method="post">{% csrf_token %}
             <tr>
               <td><label for="model">Make:<br></label>
-            <input class="form-control me-2" type="search" placeholder="eg. Jeep" aria-label="Search" name="makesearch"></td>
+              <input class="form-control me-2" type="search" placeholder="eg. Jeep" aria-label="Search" name="makesearch"></td>
             </tr>
-            <label for="model">Seats:  </label>
-            <input class="form-control me-2" type="search" placeholder="eg. 4" aria-label="Search" name="seatsearch">
-            <label for="model">Location:  </label>
-            <input class="form-control me-2" type="search" placeholder="eg. Helsinki" aria-label="Search" name="locationsearch">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <tr>
+              <td><label for="model">Seats:<br> </label>
+              <input class="form-control me-2" type="search" placeholder="eg. 4" aria-label="Search" name="seatsearch"></td>
+            </tr>
+            <tr>
+              <td><label for="model">Location:<br></label>
+              <input class="form-control me-2" type="search" placeholder="eg. Helsinki" aria-label="Search" name="locationsearch"></td>
+            </tr>
+            <tr>
+              <td><button class="btn btn-outline-success" type="submit">Search</button></td>
+            </tr>
           </form>
           {% for car in searched %}
         </table>
