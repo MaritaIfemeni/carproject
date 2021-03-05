@@ -13,7 +13,7 @@
       <div class="col-md-6 themed-grid-col">
         <h6><br>Cars</h6>
         {% for car in my_cars %}
-        <table >
+        <table class="rentstables">
             <tr>
               <th>{{ car.car }}</th>
             </tr>
@@ -27,7 +27,6 @@
             </tr>
               <tr>
                 <td>Location: {{ car.car.location }}</td>
-                <td>Status: {{ car.car.status }} </td>
               </tr>
             <tr>
          </tr>
