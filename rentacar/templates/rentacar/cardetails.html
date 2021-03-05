@@ -7,11 +7,11 @@
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
     <div class="pb-3">
-        <h4>See below when this car is available again!</h4>
+        <h4>See below when {{ car.make }} is available again!</h4>
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <h6><br>Cars</h6>
+        <h6><br>Details:</h6>
         <table class="rentstables">
             <tr>
               <th>{{ car.make }} {{ car.model }}</th>
@@ -36,7 +36,9 @@
         </table>   
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <p></p>
+        <ul>  
+            <li><a href="{% url 'carlist' %}">Go back</a></li>
+          </ul>  
     </div>
     </div>
   </div>
