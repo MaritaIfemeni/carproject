@@ -15,18 +15,10 @@
         {% if val_rents_count > 0 %}
         <form method="post">{% csrf_token %}
             {% for cars in val_rents %}
-            <table class="rentstables">
-              <tr>
-                  <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice"></td>
-                  <td><label for="{{ cars.carNumber.carNumber }}"><strong> {{ cars.carNumber.make }} </strong><br>
-                  <td><strong>Due Date:</strong></td> 
-              </tr>
-              <tr> 
-                  <td></td>
-                   <td>{{ cars.carNumber.registerNum }}</td>
-                   <td id="duedate">{{ cars.endDate }} </label></td>
-              </tr>
-              </table>
+            <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
+            <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }} </strong> 
+              <strong>Plate Nro:</strong> {{ cars.carNumber.registerNum }} <br> 
+              <strong>End Date:</strong> {{ cars.endDate }}</label><br>
               <h6><br>Return your rents choosing car(s) and pressing return button!</h6>
               <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
           </form>

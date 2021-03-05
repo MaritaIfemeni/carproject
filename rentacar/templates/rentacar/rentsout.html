@@ -16,7 +16,6 @@
           {% for cars in valid_rentsout %}
             <p>{{ cars.carNumber.make }} {{ cars.carNumber.registerNum }} {{ cars.endDate }}</p><br>
           {% endfor %}
-        <p>Confirm cat return!</p>
         {% else %}
           <p>You don't have any ongoing rents at the moment!</p>
         {% endif %}
@@ -24,8 +23,9 @@
         <form method="post">{% csrf_token %}
         {% for cars in returned_rentsout %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
-          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
-          {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
+          <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }} </strong> 
+            <strong>Plate Nro:</strong> {{ cars.carNumber.registerNum }} <br> 
+            <strong>End Date:</strong> {{ cars.endDate }}</label><br>
         {% endfor %}
           <button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
         </form>
@@ -34,7 +34,7 @@
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS OUT</h6>
       {% if expired_rentsout_count > 0 %}
-       {% for exp_cars in expired_rentsout%}
+       {% for exp_cars in expired_rentsout %}
         <table class="rentstables">
           <tr>
             <td><strong>{{ exp_cars.carNumber.make }} </strong> {{exp_cars.carNumber.registerNum}} </td>
