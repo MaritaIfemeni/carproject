@@ -13,7 +13,7 @@
           <ul id="hiddenmenu">  
             <li><a href="#available">Available Cars</a></li>
             <li><a href="#rented">Currently Rented Cars</a></li>
-            <li><a href="search">Search</a></li>
+            <li><a href="lookup">Search</a></li>
           </ul>  
           <h5 id="available"><br>Available Cars<br></h5>
           {% for car in cars %}
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="col-md-4 themed-grid-col" id="thirdcolum">
-        <p id="search"><br>Search cars!<br></p>
+      <h5 id="lookup"><br>Searchs cars<br></h5>
         <form class="d-flex" method="post">{% csrf_token %}
             <label for="model">Make:  </label>
             <input class="form-control me-2" type="search" placeholder="eg. Jeep" aria-label="Search" name="makesearch">
