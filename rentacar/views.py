@@ -166,7 +166,7 @@ def rentsout(request):
         'valid_rentsout_count': valid_rentsout_count,
         'returned_rentsout': returned_rentsout,
         'expired_rentsout': expired_rentsout,
-        'expired_rentout_count' : expired_rentsout_count,
+        'expired_rentsout_count' : expired_rentsout_count,
     }
 
     return render(request, 'rentacar/rentsout.html', context)
