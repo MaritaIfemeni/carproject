@@ -21,6 +21,8 @@
                   <td><label for="{{ cars.carNumber.carNumber }}"> 
                     {{ cars.carNumber }} <br>
                     Plate Nro: {{ cars.carNumber.registerNum }} <br> </td>
+              </tr>
+              <tr> 
                    <td id="duedate">Due date: {{ cars.endDate }} </label></td>
               </tr>
               </table>
@@ -41,7 +43,9 @@
           <tr>
             <td>{{ exp_cars.carNumber }}<br>
             Plate Nro: {{exp_cars.carNumber.registerNum}} </td>
-            <td id="rentperiod">Rent period: {{ exp_cars.startDate }} <br> 
+          </tr>
+          <tr>
+            <td>Rent period: {{ exp_cars.startDate }} <br> 
             {{ exp_cars.endDate }} </td>
           </tr>
         </table>
