@@ -174,7 +174,7 @@ th {
 .rentstables {
     margin: 5px;
     border: 2px solid rgb(43, 43, 43);
-    border-style: none;
+    border-style: line;
     size: 100%;
 }
 #duedate {
