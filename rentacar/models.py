@@ -35,6 +35,9 @@ class Owner(models.Model):
     car = models.ForeignKey('Car', on_delete=models.CASCADE)
     user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.user} {self.car}"
+
     def assign_owner(self, car, owner):
         self.car = car
         self.user = owner
