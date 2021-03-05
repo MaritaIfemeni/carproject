@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: coral;
 }
 
-#carlist_thirdcolum li:hover{
+#Search_listedcars:hover{
     background-color: rgb(43, 43, 43);
 }
 
