@@ -20,8 +20,8 @@
                   <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice"></td>
                   <td><label for="{{ cars.carNumber.carNumber }}"> 
                     {{ cars.carNumber }} <br>
-                    Plate Nro: {{ cars.carNumber.registerNum }} <br> 
-                    Due date: {{ cars.endDate }} </label></td>
+                    Plate Nro: {{ cars.carNumber.registerNum }} <br> </td>
+                   <td id="duedate">Due date: {{ cars.endDate }} </label></td>
               </tr>
               </table>
               <h5>Return your rents choosing car(s) and pressing return button!</h5>
@@ -31,19 +31,18 @@
           {% else %}
             <p>You don't have any ongoing rents at the moment!</p>
           {% endif %}
-ß
+
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS</h6>
-      {% if val_rents_count > 0 %}
+      {% if exp_rents_count > 0 %}
       {% for exp_cars in exp_rents %}
         <table>
           <tr>
-            <th>{{ exp_cars.carNumber.make }}</th>
-            <th id="rentperiod">Rent period: {{ exp_cars.endDate }}</th>
-          </tr>
-          <tr>
-              <td>Plate Num: {{ exp_cars.carNumber.registerNum }}</td>
+            <td>{{ exp_cars.carNumber }}<br>
+            Plate Nro: {{exp_cars.carNumber.registerNum}} </td>
+            <td id="rentperiod">Rent period: {{ exp_cars.startDate }} <br> 
+            {{ exp_cars.endDate }} </td>
           </tr>
         </table>
       {% endfor %}
