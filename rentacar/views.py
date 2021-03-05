@@ -244,7 +244,7 @@ def carlist(request):
     # rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
 
     cars = Car.objects.filter(status=0)
-    rented_cars = Car.objects.filter(~Q(status=0))
+    rented_cars = Rent.objects.filter(~Q(carNumber__status=0))
 
     context = {
         'cars': cars,

@@ -47,25 +47,23 @@
         {% for car in rented_cars %}
           <table class="notavailable">
             <tr>
-              <th>{{ car }}</th>
+              <th>{{ car.carNumber }}</th>
             </tr>
             <tr>
-              <td>Seats: {{ car.seats }}</td>
-              <td>Emissions: {{ car.emissions }}</td>
+              <td>Seats: {{ car.carNumber.seats }}</td>
+              <td>Emissions: {{ car.carNumber.emissions }}</td>
             </tr>
             <tr>
-              <td>Type: {{ car.powerLine }}</td>
-              <td>Year: {{ car.year }}</td>
+              <td>Type: {{ car.carNumber.powerLine }}</td>
+              <td>Year: {{ car.carNumber.year }}</td>
             </tr>
               <tr>
-                <td>Location: {{ car.location }}</td>
-                {% if car.status == 1 %}
-                  <td>THIS CAR IS RENTED</td>
-                {% endif %}
+                <td>Location: {{ car.carNumber.location }}</td>
+                <td>Rented till: {{ car.carNumber.endDate }}
               </tr>
             <tr>
               <td>
-                <form action="{% url 'cardetails' pk=car.pk %}">
+                <form action="{% url 'cardetails' pk=car.carNumber.pk %}">
                   <button class="btn btn-outline-success" type="submit">Details</button>
                 </form>
               </td>
