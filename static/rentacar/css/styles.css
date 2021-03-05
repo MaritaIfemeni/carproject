@@ -175,7 +175,7 @@ th {
     margin: 5px;
     border: 2px solid rgb(43, 43, 43);
     border-style: line;
-    size: 100%;
+    width: 100%;
 }
 #duedate {
     color: red;
