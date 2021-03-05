@@ -43,6 +43,11 @@ class Owner(models.Model):
         self.user = owner
         self.save()
 
+    def assign_new_owner(self, car, new_owner):
+        self.car = car
+        self.user = new_owner
+        self.save()
+
 class Car(models.Model):
     carNumber = models.AutoField(primary_key=True)
     make = models.CharField(max_length=50)
@@ -54,6 +59,7 @@ class Car(models.Model):
     seats = models.PositiveSmallIntegerField()
     location = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField(default=0)
+    pending = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.make} {self.model}"

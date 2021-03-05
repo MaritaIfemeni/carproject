@@ -15,9 +15,13 @@
                 Enter register number: <input type="text" name="searchfield"/>
                 <button class="btn btn-outline-success" input type="submit" value="Search">Search</button>
             </form>
-            {% for car in cars %}
-              {{ car }}
-            {% endfor %}
+            <p>Request co-ownership of the car:
+            <form method="post">{% csrf_token %}
+              {% for car in cars %}
+                {{ car }}
+                <button class="btn btn-outline-success" input type="submit" value="Request">Request</button>
+              {% endfor %}
+            </form>
       </div>
       <div class="col-md-6 themed-grid-col" id="carsearch_secondcolum">
         <p>You can have co-ownership for a car so that multible users can manage rents if needed.</p>
