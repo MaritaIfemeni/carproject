@@ -34,8 +34,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #carlist_thirdcolum {
+    padding-top: 50px;
     color: black;
     text-align: center;
+    background-color: coral;
 }
 
 .themed-grid-col a {
@@ -160,7 +162,9 @@ th {
     font-size: 10px;
     padding-top: 5px;
     }
-
+    #carlist_thirdcolum {
+        padding-top: 5px;
+    }
     #hiddenmenu {
         display: list-item;    
     }
