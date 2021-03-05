@@ -12,18 +12,18 @@
     <div class="row">
       <div class="col-md-6 themed-grid-col">
         <h6><br>ONGOING RENTS</h6>
+        {% if val_rents_count > 0 %}
         <form method="post">{% csrf_token %}
-          {% if val_rents_count > 0 %}
             {% for cars in val_rents %}
-            <table>
+            <table class="rentstables">
               <tr>
                   <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice"></td>
-                  <td><label for="{{ cars.carNumber.carNumber }}"> 
-                    {{ cars.carNumber }} <br>
-                    Plate Nro: {{ cars.carNumber.registerNum }} <br> </td>
+                  <td><label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} <br>
+                  <td>Due Date:</td> 
               </tr>
               <tr> 
-                   <td id="duedate">Due date: {{ cars.endDate }} </label></td>
+                <td>Plate Nro: {{ cars.carNumber.registerNum }}</td>
+                   <td id="duedate">{{ cars.endDate }} </label></td>
               </tr>
               </table>
               <h5>Return your rents choosing car(s) and pressing return button!</h5>
@@ -39,14 +39,15 @@
       <h6><br>PAST RENTS</h6>
       {% if exp_rents_count > 0 %}
       {% for exp_cars in exp_rents %}
-        <table>
+        <table class="rentstables">
           <tr>
-            <td>{{ exp_cars.carNumber }}<br>
-            Plate Nro: {{exp_cars.carNumber.registerNum}} </td>
+            <td>{{ exp_cars.carNumber.make }}</td>
+            <td>Plate Nro: {{exp_cars.carNumber.registerNum}} </td>
           </tr>
           <tr>
-            <td>Rent period: {{ exp_cars.startDate }} <br> 
-            {{ exp_cars.endDate }} </td>
+            <td>Rent period: <br> 
+            From: {{ exp_cars.startDate }} <br> 
+            To: {{ exp_cars.endDate }} </td>
           </tr>
         </table>
       {% endfor %}
