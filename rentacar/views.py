@@ -192,7 +192,7 @@ def caradd(request):
             owner.assign_owner(car, request.user)
             
             return redirect('cars')
-            #return render(request, 'home.html')
+            
     else:
         carform = CarForm()
 

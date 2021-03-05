@@ -15,21 +15,27 @@
         <form method="post">{% csrf_token %}
           {% if val_rents_count > 0 %}
             {% for cars in val_rents %}
-              <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-              <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
-                {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
+            <table>
+              <tr>
+                  <th><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
+                  <label for="{{ cars.carNumber.carNumber }}"> 
+                    {{ cars.carNumber }} <br>
+                    Plate Nro: {{ cars.carNumber.registerNum }} <br> 
+                    Due date: {{ cars.endDate }} </label></th>
+              </tr>
+              </table>
             {% endfor %}
-            <p>Return your rents choosing car(s) and pressing return button!</p>
+            <h5>Return your rents choosing car(s) and pressing return button!</h5>
+            <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
+        </form>
           {% else %}
             <p>You don't have any ongoing rents at the moment!</p>
           {% endif %}
-          <button class="btn btn-outline-success" type="submit" value="Save">Return</button>
-        </form>
-            <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
-               teksti----> Youd don't have ongoing rents atm!</p>
+          
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS</h6>
+      {% if val_rents_count > 0 %}
       {% for exp_cars in exp_rents %}
         <table>
           <tr>
@@ -41,6 +47,9 @@
           </tr>
         </table>
       {% endfor %}
+      {% else %}
+      <p>You don't have any past rents!</p>
+      {% endif %}
     </div>
     </div>
   </div>
