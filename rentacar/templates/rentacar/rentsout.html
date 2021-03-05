@@ -11,7 +11,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <h6><br>ONGOING RENTS</h6>
+        <h6><br>ONGOING RENTS OUT</h6>
         {% if valid_rentsout_count > 0 %}
           {% for cars in valid_rentsout %}
             <p>{{ cars.carNumber.make }} {{ cars.carNumber.registerNum }} {{ cars.endDate }}</p><br>
