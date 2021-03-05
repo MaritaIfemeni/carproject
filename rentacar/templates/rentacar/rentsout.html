@@ -11,46 +11,66 @@
     </div>
     <div class="row">
       <div class="col-md-6 themed-grid-col">
-        <h6><br>ONGOING RENTS</h6>
+        <h6><br>ONGOING RENTS OUT</h6>        
         {% if valid_rentsout_count > 0 %}
           {% for cars in valid_rentsout %}
-            <p>{{ cars.carNumber.make }} {{ cars.carNumber.registerNum }} {{ cars.endDate }}</p><br>
-          {% endfor %}
-        <p>Return your rents choosing car(s) and pressing return button!</p>
-        {% else %}
-          <p>You don't have any ongoing rents at the moment!</p>
-        {% endif %}
-        <h6>RETURNED CARS, PLEASE CONFIRM</h6>
-        <form method="post">{% csrf_token %}
-        {% for cars in returned_rentsout %}
-          <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
-          <label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} *
-          {{ cars.carNumber.registerNum }} * {{ cars.endDate }}</label><br>
-        {% endfor %}
-          <button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
-        </form>
-            <p><br>MITEN (en osaa nyyh) if lause, että tähän saadaan silloin kun ei ole vuokrauksia
-               teksti----> Youd don't have ongoing rents atm!</p>
+          <table class="rentstables">
+            <tr>
+                <td><label for="{{ cars.carNumber.carNumber }}"><strong> {{ cars.carNumber.make }} </strong><br>
+                <td><strong>Due Date:</strong></td> 
+            </tr>
+            <tr> 
+                 <td>{{ cars.carNumber.registerNum }}</td>
+                 <td id="duedate">{{ cars.endDate }} </label></td>
+            </tr>
+            </table>
+
+          <form method="post">{% csrf_token %}
+            {% for cars in returned_rentsout %}
+            <table class="rentstables">
+              <h6>Please Confirm Returned Cars!</h6>
+              <tr>
+                  <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice"></td>
+                  <td><label for="{{ cars.carNumber.carNumber }}"><strong> {{ cars.carNumber.make }} </strong><br>
+                  <td><strong>Due Date:</strong></td> 
+              </tr>
+              <tr> 
+                  <td></td>
+                   <td>{{ cars.carNumber.registerNum }}</td>
+                   <td id="duedate">{{ cars.endDate }} </label></td>
+              </tr>
+              </table>
+              <h6><br>Return your rents choosing car(s) and pressing return button!</h6>
+              <button class="btn btn-outline-success" type="submit" value="Save">Confirm</button>
+          </form>
+            {% endfor %}
+          {% else %}
+            <p>You don't have any ongoing rents out at the moment!</p>
+          {% endif %}
+
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h6><br>PAST RENTS</h6>
-        {% for exp_cars in expired_rentsout %}
-          <table>
-            <tr>
-              <th>{{ exp_cars.carNumber.make }}</th>
-              <th id="rentperiod">Rent period: MITEN?</th>
-            </tr>
-            <tr>
-                <td>Plate Num: {{ exp_cars.carNumber.registerNum }}</td>
-            </tr>
-          </table>
-        {% endfor %}
+      <h6><br>PAST RENTS OUT</h6>
+      {% if expired_rentsout_count > 0 %}
+      {% for exp_cars in exp_rentsout %}
+        <table class="rentstables">
+          <tr>
+            <td><strong>{{ exp_cars.carNumber.make }} </strong> {{exp_cars.carNumber.registerNum}} </td>
+          </tr>
+          <tr>
+            <td><strong>Rent period:</strong>  <br> 
+            <strong>From:</strong> {{ exp_cars.startDate }} <br> 
+            <strong>To </strong> {{ exp_cars.endDate }} </td>
+          </tr>
+        </table>
+      {% endfor %}
+      {% else %}
+      <p>You don't have any past rents out!</p>
+      {% endif %}
     </div>
     </div>
   </div>
   <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
   </div>
 </div>
-
-
 {% endblock %}
