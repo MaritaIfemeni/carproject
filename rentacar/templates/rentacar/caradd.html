@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
-
+{% block title %}Add Car% endblock %}
 {% block content %}
-<h2>New Car</h2>
-    <form method="POST" id="carform">{% csrf_token %}
-        <div class="form">
-            {{ carform.as_p }}
-        </div>
-        <button type="submit" class="savebutton">save</button>
-    </form>
+
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+          <h5>Add a car you want to rent out!</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col">
+            <h5>New Car</h5>
+            <form method="POST" id="carform">{% csrf_token %}
+                <div class="form">
+                    {{ carform.as_p }}
+                </div>
+                <button class="btn btn-outline-success" type="submit">Save</button>
+            </form>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+    </div>
+  </div>
 {% endblock %}

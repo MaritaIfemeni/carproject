@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %}Rent Car{% endblock %}
 {% block content %}
 
 
@@ -95,7 +95,7 @@
           </form>
           {% for car in searched %}
         </table>
-            <table class="Search_listedcars">
+            <table class="search_listedcars">
               <tr>
                 <th>{{ car }}</th>
               </tr>
