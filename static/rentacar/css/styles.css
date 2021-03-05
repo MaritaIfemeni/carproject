@@ -157,5 +157,6 @@ th {
     }
 
     #hiddenmenu {
-        display: flex;    }
+        display: list-item;    
+    }
 }
