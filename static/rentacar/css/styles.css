@@ -68,8 +68,18 @@ h1, h2, h3, h4, h5, h6 {
     background-color: coral;
 }
 
-#Search_listedcars:hover{
+.search_listedcars {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
     background-color: rgb(43, 43, 43);
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.search_listedcars:hover{
+    background-color:  rgb(163, 163, 163);
 }
 
 #forgotten{
