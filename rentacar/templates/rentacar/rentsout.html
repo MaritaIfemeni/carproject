@@ -32,14 +32,13 @@
         <form method="post">{% csrf_token %}
         {% for cars in returned_rentsout %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
-          <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }} </strong> 
+          <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }}<br></strong> 
             <strong>Plate Nro:</strong> {{ cars.carNumber.registerNum }} <br> 
-            <strong>End Date:</strong> {{ cars.endDate }}</label><br>
+            <strong>End Date:</strong> {{ cars.endDate }}<br></label>
         {% endfor %}
           <button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
         </form>
     </div>
-
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS OUT</h6>
       {% if expired_rentsout_count > 0 %}

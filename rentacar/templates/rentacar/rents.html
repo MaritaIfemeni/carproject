@@ -16,7 +16,7 @@
         <form method="post">{% csrf_token %}
           {% for cars in val_rents %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice">
-          <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }} </strong> 
+          <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }}<br></strong> 
             <strong>Plate Nro:</strong> {{ cars.carNumber.registerNum }} <br> 
             <strong>End Date:</strong> {{ cars.endDate }}</label><br>
         {% endfor %}
@@ -25,8 +25,6 @@
         {% else %}
         <p>You don't have any ongoing rents at the moment!</p>
         {% endif %}
-    </div>
-    </div>
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
       <h6><br>PAST RENTS</h6>
@@ -39,7 +37,7 @@
           <tr>
             <td><strong>Rent period:</strong>  <br> 
             <strong>From:</strong> {{ exp_cars.startDate }} <br> 
-            <strong>To </strong> {{ exp_cars.endDate }} </td>
+            <strong>To:</strong> {{ exp_cars.endDate }} </td>
           </tr>
         </table>
       {% endfor %}
