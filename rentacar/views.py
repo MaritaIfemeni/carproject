@@ -117,6 +117,7 @@ def rents(request):
     val_rents = rents.filter(expired=0).filter(carNumber__status=1)
     exp_rents = rents.filter(expired=1)
     val_rents_count = val_rents.count()
+    exp_rents_count = exp_rents.count()
 
     carchoice = []
 
@@ -136,6 +137,7 @@ def rents(request):
         'val_rents': val_rents,
         'val_rents_count': val_rents_count,
         'exp_rents': exp_rents,
+        'exp_rents_count':exp_rents_count,
         'carchoice': carchoice,
     }
 
@@ -192,7 +194,7 @@ def caradd(request):
             owner.assign_owner(car, request.user)
             
             return redirect('cars')
-            
+
     else:
         carform = CarForm()
 
