@@ -18,8 +18,8 @@
             <table class="rentstables">
               <tr>
                   <td><input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="carchoice"></td>
-                  <td><label for="{{ cars.carNumber.carNumber }}"> {{ cars.carNumber.make }} <br>
-                  <td>Due Date:</td> 
+                  <td><label for="{{ cars.carNumber.carNumber }}"><strong> {{ cars.carNumber.make }} <br>
+                  <td>Due Date:</strong></td> 
               </tr>
               <tr> 
                   <td></td>
@@ -42,12 +42,12 @@
       {% for exp_cars in exp_rents %}
         <table class="rentstables">
           <tr>
-            <td>{{ exp_cars.carNumber.make }}, {{exp_cars.carNumber.registerNum}} </td>
+            <td><strong>{{ exp_cars.carNumber.make }} </strong> {{exp_cars.carNumber.registerNum}} </td>
           </tr>
           <tr>
-            <td>Rent period: <br> 
-            From: {{ exp_cars.startDate }} <br> 
-            To: {{ exp_cars.endDate }} </td>
+            <td><strong>period:</strong>  <br> 
+            <strong>From:</strong> {{ exp_cars.startDate }} <br> 
+            <strong>To </strong> {{ exp_cars.endDate }} </td>
           </tr>
         </table>
       {% endfor %}

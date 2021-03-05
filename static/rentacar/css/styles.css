@@ -172,8 +172,10 @@ th {
 }
 
 .rentstables {
-    border: 1px solid rgb(43, 43, 43);
-    border-style: dotted;
+    margin: 5px;
+    border: 2px solid rgb(43, 43, 43);
+    border-style: none;
+    size: 100%;
 }
 #duedate {
     color: red;
