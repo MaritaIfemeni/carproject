@@ -239,9 +239,12 @@ def carlist(request):
     #         if filt_uniq_cars[i] == cars[j].carNumber:
     #             filtered_cars.append(cars[j])
     
-    user_number = request.user.userNumber
-    cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
-    rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
+    # user_number = request.user.userNumber
+    # cars = Owner.objects.filter(car__status=0).filter(~Q(user_id=user_number))
+    # rented_cars = Rent.objects.filter(carNumber__status=1).filter(~Q(renterNumber_id=user_number))
+
+    cars = Cars.objects.filter(status=0)
+    rented_cars = Cars.objects.filter(~Q(status=0))
 
     context = {
         'cars': cars,
