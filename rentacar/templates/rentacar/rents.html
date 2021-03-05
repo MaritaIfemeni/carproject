@@ -23,7 +23,7 @@
               </tr>
               <tr> 
                   <td></td>
-                   <td>Plate Nro: {{ cars.carNumber.registerNum }}</td>
+                   <td>{{ cars.carNumber.registerNum }}</td>
                    <td id="duedate">{{ cars.endDate }} </label></td>
               </tr>
               </table>
@@ -42,8 +42,7 @@
       {% for exp_cars in exp_rents %}
         <table class="rentstables">
           <tr>
-            <td>{{ exp_cars.carNumber.make }}</td>
-            <td>Plate Nro: {{exp_cars.carNumber.registerNum}} </td>
+            <td>{{ exp_cars.carNumber.make }}, {{exp_cars.carNumber.registerNum}} </td>
           </tr>
           <tr>
             <td>Rent period: <br> 
