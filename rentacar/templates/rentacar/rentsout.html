@@ -29,14 +29,15 @@
           <p>You don't have any ongoing rents at the moment!</p>
         {% endif %}
         <h6><br>RETURNED CARS, PLEASE CONFIRM</h6>
+        <p>Confirm car return selecting car(s) and pressing confirm button!</p>
         <form method="post">{% csrf_token %}
         {% for cars in returned_rentsout %}
           <input type="checkbox" value="{{ cars.carNumber.carNumber }}" name="returncarchoice">
           <label for="{{ cars.carNumber.carNumber }}"><br><strong> {{ cars.carNumber.make }}<br></strong> 
             <strong>Plate Nro:</strong> {{ cars.carNumber.registerNum }} <br> 
-            <strong>End Date:</strong> {{ cars.endDate }}<br></label>
+            <strong>End Date:</strong> {{ cars.endDate }}</label><br>
         {% endfor %}
-          <button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
+         <br><button class="btn btn-outline-success" type="submit" value="Save">Confirm Return</button>
         </form>
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
