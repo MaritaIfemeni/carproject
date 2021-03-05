@@ -24,7 +24,10 @@
                  <td id="duedate">{{ cars.endDate }} </label></td>
             </tr>
             </table>
-
+          {% else %}
+            <p>You don't have any ongoing rents out at the moment!</p>
+          {% endif %}
+          
           <form method="post">{% csrf_token %}
             {% for cars in returned_rentsout %}
             <table class="rentstables">
@@ -44,9 +47,6 @@
               <button class="btn btn-outline-success" type="submit" value="Save">Confirm</button>
           </form>
             {% endfor %}
-          {% else %}
-            <p>You don't have any ongoing rents out at the moment!</p>
-          {% endif %}
 
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
