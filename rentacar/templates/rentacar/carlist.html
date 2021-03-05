@@ -19,22 +19,22 @@
           {% for car in cars %}
           <table class="listedcars">
             <tr>
-              <th>{{ car.car }}</th>
+              <th>{{ car }}</th>
             </tr>
             <tr>
-                <td>Seats: {{ car.car.seats }}</td>
-                <td>Emissions: {{ car.car.emissions }}</td>
+                <td>Seats: {{ car.seats }}</td>
+                <td>Emissions: {{ car.emissions }}</td>
             </tr>
             <tr>
-                <td>Type: {{ car.car.powerLine }}</td>
-                <td>Year: {{ car.car.year }}</td>
+                <td>Type: {{ car.powerLine }}</td>
+                <td>Year: {{ car.year }}</td>
             </tr>
               <tr>
-                <td>Location: {{ car.car.location }}</td>
+                <td>Location: {{ car.location }}</td>
               </tr>
             <tr>
                 <td>
-                    <form action="{% url 'carrent' pk=car.car.pk %}">
+                    <form action="{% url 'carrent' pk=car.pk %}">
                         <button class="btn btn-outline-success" type="submit">RENT</button>
                     </form>
                 </td>
@@ -50,20 +50,19 @@
               <th>{{ car.carNumber }}</th>
             </tr>
             <tr>
-              <td>Seats: {{ car.carNumber.seats }}</td>
-              <td>Emissions: {{ car.carNumber.emissions }}</td>
+              <td>Seats: {{ car.seats }}</td>
+              <td>Emissions: {{ car.emissions }}</td>
             </tr>
             <tr>
-              <td>Type: {{ car.carNumber.powerLine }}</td>
-              <td>Year: {{ car.carNumber.year }}</td>
+              <td>Type: {{ car.powerLine }}</td>
+              <td>Year: {{ car.year }}</td>
             </tr>
               <tr>
-                <td>Location: {{ car.carNumber.location }}</td>
-                <td>Available from: {{ car.endDate }} </td>
+                <td>Location: {{ car.location }}</td>
               </tr>
             <tr>
               <td>
-                <form action="{% url 'cardetails' pk=car.carNumber.pk %}">
+                <form action="{% url 'cardetails' pk=car.pk %}">
                   <button class="btn btn-outline-success" type="submit">Details</button>
                 </form>
               </td>
