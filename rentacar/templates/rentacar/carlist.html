@@ -10,7 +10,12 @@
       </div>
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-          <h5><br>Available Cars<br></h5>
+          <ul id="hiddenmenu">  
+            <li><a href="#available">Available Cars</a></li>
+            <li><a href="#rented">Currently Rented Cars</a></li>
+            <li><a href="search">Search</a></li>
+          </ul>  
+          <h5 id="available"><br>Available Cars<br></h5>
           {% for car in cars %}
           <table class="listedcars">
             <tr>
@@ -38,7 +43,7 @@
           {% endfor %}
       </div>
       <div class="col-md-6 themed-grid-col" id="secondcolum">
-        <h5><br>Currently Rented Cars<br></h5>
+        <h5 id="rented"><br>Currently Rented Cars<br></h5>
         {% for car in rented_cars %}
           <table class="notavailable">
             <tr>
@@ -69,7 +74,7 @@
       </div>
     </div>
     <div class="col-md-4 themed-grid-col" id="thirdcolum">
-        <p><br>Search cars!<br></p>
+        <p id="search"><br>Search cars!<br></p>
         <form class="d-flex" method="post">{% csrf_token %}
             <label for="model">Make:  </label>
             <input class="form-control me-2" type="search" placeholder="eg. Jeep" aria-label="Search" name="makesearch">

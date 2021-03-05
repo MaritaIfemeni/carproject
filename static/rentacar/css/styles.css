@@ -146,9 +146,16 @@ th {
     color: burlywood;
 }
 
+#hiddenmenu {
+    display: none;
+}
+
 @media screen and (max-width: 700px) {
 .text-muted {
     font-size: 10px;
     padding-top: 5px;
     }
+
+    #hiddenmenu {
+        display: flex;    }
 }
