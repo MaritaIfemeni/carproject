@@ -1,12 +1,47 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <p>{{ car.make }} {{ car.model }}</p>
-    <p>{{ car.registerNum }}</p>
+{% block title %}Car Details{% endblock %}
 
-    <form method="POST">{% csrf_token %}
-        {{ teksti }}
-        <button class="btn btn-outline-success" type="submit" value="Save">HELP</button>
-    </form>
+{% block content %}
+
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col">
+    <div class="pb-3">
+        <h4>See below when this car is available again!</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6 themed-grid-col">
+        <h6><br>Cars</h6>
+        <table class="rentstables">
+            <tr>
+              <th>{{ car.make }} {{ car.model }}</th>
+              <th></th>
+            </tr>
+            <tr>
+                <td>Seats: {{ car.seats }}</td>
+                <td>Emissions: {{ car.car.emissions }}</td>
+            </tr>
+            <tr>
+                <td>Type: {{ car.powerLine }}</td>
+                <td>Year: {{ car.year }}</td>
+            </tr>
+            <tr>
+                <td>Plate Nro: {{ car.registerNum }}</td>
+                <td>Location: {{ car.location }}</td>
+            </tr>
+            <tr>
+                <td>Status {{ car.status }}</td>
+                <td></td>
+            </tr>
+        </table>   
+    </div>
+    <div class="col-md-6 themed-grid-col" id="secondcolum">
+        <p></p>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4 themed-grid-col" id="thirdcolum">Rent<br>-<br>A<br>-<br>Car<br>-<br>Enterprices<br>-<br>2021
+  </div>
+</div>
 
 {% endblock %}
