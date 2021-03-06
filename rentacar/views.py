@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.utils import timezone
 
 from .forms import CustomUserCreationForm, CarForm, CarImageForm, RentForm
-from .models import CustomUser, Car, Rent, Owner
+from .models import CustomUser, Car, Rent, Owner, AddOwner
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
