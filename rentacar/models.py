@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models.fields import DateTimeField
 from django.utils import timezone
+from datetime import timedelta
 
 class CarImage(models.Model):
     image = models.ImageField(upload_to='images')
@@ -79,7 +80,7 @@ class Rent(models.Model):
     renteeNumber = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="rentee")
     rentPrice = models.PositiveSmallIntegerField(default=100)
     startDate = models.DateTimeField(null=True, default=timezone.now())
-    endDate = models.DateTimeField(null=True, default=timezone.now())
+    endDate = models.DateTimeField(null=True, default=timezone.now() + timedelta(1))
     expired = models.BooleanField(default=False)
 
     def __str__(self):
