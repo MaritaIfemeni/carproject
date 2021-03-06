@@ -32,7 +32,7 @@ class RentAdmin(admin.ModelAdmin):
         {'fields': ['rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate', 'endDate', 'expired']}),
     ]
 
-    readonly_fields = ('rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate',)
+    readonly_fields = ('rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate')
     list_display = ('rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate', 'endDate', 'expired')
     list_filter = ('renterNumber', 'renteeNumber')
 
