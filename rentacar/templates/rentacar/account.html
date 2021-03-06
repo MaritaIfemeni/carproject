@@ -18,7 +18,7 @@
           <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
           {% if pending_cars_count > 0 %}
             {% for car in pending_cars %}
-              <li><a href="{% url 'coownership' pk=pending_cars.car.pk %}">Accept co-ownership</a></li>
+              <li><a href="{% url 'coownership' pk=car.car.pk %}">Accept co-ownership</a></li>
             {% endfor %}
           {% endif %}
         </ul>  
