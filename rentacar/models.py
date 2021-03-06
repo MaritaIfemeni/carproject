@@ -33,7 +33,7 @@ class CarOwner(models.Model):
 """
 class Owner(models.Model):
     car = models.ForeignKey('Car', on_delete=models.CASCADE)
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="user")
 
     def __str__(self):
         return f"{self.user} {self.car}"
