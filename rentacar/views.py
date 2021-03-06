@@ -51,7 +51,7 @@ def carimage(request):
     user = request.user
     owner = Owner.objects.filter(user_id=user.userNumber)
     if request.method == 'POST':
-        imageform = CarImageForm(request.POST, request.FILES, initial={'car': selected_car})
+        imageform = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
             imageform.save(commit=False)
             selected_car = request.POST.get('idsel_car')
