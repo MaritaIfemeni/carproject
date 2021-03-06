@@ -173,13 +173,27 @@ def rentsout(request):
 
 @login_required
 def carsearch(request):
+    text = None
     cars = None
-    if request.method == "POST":
-        regsearch = request.POST.get('searchfield')
-        cars = Car.objects.filter(registerNum__icontains=regsearch)
+        if 'search' in request.POST:
+            regsearch = request.POST.get('searchfield')
+            cars = Car.objects.filter(registerNum__icontains=regsearch)
 
+        if 'request' in request.POST:
+            selected_car = request.POST.get('sel_car')
+            sel_car = Car.objects.get(carNumber=selected_car)
+            owner = Owner.objects.filter(car__carNumber=sel_car.carNumber).first()
+
+            new_owner = Owner()
+            new_owner.assign_new_owner(sel_car, owner, request.user)
+
+            sel_car.pending = True
+
+            text = "Your request is now pending..."
+            
     context = {
         'cars': cars,
+        'text': text,
     }
 
     return render(request, 'rentacar/carsearch.html', context)

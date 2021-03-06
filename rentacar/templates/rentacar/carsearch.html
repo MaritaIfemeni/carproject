@@ -13,14 +13,20 @@
         <div class="col-md-6 themed-grid-col" id="carsearch_firstcolum">
             <form method="post">{% csrf_token %}
                 Enter register number: <input type="text" name="searchfield"/>
-                <button class="btn btn-outline-success" input type="submit" value="Search">Search</button>
+                <button class="btn btn-outline-success" input type="submit" value="Search" name="search">Search</button>
             </form>
             <p>Request co-ownership of the car:
             <form method="post">{% csrf_token %}
+            {% if text == None %}
               {% for car in cars %}
-                {{ car }}
-                <button class="btn btn-outline-success" input type="submit" value="Request">Request</button>
+                <input type="checkbox" value="{{ car.carNumber }}" name="sel_car">
+                <label for="{{ car.carNumber }}"><br><strong> {{ car.make }}{{ car.model }} <br></strong> 
+                <strong>Plate Nro:</strong> {{ car.registerNum }} </label><br>
+                <button class="btn btn-outline-success" input type="submit" value="Request" name="request">Request</button>
               {% endfor %}
+            {% else %}
+              {{ text }}
+            {% endif %}
             </form>
       </div>
       <div class="col-md-6 themed-grid-col" id="carsearch_secondcolum">
