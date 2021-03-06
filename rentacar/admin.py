@@ -13,7 +13,6 @@ class CustomUserAdmin(UserAdmin):
 
 # Register your models here.
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Owner)
 
 class CarAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -37,5 +36,16 @@ class RentAdmin(admin.ModelAdmin):
     list_display = ('rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate', 'endDate', 'expired')
     list_filter = ('renterNumber', 'renteeNumber')
 
+class OwnerAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,
+        {'fields': ['car', 'user']}),
+    ]
+
+    readonly_fields = ('car',)
+    list_display = ('car', 'user')
+    list_filter = ('car')
+
 admin.site.register(Car, CarAdmin)
 admin.site.register(Rent, RentAdmin)
+admin.site.register(Owner, OwnerAdmin)
