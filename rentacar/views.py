@@ -102,7 +102,7 @@ def coownership(request, pk):
     new_owner = AddOwner.objects.get(car=car)
 
     new_owner = Owner()
-    new_owner.assign_owner(car, new_owner.user)
+    new_owner.assign_owner(car, new_owner.new_owner_id)
 
     car.pending = False
     car.save()
