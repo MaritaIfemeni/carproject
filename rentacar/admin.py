@@ -42,6 +42,8 @@ class OwnerAdmin(admin.ModelAdmin):
         {'fields': ['car', 'user']}),
     ]
 
+    list_display = ('car', 'user')
+
 admin.site.register(Car, CarAdmin)
 admin.site.register(Rent, RentAdmin)
 admin.site.register(Owner, OwnerAdmin)
