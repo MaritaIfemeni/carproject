@@ -20,7 +20,7 @@ class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
-        'emissions', 'seats', 'location', 'main_owner')
+        'emissions', 'seats', 'location')
 
 class RentForm(forms.ModelForm):
     class Meta:
