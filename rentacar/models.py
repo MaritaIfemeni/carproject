@@ -66,7 +66,6 @@ class Car(models.Model):
     location = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField(default=0)
     pending = models.BooleanField(default=False)
-    owners = models.ManyToManyField("CustomUser")
 
     def __str__(self):
         return f"{self.make} {self.model}"
