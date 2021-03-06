@@ -42,6 +42,7 @@ class OwnerAdmin(admin.ModelAdmin):
         {'fields': ['car', 'user']}),
     ]
 
+    readonly_fields = ('car',)
     list_display = ('car', 'user')
 
 admin.site.register(Car, CarAdmin)
