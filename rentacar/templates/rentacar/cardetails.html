@@ -30,8 +30,10 @@
                 <td>Location: {{ car.location }}</td>
             </tr>
             <tr>
-                <td><strong>Available from:</strong> {{ rent.endDate}}</td>
-                <td><img src="/media/images/test_2HaFdgR.jpg"></td>
+                <td><strong>Available from:</strong> {{ rent.endDate }}</td>
+                {% if image %}
+                  <td><img src="/media/{{ image.image }}></td>
+                {% else %}
             </tr>
         </table>   
     </div>
