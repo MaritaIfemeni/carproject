@@ -245,6 +245,7 @@ def caradd(request):
 
     else:
         carform = CarForm()
+        carform.base_fields['main_owner'].queryset = request.user
 
     context = {
         'carform': carform
