@@ -51,15 +51,15 @@ def carimage(request):
     user = request.user
     owner = Owner.objects.filter(user_id=user.userNumber)
     if request.method == 'POST':
-        form = CarImageForm(request.POST, request.FILES)
+        imageform = CarImageForm(request.POST, request.FILES, initial={'car': selected_car})
         if form.is_valid():
+            imageform.save(commit=False)
             selected_car = request.POST.get('idsel_car')
-            form.car = Car.objects.filter(carNumber=selected_car)
-            form.save()
+            imageform.save()
             img_obj = form.instance
     
             context = {
-                'form': form,
+                'imageform': imageform,
                 'img_obj': img_obj,
                 'selected_car': selected_car,
                 'owner': owner,
@@ -67,10 +67,10 @@ def carimage(request):
 
             return render(request, 'rentacar/carimage.html', context)
     else:
-        form = CarImageForm()
+        imageform = CarImageForm()
 
         context = {
-            'form': form,
+            'imageform': imageform,
             'owner': owner,
         }
 
