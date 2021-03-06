@@ -304,7 +304,7 @@ def carlist(request):
 def cardetails(request, pk):
     teksti = None
     cartext = None
-    image = CarImage.objects.get(car__carNumber=pk)
+    image = CarImage.objects.filter(car__carNumber=pk).first()
     car = get_object_or_404(Car, pk=pk)
     rent = Rent.objects.filter(carNumber=car)
     if rent.count() > 0:
