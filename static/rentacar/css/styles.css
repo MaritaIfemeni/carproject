@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
 
+#login_firstcolum li {
+    background-color: coral;
+}
+
 #caradd_firstcolum {
     text-align: left;
 }
@@ -69,10 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .themed-grid-col li:hover{
-    background-color: coral;
-}
-
-.errorlist ul {
     background-color: coral;
 }
 
