@@ -119,7 +119,7 @@ def coownership(request, pk):
 @login_required
 def account(request):
     pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
-    pending_cars_new_owner = AddOwner.objects.filter(Owner=request.user).first()
+    pending_cars_new_owner = AddOwner.objects.filter(owner=request.user).first()
     pending_cars_count = pending_cars.count()
 
     context = {
