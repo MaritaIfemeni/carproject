@@ -52,7 +52,6 @@ def carimage(request):
     owner = Owner.objects.filter(user_id=user.userNumber)
     if request.method == 'POST':
         imageform = CarImageForm(request.POST, request.FILES)
-        imageform.base_fields['car'].queryset = Car.objects.filter(main_owner=user)
         if imageform.is_valid():
             imageform.save()
             img_obj = imageform.instance
