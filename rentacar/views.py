@@ -232,7 +232,7 @@ def carsearch(request):
 @login_required
 def caradd(request):
     if request.method == "POST":
-        carform = CarForm(request.POST)
+        carform = CarForm(request.POST, initial={'customUser': request.user})
         if carform.is_valid():
             car = carform.save(commit=False)
             car.save()
