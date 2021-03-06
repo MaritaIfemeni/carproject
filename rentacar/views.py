@@ -306,6 +306,8 @@ def cardetails(request, pk):
     cartext = None
     car = get_object_or_404(Car, pk=pk)
     rent = Rent.objects.filter(carNumber=car)
+    if rent.count() > 0:
+        rent = rent.latest('startDate')
 
     if car.status != 0:
         cartext = "Tällä hetkellä varattu"
@@ -316,12 +318,16 @@ def cardetails(request, pk):
         context = {
             'teksti': teksti,
             'car': car,
+            'rent': rent,
+            'cartext': cartext,
         }
 
         return render(request, 'rentacar/cardetails.html', context)
 
     context = {
         'car': car,
+        'rent': rent,
+        'cartext': cartext,
     }
 
     return render(request, 'rentacar/cardetails.html', context)
