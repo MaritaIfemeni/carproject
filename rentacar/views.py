@@ -104,6 +104,7 @@ def coownership(request, pk):
     new_owner.assign_owner(car, request.user)
 
     car.pending = False
+    car.save()
 
     context = {
         'car': car,
