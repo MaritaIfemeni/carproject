@@ -99,7 +99,7 @@ def help(request):
 
 @login_required
 def account(request):
-    pending_cars = Car.objects.filter()
+    pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
     return render(request, 'rentacar/account.html')
 
 @login_required
@@ -189,6 +189,7 @@ def carsearch(request):
         new_owner.assign_new_owner(sel_car, owner.user, request.user)
 
         sel_car.pending = True
+        sel_car.save()
 
         text = "Your request is now pending..."
             
