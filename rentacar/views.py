@@ -99,6 +99,7 @@ def help(request):
 
 @login_required
 def account(request):
+    pending_cars = Car.objects.filter()
     return render(request, 'rentacar/account.html')
 
 @login_required

@@ -16,6 +16,9 @@
           <li><a href="{% url 'rentsout' %}">View your cars rented out</a></li>
           <li><a href="{% url 'cars' %}">View your listed cars</a></li>
           <li><a href="{% url 'carsearch' %}">Add co-ownership</a></li>
+          {% if alert %}
+            <li><a href="{% url 'coownership' %}">Accept co-ownership</a></li>
+          {% endif %}
         </ul>  
     </div>
     <div class="col-md-6 themed-grid-col" id="secondcolum">
