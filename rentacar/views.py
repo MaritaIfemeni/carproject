@@ -101,6 +101,9 @@ def coownership(request, pk):
     car = Car.objects.get(pk=pk)
     new_owner = AddOwner.objects.get(car=car)
 
+    if request.user != new_owner.owner:
+        return render(request, '/')
+
     owner = Owner()
     owner.assign_owner(car, new_owner.new_owner)
 
@@ -116,11 +119,13 @@ def coownership(request, pk):
 @login_required
 def account(request):
     pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
+    pending_cars_new_owner = AddOwner.objects.filter(Owner=request.user).first()
     pending_cars_count = pending_cars.count()
 
     context = {
         'pending_cars': pending_cars,
         'pending_cars_count': pending_cars_count,
+        'pending_cars_new_owner': pending_cars_new_owner,
     }
 
     return render(request, 'rentacar/account.html', context)
