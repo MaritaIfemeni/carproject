@@ -99,7 +99,8 @@ def help(request):
 
 def coownership(request, pk):
     car = Car.objects.get(pk=pk)
-    new_owner = AddOwner.objects.get(car=car)
+    car_owner = AddOwner.objects.filter(car=car)
+    new_owner = car_owner.latest('requestDate')
 
     if request.user != new_owner.owner:
         return render(request, '/')
