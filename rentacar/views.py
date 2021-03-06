@@ -52,9 +52,8 @@ def carimage(request):
     owner = Owner.objects.filter(user_id=user.userNumber)
     if request.method == 'POST':
         imageform = CarImageForm(request.POST, request.FILES)
+        imageform.base_fields['car'].queryset = Car.objects.all()
         if imageform.is_valid():
-            selected_car = request.POST.get('idsel_car')
-            
             imageform.save()
             img_obj = imageform.instance
     
@@ -68,7 +67,7 @@ def carimage(request):
             return render(request, 'rentacar/carimage.html', context)
     else:
         imageform = CarImageForm()
-        imageform.base_fields['car'].queryset = Car.objects.filter(carNumber=1)
+        imageform.base_fields['car'].queryset = Car.objects.all()
         context = {
             'imageform': imageform,
             'owner': owner,

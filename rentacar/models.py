@@ -67,6 +67,7 @@ class Car(models.Model):
     location = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField(default=0)
     pending = models.BooleanField(default=False)
+    main_owner = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="main_owner")
 
     def __str__(self):
         return f"{self.make} {self.model}"
