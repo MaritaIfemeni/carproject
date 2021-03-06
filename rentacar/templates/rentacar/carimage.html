@@ -4,19 +4,9 @@
 
 <form name="carimageform" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-    <select id="idsel_car" name="idsel_car">
-    <option selected="select" disabled>--select one--</option>
-      {% for car in owner %}
-        <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
-      {% endfor %}
-    </select>
     {{ imageform.as_p }}
   <input class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
 </form>
-
-{% if selected_car %}
-  <h5>{{ selected_car }}</h5>
-{% endif %}
 
 {% if img_obj %}
   <h6>Succesfully uploaded {{ img_obj.title }}</h6>
