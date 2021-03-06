@@ -60,6 +60,7 @@ def carimage(request):
             img_obj = imageform.instance
     
             context = {
+                'owner': owner,
                 'imageform': imageform,
                 'img_obj': img_obj,
             }
@@ -70,6 +71,7 @@ def carimage(request):
         # imageform.base_fields['car'].queryset = Car.objects.filter(main_owner=user)
 
         context = {
+            'owner': owner,
             'imageform': imageform,
         }
 

@@ -4,7 +4,7 @@
 
 <form name="carimageform" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-    {% for car in cars %}
+    {% for car in owner %}
       <input type="checkbox" value="{{ car.carNumber.carNumber }}" name="getcar">
       <label for="getcar"><br><strong> {{ car.carNumber.make }} {{ car.carNumber.model }} <br></strong> 
       <strong>Plate Nro:</strong> {{ car.carNumber.registerNum }} </label><br>
