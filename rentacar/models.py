@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class CarImage(models.Model):
     image = models.ImageField(upload_to='images')
-    car = models.ForeignKey('Car', on_delete=models.CASCADE)
+    car = models.ForeignKey('Car', blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.car.registerNum
