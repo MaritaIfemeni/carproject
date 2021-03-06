@@ -66,6 +66,9 @@
                 <form action="{% url 'cardetails' pk=car.carNumber.pk %}">
                   <button class="btn btn-outline-success" type="submit">Details</button>
                 </form>
+                <form action="{% url 'carrent' pk=car.carNumber.pk %}">
+                    <button class="btn btn-outline-success" type="submit">RENT</button>
+                </form>
               </td>
             </tr>
           </table>
