@@ -117,6 +117,7 @@ def account(request):
     pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
     pending_cars_count = pending_cars.count()
     pending_cars_new = AddOwner.objects.filter(owner=request.user)
+    
     if pending_cars_count > 0:
         pending_cars_new_owner = pending_cars_new.latest('requestDate')
     else:
