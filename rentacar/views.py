@@ -60,8 +60,6 @@ def carimage(request):
             context = {
                 'imageform': imageform,
                 'img_obj': img_obj,
-                'selected_car': selected_car,
-                'owner': owner,
             }
 
             return render(request, 'rentacar/carimage.html', context)
@@ -70,7 +68,6 @@ def carimage(request):
         imageform.base_fields['car'].queryset = Car.objects.filter(main_owner=user)
         context = {
             'imageform': imageform,
-            'owner': owner,
         }
 
     return render(request, 'rentacar/carimage.html', context)
