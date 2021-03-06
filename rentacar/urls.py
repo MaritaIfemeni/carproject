@@ -16,5 +16,5 @@ urlpatterns = [
     path('rentsout/', views.rentsout, name='rentsout'),
     path('cars/', views.cars, name='cars'),
     path('help/', views.help, name='help'),
-    path('coownership/', views.coownership, name='coownership')
+    path('coownership/<int:pk>', views.coownership, name='coownership')
 ]
