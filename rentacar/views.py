@@ -97,10 +97,27 @@ def carimage(request):
 def help(request):
     return render(request, 'rentacar/help.html')
 
+def coownership(request, pk):
+    car = Car.objects.get(pk=pk)
+
+    new_owner = Owner()
+    new_owner.assign_owner(car, request.user)
+
+    context = {
+        'car': car,
+    }
+
+    return render(request, 'rentacar/coownership.html', context)
+
 @login_required
 def account(request):
     pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
-    return render(request, 'rentacar/account.html')
+    
+    context = {
+        'pending_cars': pending_cars,
+    }
+
+    return render(request, 'rentacar/account.html', context)
 
 @login_required
 def cars(request):
