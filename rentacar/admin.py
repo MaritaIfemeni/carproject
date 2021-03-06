@@ -44,7 +44,7 @@ class OwnerAdmin(admin.ModelAdmin):
 
     readonly_fields = ('car',)
     list_display = ('car', 'user')
-    list_filter = ('car')
+    list_filter = ('car',)
 
 admin.site.register(Car, CarAdmin)
 admin.site.register(Rent, RentAdmin)
