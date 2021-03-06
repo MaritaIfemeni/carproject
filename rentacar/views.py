@@ -56,6 +56,7 @@ def carimage(request):
             selected_car = request.POST.get('getcar')
             image = imageform.save(commit=False)
             image.car = Car.objects.get(selected_car)
+            image.save()
             img_obj = imageform.instance
     
             context = {
