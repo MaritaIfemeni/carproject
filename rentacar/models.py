@@ -43,11 +43,6 @@ class Owner(models.Model):
         self.user = owner
         self.save()
 
-    def assign_new_owner(self, car, new_owner):
-        self.car = car
-        self.user = new_owner
-        self.save()
-
 class AddOwner(models.Model):
     owner = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="owner")
     new_owner = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name="new_owner")

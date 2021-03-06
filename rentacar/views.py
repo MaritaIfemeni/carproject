@@ -184,7 +184,7 @@ def carsearch(request):
         sel_car = Car.objects.get(carNumber=selected_car)
         owner = Owner.objects.filter(car__carNumber=sel_car.carNumber).first()
 
-        new_owner = Owner()
+        new_owner = AddOwner()
         new_owner.assign_new_owner(sel_car, owner, request.user)
 
         sel_car.pending = True
