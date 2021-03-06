@@ -303,7 +303,13 @@ def carlist(request):
 @login_required
 def cardetails(request, pk):
     teksti = None
+    cartext = None
     car = get_object_or_404(Car, pk=pk)
+    rent = Rent.objects.filter(carNumber=car)
+
+    if car.status != 0:
+        cartext = "Tällä hetkellä varattu"
+
     if request.method == 'POST':
         teksti = "Lähetä sähköpostia osoitteeseen blabla"
 
