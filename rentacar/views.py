@@ -99,9 +99,10 @@ def help(request):
 
 def coownership(request, pk):
     car = Car.objects.get(pk=pk)
+    new_owner = AddOwner.objects.get(car=car)
 
     new_owner = Owner()
-    new_owner.assign_owner(car, request.user)
+    new_owner.assign_owner(car, new_owner.user)
 
     car.pending = False
     car.save()
