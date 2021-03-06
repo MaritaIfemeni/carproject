@@ -21,6 +21,7 @@ class CarAdmin(admin.ModelAdmin):
          'status', 'pending', 'main_owner']}),
     ]
 
+    readonly_fields = ('carNumber',)
     list_display = ('carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location',
                     'status', 'pending', 'main_owner')    
     list_filter = ['main_owner']
@@ -31,6 +32,7 @@ class RentAdmin(admin.ModelAdmin):
         {'fields': ['rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate', 'endDate', 'expired']}),
     ]
 
+    readonly_fields = ('rentNumber',)
     list_display = ('rentNumber', 'carNumber', 'renterNumber', 'renteeNumber', 'rentPrice', 'startDate', 'endDate', 'expired')
     list_filter = ('renterNumber', 'renteeNumber')
 
@@ -40,7 +42,8 @@ class OwnerAdmin(admin.ModelAdmin):
         {'fields': ['car', 'user']}),
     ]
 
-    list_display = ('car', 'user')
+    readonly_fields = ('id',)
+    list_display = ('id', 'car', 'user')
     list_filter = ('car',)
 
 admin.site.register(Car, CarAdmin)
