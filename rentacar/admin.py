@@ -26,6 +26,6 @@ class CarAdmin(admin.ModelAdmin):
     readonly_fields = ('carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location')
     list_display = ('carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location',
                     'status', 'pending', 'main_owner')    
-    list_filter = ['carNumber']
+    list_filter = ['main_owner']
 
 admin.site.register(Car, CarAdmin)
