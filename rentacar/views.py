@@ -234,6 +234,7 @@ def caradd(request):
     if request.method == "POST":
         carform = CarForm(request.POST, initial={'main_owner': request.user})
         if carform.is_valid():
+            carform.base_fields['main_owner'].queryset = request.user
             car = carform.save(commit=False)
             car.save()
 
