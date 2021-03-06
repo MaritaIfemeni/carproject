@@ -42,7 +42,7 @@ class OwnerAdmin(admin.ModelAdmin):
         {'fields': ['car', 'user']}),
     ]
 
-    readonly_fields = ('car',)
+    readonly_fields = ('car')
     list_display = ('car', 'user')
     list_filter = ('car')
 
