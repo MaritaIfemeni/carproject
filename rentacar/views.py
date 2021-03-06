@@ -53,9 +53,9 @@ def carimage(request):
     if request.method == 'POST':
         form = CarImageForm(request.POST, request.FILES)
         if form.is_valid():
-            selected_car = request.POST.get("idsel_car")
+            selected_car = request.POST.get('idsel_car')
             form.car = Car.objects.filter(carNumber=selected_car)
-            # form.save()
+            form.save()
             img_obj = form.instance
     
             context = {
@@ -120,7 +120,8 @@ def coownership(request, pk):
 @login_required
 def account(request):
     pending_cars = Owner.objects.filter(user=request.user).filter(car__pending=1)
-    pending_cars_new_owner = AddOwner.objects.filter(owner=request.user).first()
+    pending_cars_new = AddOwner.objects.filter(owner=request.user)
+    pending_cars_new_owner = pending_cars_new.latest('requestDate')
     pending_cars_count = pending_cars.count()
 
     context = {
