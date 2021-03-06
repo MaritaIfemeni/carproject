@@ -13,6 +13,19 @@ class CustomUserAdmin(UserAdmin):
 
 # Register your models here.
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Car)
 admin.site.register(Rent)
 admin.site.register(Owner)
+
+class CarAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,
+         {'fields': ['carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location',
+         'status', 'pending', 'main_owner']}),
+    ]
+
+    readonly_fields = ('carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location')
+    list_display = ('carNumber', 'make', 'model', 'registerNum', 'year', 'powerLine', 'emissions', 'seats', 'location',
+                    'status', 'pending', 'main_owner')    
+    list_filter = ['carNumber']
+
+admin.site.register(Car, CarAdmin)
