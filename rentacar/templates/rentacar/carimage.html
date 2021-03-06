@@ -10,12 +10,13 @@
         <option value="{{ car.car.carNumber }}">{{ car.car.registerNum }}</option>
       {% endfor %}
     </select>
-    {{ form.as_p }}
+    {{ imageform.as_p }}
   <input class="btn btn-outline-success" type="submit" class="savebutton">Upload</button>
 </form>
 
-<h5>{{ selected_car }}
-{{ owner }}</h5>
+{% if selected_car %}
+  <h5>{{ selected_car }}</h5>
+{% endif %}
 
 {% if img_obj %}
   <h6>Succesfully uploaded {{ img_obj.title }}</h6>
