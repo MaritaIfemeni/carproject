@@ -231,10 +231,11 @@ def carsearch(request):
 
 @login_required
 def caradd(request):
+    user = request.user
     if request.method == "POST":
-        carform = CarForm(request.POST, request.user, initial={'main_owner': request.user})
+        carform = CarForm(request.POST)
         if carform.is_valid():
-            carform.base_fields['main_owner'].queryset = request.user
+            carform.base_fields['main_owner'].queryset = user
             car = carform.save(commit=False)
             car.save()
 
@@ -244,8 +245,8 @@ def caradd(request):
             return redirect('cars')
 
     else:
-        carform = CarForm(request.user)
-        carform.base_fields['main_owner'].queryset = request.user
+        carform = CarForm()
+        carform.base_fields['main_owner'].queryset = user
 
     context = {
         'carform': carform
