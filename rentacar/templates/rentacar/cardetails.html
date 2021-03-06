@@ -32,7 +32,7 @@
             <tr>
                 <td><strong>Available from:</strong> {{ rent.endDate }}</td>
                 {% if image %}
-                  <td><img src="/media/{{ image.image }}" style="max-height: 150px"></td>
+                  <td><img src="/media/{{ image.image }}" style="max-height: 150px; max-width: 150px;"></td>
                 {% else %}
                   <td>Image not available</td>
                 {% endif %}
