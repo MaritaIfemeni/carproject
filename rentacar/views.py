@@ -178,7 +178,7 @@ def rents(request):
 def rentsout(request):
     rentsout = Rent.objects.filter(renteeNumber_id=request.user.userNumber)
     valid_rentsout = rentsout.filter(expired=0).filter(carNumber__status=1)
-    returned_rentsout = rentsout.filter(carNumber__status=2)
+    returned_rentsout = rentsout.filter(carNumber__status=2).first()
     expired_rentsout = rentsout.filter(expired=1)
     valid_rentsout_count = valid_rentsout.count()
     expired_rentsout_count =expired_rentsout.count()
