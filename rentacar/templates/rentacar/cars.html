@@ -30,6 +30,13 @@
                 <td>Plate Nro: {{ car.car.registerNum }}</td>
                 <td>Location: {{ car.car.location }}</td>
             </tr>
+            <tr>
+              <td>
+                <form action="{% url 'cardetails' pk=car.car.pk %}">
+                  <button class="btn btn-outline-success" type="submit">Details</button>
+                </form>
+              </td>
+            </tr>
         </table>
         {% endfor %}       
     </div>

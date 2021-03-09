@@ -46,7 +46,6 @@ def carimage(request):
         return render(request, 'rentacar/carimage.html', context)
 """
 
-# TOTALLY FUCKED!
 @login_required
 def carimage(request):
     user = request.user
