@@ -81,7 +81,7 @@ class Rent(models.Model):
     rentPrice = models.PositiveSmallIntegerField(default=100)
     startDate = models.DateTimeField(null=True, default=timezone.now())
     endDate = models.DateTimeField(null=True, default=timezone.now() + timedelta(1))
-    expired = models.BooleanField(default=False)
+    expired = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
         return f"{self.renterNumber.last_name} {self.renteeNumber.last_name} {self.carNumber.registerNum} {self.endDate}"
