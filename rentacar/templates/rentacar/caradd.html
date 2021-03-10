@@ -12,7 +12,7 @@
             <h5>New Car</h5>
             <form method="POST" id="carform">{% csrf_token %}
                 <div class="form">
-                    {{ carform.as_p }}
+                    {{ carform.email }}
                 </div>
                 <button class="btn btn-outline-success" type="submit">Save</button>
             </form>

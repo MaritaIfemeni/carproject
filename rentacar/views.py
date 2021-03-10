@@ -231,11 +231,12 @@ def carsearch(request):
 
 @login_required
 def caradd(request):
+    user = request.user
     if request.method == "POST":
         carform = CarForm(request.POST)
         if carform.is_valid():
             car = carform.save(commit=False)
-            car.main_owner = request.user
+            car.main_owner = user
             car.save()
 
             owner = Owner()
