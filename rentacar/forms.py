@@ -21,6 +21,9 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = ('make', 'model', 'registerNum', 'year', 'powerLine',
         'emissions', 'seats', 'location', 'main_owner')
+        widgets = {
+            'main_owner': forms.HiddenInput(),
+        }
 
 class RentForm(forms.ModelForm):
     class Meta:
